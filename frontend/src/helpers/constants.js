@@ -21,12 +21,12 @@ export const tiers = [
 
 // Faction options
 export const factions = [
-  'Basic',
-  'Protection',
-  'Leadership',
-  'Aggression',
-  'Justice',
-  'Your Choice',
+  { id: 'Basic', name: 'Basic' },
+  { id: 'Protection', name: 'Protection' },
+  { id: 'Leadership', name: 'Leadership' },
+  { id: 'Aggression', name: 'Aggression' },
+  { id: 'Justice', name: 'Justice' },
+  { id: 'Your Choice', name: 'Your Choice' },
 ];
 
 // Primary loot table rolls

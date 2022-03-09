@@ -25,7 +25,7 @@ export const getFaction = (roll) => {
   if (roll.includes('None')) {
     return 'None';
   } else if (roll.includes('Roll')) {
-    return constants.factions[randomIntFromInterval(0, 5)];
+    return constants.factions[randomIntFromInterval(0, 5)].name;
   } else {
     return roll.split(' ')[2];
   }

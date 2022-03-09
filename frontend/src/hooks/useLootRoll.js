@@ -5,14 +5,23 @@ import { api } from '../helpers/constants';
 import * as helpers from '../helpers/helpers';
 
 const useLootRoll = () => {
-  const [player, setPlayer] = useState(1);
-  const [tier, setTier] = useState('T1+');
+  const [player, setPlayer] = useState('Player 1');
+  const [tier, setTier] = useState('T1');
+  const [faction, setFaction] = useState('Basic');
+  const [rolledTier, setRolledTier] = useState('');
   const [rolledCard, setRolledCard] = useState('');
+
+  const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
+  const [displayResults, setDisplayResults] = useState(false);
 
   const cards = useFetch(api.getCards).data;
   const players = useFetch(api.getPlayers).data;
 
   const rollLoot = () => {
+    console.log(faction);
+    // Hide results from previous role
+    setDisplayResults(false);
+
     // Get potential loot array based on tier selected
     const potentialLoot = helpers.getPotentialLoot(constants.lootTable, tier);
     console.log('Loot:', potentialLoot);
@@ -21,12 +30,19 @@ const useLootRoll = () => {
     console.log('Roll Results:', rollResults);
 
     const rolledTier = helpers.getTier(rollResults);
+    setRolledTier(rolledTier);
     console.log('Tier:', rolledTier);
 
     const rolledFaction = helpers.getFaction(rollResults);
     console.log('Faction:', rolledFaction);
 
-    rollForCard(rolledTier, rolledFaction);
+    rolledFaction === 'Your Choice'
+      ? setDisplayFactionSelect(true)
+      : rollForCard(rolledTier, rolledFaction);
+  };
+
+  const rollLootWithFaction = () => {
+    rollForCard(rolledTier, faction);
   };
 
   // Randomly select card from lootable pool of cards
@@ -43,6 +59,8 @@ const useLootRoll = () => {
     const card = helpers.getCard(potentialCards);
     card !== 'None' ? setRolledCard(card) : setRolledCard('');
     console.log('Card:', card);
+
+    setDisplayResults(true);
   };
 
   function setPlayerState(value) {
@@ -53,15 +71,24 @@ const useLootRoll = () => {
     setTier(value);
   }
 
+  function setFactionState(value) {
+    setFaction(value);
+  }
+
   return {
-    cards: cards,
-    players: players,
-    rolledCard: rolledCard,
-    tier: tier,
-    player: player,
+    cards,
+    players,
+    player,
+    tier,
+    faction,
+    rolledCard,
     rollLoot,
+    rollLootWithFaction,
     setPlayerState,
     setTierState,
+    setFactionState,
+    displayFactionSelect,
+    displayResults,
   };
 };
 
