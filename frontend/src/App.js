@@ -2,7 +2,7 @@ import LootRoll from './components/LootRoll';
 
 export default function App() {
   return (
-    <div className='App'>
+    <div className='bg-slate-300 h-screen'>
       <LootRoll />
     </div>
   );

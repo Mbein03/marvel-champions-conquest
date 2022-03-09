@@ -23,7 +23,7 @@ const LootRoll = () => {
 
   return (
     <>
-      <section className='flex items-center justify-center h-screen bg-slate-300'>
+      <section className='p-6 flex items-center justify-center'>
         <section className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
           <form>
             <InputLabel htmlFor={'player'}>Player:</InputLabel>
@@ -61,8 +61,10 @@ const LootRoll = () => {
             Roll
           </Button>
         </section>
+      </section>
+      <section className='flex items-center justify-center'>
         <section className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
-          {displayResults && <h4 className='mt-3'>Card: {rolledCard.name}</h4>}
+          {displayResults && <h4>Card: {rolledCard.name}</h4>}
         </section>
       </section>
     </>
