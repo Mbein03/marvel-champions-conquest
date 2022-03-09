@@ -1,4 +1,3 @@
-// Testing Git
 import useLootRoll from '../hooks/useLootRoll';
 import Button from '../components/Button';
 import InputLabel from '../components/InputLabel';
