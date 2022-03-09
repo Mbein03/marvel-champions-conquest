@@ -22,46 +22,50 @@ const LootRoll = () => {
   } = useLootRoll();
 
   return (
-    <section className='justify-center items-center h-screen bg-slate-300'>
-      <section className='mx-auto block p-6 rounded-lg shadow-lg bg-white w-80'>
-        <form>
-          <InputLabel htmlFor={'player'}>Player:</InputLabel>
-          <SelectInput
-            id={'player'}
-            name={'player'}
-            value={player}
-            data={players}
-            onSelectChange={setPlayerState}
-          ></SelectInput>
-          <InputLabel htmlFor={'tier'}>Tier Roll:</InputLabel>
-          <SelectInput
-            id={'tier'}
-            name={'tier'}
-            value={tier}
-            data={constants.tiers}
-            onSelectChange={setTierState}
-          ></SelectInput>
-          {displayFactionSelect && (
-            <>
-              <InputLabel htmlFor={'faction'}>Choose Faction:</InputLabel>
-              <SelectInput
-                id={'faction'}
-                name={'faction'}
-                value={faction}
-                data={constants.factions}
-                onSelectChange={setFactionState}
-              ></SelectInput>
-            </>
-          )}
-        </form>
-        <Button onClick={displayFactionSelect ? rollLootWithFaction : rollLoot}>
-          Roll
-        </Button>
+    <>
+      <section className='flex items-center justify-center h-screen bg-slate-300'>
+        <section className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
+          <form>
+            <InputLabel htmlFor={'player'}>Player:</InputLabel>
+            <SelectInput
+              id={'player'}
+              name={'player'}
+              value={player}
+              data={players}
+              onSelectChange={setPlayerState}
+            ></SelectInput>
+            <InputLabel htmlFor={'tier'}>Tier Roll:</InputLabel>
+            <SelectInput
+              id={'tier'}
+              name={'tier'}
+              value={tier}
+              data={constants.tiers}
+              onSelectChange={setTierState}
+            ></SelectInput>
+            {displayFactionSelect && (
+              <>
+                <InputLabel htmlFor={'faction'}>Choose Faction:</InputLabel>
+                <SelectInput
+                  id={'faction'}
+                  name={'faction'}
+                  value={faction}
+                  data={constants.factions}
+                  onSelectChange={setFactionState}
+                ></SelectInput>
+              </>
+            )}
+          </form>
+          <Button
+            onClick={displayFactionSelect ? rollLootWithFaction : rollLoot}
+          >
+            Roll
+          </Button>
+        </section>
+        <section className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
+          {displayResults && <h4 className='mt-3'>Card: {rolledCard.name}</h4>}
+        </section>
       </section>
-      <section className='mx-auto block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
-        {displayResults && <h4 className='mt-3'>Card: {rolledCard.name}</h4>}
-      </section>
-    </section>
+    </>
   );
 };
 
