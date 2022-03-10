@@ -75,13 +75,20 @@ const useLootRoll = () => {
     setFaction(value);
   }
 
+  const reset = () => {
+    setFaction('Basic');
+    setRolledTier('');
+    setRolledCard('');
+    setDisplayFactionSelect(false);
+    setDisplayResults(false);
+  };
+
   return {
     cards,
     players,
     player,
     tier,
     faction,
-    rolledCard,
     rollLoot,
     rollLootWithFaction,
     setPlayerState,
@@ -89,6 +96,8 @@ const useLootRoll = () => {
     setFactionState,
     displayFactionSelect,
     displayResults,
+    rolledCard,
+    reset,
   };
 };
 
