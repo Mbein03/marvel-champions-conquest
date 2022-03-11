@@ -30,25 +30,23 @@ server.get('/api/players', (req, res) => {
 });
 
 server.post('/api/cards/mark-looted', (req, res) => {
-  Cards.markLooted(req.body)
+  Cards.markLooted(req.body.data)
     .then((card) => {
       res.status(200).json(card);
     })
     .catch((error) => {
-      console.log(error);
       res.status(500).json({ message: 'Unable to mark card as looted.' });
     });
 });
 
-// server.post('/api/cards/mark-sold', (req, res) => {
-//   Cards.markSold(req.body)
-//     .then((card) => {
-//       res.status(200).json(card);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       res.status(500).json({ message: 'Unable to mark card as sold.' });
-//     });
-// });
+server.post('/api/cards/mark-sold', (req, res) => {
+  Cards.markSold(req.body.data)
+    .then((card) => {
+      res.status(200).json(card);
+    })
+    .catch((error) => {
+      res.status(500).json({ message: 'Unable to mark card as sold.' });
+    });
+});
 
 module.exports = server;

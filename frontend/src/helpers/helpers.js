@@ -1,4 +1,4 @@
-import * as constants from './constants';
+import { factions } from './constants';
 
 // Returns integer between two intervals
 export const randomIntFromInterval = (min, max) =>
@@ -25,7 +25,7 @@ export const getFaction = (roll) => {
   if (roll.includes('None')) {
     return 'None';
   } else if (roll.includes('Roll')) {
-    return constants.factions[randomIntFromInterval(0, 5)].name;
+    return factions[randomIntFromInterval(0, 5)].name;
   } else {
     return roll.split(' ')[2];
   }
@@ -66,19 +66,19 @@ export const getCard = (potentialCards) =>
 // Reusable get request
 export const fetchData = async (url) => {
   const response = await fetch(url);
-  const data = await response.json();
-  return data;
+  const responseData = await response.json();
+  return responseData;
 };
 
 // Reusable post request
-export const postData = async (url, json) => {
+export const postData = async (url, data) => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ json }),
+    body: JSON.stringify({ data }),
   };
 
   const response = await fetch(url, requestOptions);
-  const data = await response.json();
-  return data;
+  const responseData = await response.json();
+  return responseData;
 };

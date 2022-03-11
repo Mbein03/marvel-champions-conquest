@@ -2,7 +2,7 @@ import CardHeader from '../reusuable/CardHeader';
 import ResultLine from '../reusuable/ResultLine';
 import Button from '../reusuable/Button';
 
-const LootResultCard = ({ rolledCard, reset }) => {
+const LootResultCard = ({ rolledCard, player, markCardSold, reset }) => {
   return (
     <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
       <CardHeader>Loot Roll</CardHeader>
@@ -16,7 +16,15 @@ const LootResultCard = ({ rolledCard, reset }) => {
         title={'Card'}
         result={rolledCard ? rolledCard.name : 'None'}
       />
-      <Button onClick={reset}>Reset</Button>
+      {rolledCard && (
+        <Button
+          onClick={() => markCardSold(rolledCard, player)}
+          additionalClasses='mb-3'
+        >
+          Sell
+        </Button>
+      )}
+      <Button onClick={reset}>{rolledCard ? 'Add to Deck' : 'Reset'}</Button>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as constants from '../../helpers/constants';
-import { api } from '../../helpers/constants';
+import { api, lootTable } from '../../helpers/constants';
 import * as helpers from '../../helpers/helpers';
 
 const useLootRollController = () => {
@@ -26,24 +25,11 @@ const useLootRollController = () => {
     });
   }, []);
 
-  useEffect(() => {
-    // Fire off request to mark card as looted after roll
-    if (rolledCard) {
-      helpers
-        .postData(api.markCardLooted, {
-          card: rolledCard,
-        })
-        .then((card) => {
-          console.log('Card Looted:', card);
-        });
-    }
-  }, [rolledCard]);
-
   const rollLoot = () => {
     console.log(faction);
 
     // Get potential loot array based on tier selected
-    const potentialLoot = helpers.getPotentialLoot(constants.lootTable, tier);
+    const potentialLoot = helpers.getPotentialLoot(lootTable, tier);
     console.log('Loot:', potentialLoot);
 
     const rollResults = helpers.getLootRollResult(potentialLoot);
@@ -80,7 +66,33 @@ const useLootRollController = () => {
     card ? setRolledCard(card) : setRolledCard('');
     console.log('Card:', card);
 
+    // Mark card looted
+    if (card) markCardLooted(card);
+
     setDisplayResults(true);
+  };
+
+  const markCardLooted = (card) => {
+    helpers
+      .postData(api.markCardLooted, {
+        card: card,
+      })
+      .then((card) => {
+        console.log('Card Looted:', card);
+        setRolledCard(card);
+      });
+  };
+
+  const markCardSold = (card, player) => {
+    helpers
+      .postData(api.markCardSold, {
+        card: card,
+        player: player,
+      })
+      .then((card) => {
+        reset();
+        console.log('Card Sold:', card);
+      });
   };
 
   function setPlayerState(value) {
@@ -117,6 +129,7 @@ const useLootRollController = () => {
     displayFactionSelect,
     displayResults,
     rolledCard,
+    markCardSold,
     reset,
   };
 };

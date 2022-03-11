@@ -16,6 +16,7 @@ export default function App() {
     displayFactionSelect,
     displayResults,
     rolledCard,
+    markCardSold,
     reset,
   } = useLootRoll();
 
@@ -40,6 +41,8 @@ export default function App() {
             <LootResultCard
               displayResults={displayResults}
               rolledCard={rolledCard}
+              player={player}
+              markCardSold={markCardSold}
               reset={reset}
             />
           )}
