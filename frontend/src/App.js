@@ -1,6 +1,6 @@
 import LootRollCard from './components/LootRollCard';
 import LootResultCard from './components/LootResultCard';
-import useLootRoll from './hooks/useLootRoll';
+import useLootRoll from './hooks/useLootRollController';
 
 export default function App() {
   const {

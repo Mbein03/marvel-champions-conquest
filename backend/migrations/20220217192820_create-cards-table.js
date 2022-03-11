@@ -9,8 +9,7 @@ exports.up = function (knex) {
       table.string('faction').notNullable(),
       table.string('tier'),
       table.integer('qty').notNullable(),
-      table.boolean('p1_acquired').defaultTo(0),
-      table.boolean('p2_acquired').defaultTo(0);
+      table.boolean('is_acquired').defaultTo(0),
   });
 };
 

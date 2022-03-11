@@ -61,4 +61,22 @@ export const getPotentialCards = (filteredCards) => {
 export const getCard = (potentialCards) =>
   potentialCards.length
     ? potentialCards[Math.floor(Math.random() * potentialCards.length)]
-    : { name: 'None' };
+    : null;
+
+export const fetchData = async (url) => {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
+
+export const postData = async (url, json) => {
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ json }),
+  };
+
+  const response = await fetch(url, requestOptions);
+  const data = await response.json();
+  return data;
+};

@@ -1,4 +1,3 @@
-import React from 'react';
 import CardHeader from './CardHeader';
 import Button from './Button';
 import InputLabel from './InputLabel';

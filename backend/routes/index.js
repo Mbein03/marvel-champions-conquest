@@ -29,16 +29,16 @@ server.get('/api/players', (req, res) => {
   fetch();
 });
 
-// server.post('/api/cards/mark-looted', (req, res) => {
-//   Cards.markLooted(req.body)
-//     .then((card) => {
-//       res.status(200).json(card);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       res.status(500).json({ message: 'Unable to mark card as looted.' });
-//     });
-// });
+server.post('/api/cards/mark-looted', (req, res) => {
+  Cards.markLooted(req.body)
+    .then((card) => {
+      res.status(200).json(card);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json({ message: 'Unable to mark card as looted.' });
+    });
+});
 
 // server.post('/api/cards/mark-sold', (req, res) => {
 //   Cards.markSold(req.body)

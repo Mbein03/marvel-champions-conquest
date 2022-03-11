@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 function SelectInput({ id, name, value, data, onSelectChange }) {
   // Update state in useLootRoll.js so additional logic can be performed
   function updateSelected(event) {

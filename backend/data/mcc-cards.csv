@@ -1,283 +1,283 @@
-1,Athletic Conditioning,Basic,C,1,0,0
-2,Beat 'Em Up,Basic,C,1,0,0
-3,Booster Boots,Basic,C,3,0,0
-4,Civic Duty,Basic,C,1,0,0
-5,Daughters of Thanos,Basic,C,2,0,0
-6,Emergency,Basic,C,1,0,0
-7,Espionage,Basic,C,3,0,0
-8,Flora and Fauna,Basic,C,2,0,0
-9,Haymaker,Basic,C,1,0,0
-10,Hit and Run,Basic,C,3,0,0
-11,Invulnerability,Basic,C,1,0,0
-12,Order and Chaos,Basic,C,2,0,0
-13,Plasma Pistol,Basic,C,3,0,0
-14,Resourceful,Basic,C,1,0,0
-15,Spiritual Meditation,Basic,C,3,0,0
-16,Swarm Tactics,Basic,C,2,0,0
-17,Tenacity,Basic,C,3,0,0
-18,To the Resue!,Basic,C,1,0,0
-19,Two Against the World,Basic,C,2,0,0
-20,Warning,Basic,C,1,0,0
-21,Adrenaline Rush,Basic,B,3,0,0
-22,Crew Quarters,Basic,B,2,0,0
-23,Earth's Mightiest Heroes,Basic,B,3,0,0
-24,Enhanced Awareness,Basic,B,3,0,0
-25,Enhanced Physique,Basic,B,3,0,0
-26,Enhanced Reflexes,Basic,B,3,0,0
-27,First Aid,Basic,B,1,0,0
-28,Honorary Avenger,Basic,B,3,0,0
-29,Honorary Guardian,Basic,B,3,0,0
-30,Pulse Grenade,Basic,B,3,0,0
-31,Ready to Rumble,Basic,B,3,0,0
-32,Recuperation,Basic,B,3,0,0
-33,Sidearm,Basic,B,3,0,0
-34,Team-Building Exercise,Basic,B,3,0,0
-35,Assess the Situation,Basic,A,3,0,0
-36,Avengers Tower,Basic,A,1,0,0
-37,C.I.T.T.,Basic,A,1,0,0
-38,Cosmo,Basic,A,1,0,0
-39,Deft Focus,Basic,A,2,0,0
-40,Down Time,Basic,A,2,0,0
-41,Drax,Basic,A,1,0,0
-42,Gamora,Basic,A,1,0,0
-43,Groot,Basic,A,1,0,0
-44,Heimdall,Basic,A,1,0,0
-45,Knowhere,Basic,A,1,0,0
-46,Martinex,Basic,A,1,0,0
-47,Quincarrier,Basic,A,1,0,0
-48,Rocket Racoon,Basic,A,1,0,0
-49,Side Holster,Basic,A,2,0,0
-50,Star-Lord,Basic,A,1,0,0
-51,Target Acquired,Basic,A,3,0,0
-52,The Power in All of Us,Basic,A,3,0,0
-53,War Machine,Basic,A,1,0,0
-54,Avengers Mansion,Basic,S,2,0,0
-55,Blade,Basic,S,1,0,0
-56,Endurance,Basic,S,3,0,0
-57,Energy,Basic,S,2,0,0
-58,Genius,Basic,S,2,0,0
-59,Helicarrier,Basic,S,2,0,0
-60,Ironheart,Basic,S,1,0,0
-61,Lockjaw,Basic,S,1,0,0
-62,Mockingbird,Basic,S,1,0,0
-63,Nick Fury,Basic,S,1,0,0
-64,Spider-Man,Basic,S,1,0,0
-65,Strength,Basic,S,2,0,0
-66,The Sorcerer Supreme,Basic,S,1,0,0
-67,Bait and Switch,Protection,B,2,0,0
-68,Dauntless,Protection,B,3,0,0
-69,Defensive Stance,Protection,B,2,0,0
-70,Defensive Training,Protection,B,2,0,0
-71,Ever Vigilant,Protection,B,3,0,0
-72,Expert Defense,Protection,B,2,0,0
-73,Hard Knocks,Protection,B,3,0,0
-74,Leading Blow,Protection,B,3,0,0
-75,Multiple Man,Protection,B,3,0,0
-76,Muster Courage,Protection,B,2,0,0
-77,Perserverance,Protection,B,3,0,0
-78,Second Wind,Protection,B,2,0,0
-79,Shake It Off,Protection,B,3,0,0
-80,Side Step,Protection,B,2,0,0
-81,Stand Together,Protection,B,3,0,0
-82,The Gardener,Protection,B,1,0,0
-83,True Grit,Protection,B,3,0,0
-84,Armored Vest,Protection,A,1,0,0
-85,Charlie-27,Protection,A,1,0,0
-86,Counter-Punch,Protection,A,2,0,0
-87,Deflection,Protection,A,3,0,0
-88,Desperate Defense,Protection,A,3,0,0
-89,Electrostatic Armor,Protection,A,2,0,0
-90,Fighting Fit,Protection,A,3,0,0
-91,First Hit,Protection,A,3,0,0
-92,Get Behind Me,Protection,A,2,0,0
-93,Preservation,Protection,A,1,0,0
-94,Martyr,Protection,A,1,0,0
-95,Momentum Shift,Protection,A,2,0,0
-96,Moondragon,Protection,A,1,0,0
-97,Never Back Down,Protection,A,3,0,0
-98,Nova,Protection,A,1,0,0
-99,Spell Shield,Protection,A,1,0,0
-100,Subdue,Protection,A,3,0,0
-101,Warlock,Protection,A,1,0,0
-102,Brother Voodoo,Protection,S,1,0,0
-103,Clea,Protection,S,1,0,0
-104,Energy Barrier,Protection,S,3,0,0
-105,Hard to Ignore,Protection,S,3,0,0
-106,Indomitable,Protection,S,2,0,0
-107,Iron Fist,Protection,S,1,0,0
-108,Med Team,Protection,S,2,0,0
-109,Nerves of Steel,Protection,S,2,0,0
-110,Preemptive Strike,Protection,S,3,0,0
-111,Starhawk,Protection,S,1,0,0
-112,Tackle,Protection,S,2,0,0
-113,The Night Nurse,Protection,S,1,0,0
-114,The Power of Protection,Protection,S,2,0,0
-115,Unflappable,Protection,S,2,0,0
-116,"""As One!""",Aggression,B,3,0,0
-117,Battle Furty,Aggression,B,3,0,0
-118,Boot Camp,Aggression,B,1,0,0
-119,Browbeat,Aggression,B,3,0,0
-120,Brute Force,Aggression,B,2,0,0
-121,Enraged,Aggression,B,2,0,0
-122,Follow Through,Aggression,B,2,0,0
-123,Fusilade,Aggression,B,3,0,0
-124,Get Over Here!,Aggression,B,2,0,0
-125,In-Betweener,Aggression,B,1,0,0
-126,Lie in Wait,Aggression,B,2,0,0
-127,Melee,Aggression,B,2,0,0
-128,Piercing Strike,Aggression,B,3,0,0
-129,Plan of Attack,Aggression,B,3,0,0
-130,Surprise Attack,Aggression,B,3,0,0
-131,Tac Team,Aggression,B,2,0,0
-132,Uppercut,Aggression,B,2,0,0
-133,"""You'll Pay for That!""",Aggression,B,2,0,0
-134,Audacity,Aggression,A,1,0,0
-135,Brawn,Aggression,A,1,0,0
-136,"""Bring It!""",Aggression,A,2,0,0
-137,Clobber,Aggression,A,3,0,0
-138,Counterattack,Aggression,A,3,0,0
-139,Dive Bomb,Aggression,A,3,0,0
-140,Energy Spear,Aggression,A,3,0,0
-141,Hercules,Aggression,A,1,0,0
-142,Magic Attack,Aggression,A,1,0,0
-143,Martial Prowess,Aggression,A,2,0,0
-144,Mean Swing,Aggression,A,3,0,0
-145,Moment of Triumph,Aggression,A,3,0,0
-146,Press the Advantage,Aggression,A,3,0,0
-147,Relentless Assault,Aggression,A,2,0,0
-148,She-Hulk,Aggression,A,1,0,0
-149,Skilled Strike,Aggression,A,3,0,0
-150,Toe to Toe,Aggression,A,3,0,0
-151,Valkyrie,Aggression,A,1,0,0
-152,Angela,Aggression,S,1,0,0
-153,Bug,Aggression,S,1,0,0
-154,Chase Them Down,Aggression,S,2,0,0
-155,Combat Training,Aggression,S,2,0,0
-156,Drop Kick,Aggression,S,3,0,0
-157,Godslayer,Aggression,S,1,0,0
-158,Hall of Heroes,Aggression,S,1,0,0
-159,Hand Cannon,Aggression,S,3,0,0
-160,Into the Fray,Aggression,S,2,0,0
-161,Jambjorn,Aggression,S,1,0,0
-162,Looking for Trouble,Aggression,S,3,0,0
-163,Marvel Boy,Aggression,S,1,0,0
-164,Sentry,Aggression,S,1,0,0
-165,Spider-Girl,Aggression,S,1,0,0
-166,The Power of Aggression,Aggression,S,2,0,0
-167,Thor,Aggression,S,1,0,0
-168,Wasp,Aggression,S,1,0,0
-169,Air Supremacy,Leadership,B,3,0,0
-170,All for One,Leadership,B,3,0,0
-171,Blaze of Glory,Leadership,B,3,0,0
-172,Comms Implant,Leadership,B,3,0,0
-173,Eternity,Leadership,B,1,0,0
-174,Inspiring Presence,Leadership,B,3,0,0
-175,Laser Blaster,Leadership,B,3,0,0
-176,Last Stand,Leadership,B,3,0,0
-177,Mass Attack,Leadership,B,3,0,0
-178,Moxie,Leadership,B,3,0,0
-179,Power Gloves,Leadership,B,3,0,0
-180,Quinjet,Leadership,B,3,0,0
-181,Sky Cycle,Leadership,B,3,0,0
-182,Target Practice,Leadership,B,3,0,0
-183,Teamwork,Leadership,B,3,0,0
-184,United We Stand,Leadership,B,3,0,0
-185,Adam Warlock,Leadership,A,1,0,0
-186,Avengers Assemble,Leadership,A,3,0,0
-187,Black Panther,Leadership,A,1,0,0
-188,Beta Ray Bill,Leadership,A,1,0,0
-189,Call for Aid,Leadership,A,3,0,0
-190,Captain America,Leadership,A,1,0,0
-191,Captain Marvel,Leadership,A,1,0,0
-192,Falcon,Leadership,A,1,0,0
-193,Giant-Man,Leadership,A,1,0,0
-194,Goliath,Leadership,A,1,0,0
-195,Guardians of the Galaxy,Leadership,A,2,0,0
-196,Hawkeye (Kate Bishop),Leadership,A,1,0,0
-197,Innovation,Leadership,A,1,0,0
-198,Lead from the Front,Leadership,A,3,0,0
-199,Mighty Avengers,Leadership,A,2,0,0
-200,Morale Boost,Leadership,A,3,0,0
-201,Power Man,Leadership,A,1,0,0
-202,Ready for Action,Leadership,A,3,0,0
-203,Reinforced Suit,Leadership,A,3,0,0
-204,Ronin,Leadership,A,1,0,0
-205,Sneak Attack,Leadership,A,3,0,0
-206,Stinger,Leadership,A,1,0,0
-207,Team Training,Leadership,A,2,0,0
-208,U.S.  Agent,Leadership,A,1,0,0
-209,Vision,Leadership,A,1,0,0
-210,Welcome Aboard,Leadership,A,3,0,0
-211,Wonder Man,Leadership,A,1,0,0
-212,Yondu,Leadership,A,1,0,0
-213,Ant-Man,Leadership,S,1,0,0
-214,Band Togetherr,Leadership,S,3,0,0
-215,Black Knight,Leadership,S,1,0,0
-216,Command Team,Leadership,S,3,0,0
-217,Get Ready,Leadership,S,3,0,0
-218,Go Down Swinging,Leadership,S,3,0,0
-219,Hawkeye (Clint Barton),Leadership,S,1,0,0
-220,Inspired,Leadership,S,3,0,0
-221,Iron Man,Leadership,S,1,0,0
-222,Kaluu,Leadership,S,1,0,0
-223,Major Victory,Leadership,S,1,0,0
-224,Make the Call,Leadership,S,3,0,0
-225,Maria Hill,Leadership,S,1,0,0
-226,Rapid Response,Leadership,S,3,0,0
-227,Regroup,Leadership,S,3,0,0
-228,Save the Day,Leadership,S,3,0,0
-229,Strength in Numbers,Leadership,S,3,0,0
-230,Summoning Spell,Leadership,S,1,0,0
-231,Squirrel Girl,Leadership,S,1,0,0
-232,The Power of Leadership,Leadership,S,2,0,0
-233,The Triskelion,Leadership,S,1,0,0
-234,White Tiger,Leadership,S,1,0,0
-235,Agile Flight,Justice,B,3,0,0
-236,Brains Over Brawn,Justice,B,3,0,0
-237,Counterintelligence,Justice,B,3,0,0
-238,Crisis Averted,Justice,B,3,0,0
-239,Followed,Justice,B,3,0,0
-240,Great Responsibility,Justice,B,3,0,0
-241,Interrogation Room,Justice,B,2,0,0
-242,Justice Served,Justice,B,3,0,0
-243,Living Tribunal,Justice,B,1,0,0
-244,Multitasking,Justice,B,3,0,0
-245,Pivotal Moment,Justice,B,3,0,0
-246,Running Interference,Justice,B,3,0,0
-247,Scare Tactic,Justice,B,3,0,0
-248,Spycraft,Justice,B,3,0,0
-249,Stealth Strike,Justice,B,3,0,0
-250,Swift Retribution,Justice,B,3,0,0
-251,Vigilante Training,Justice,B,3,0,0
-252,Beat Cop,Justice,A,3,0,0
-253,Determination,Justice,A,1,0,0
-254,Foiled!,Justice,A,3,0,0
-255,For Justice!,Justice,A,3,0,0
-256,Jack Flag,Justice,A,1,0,0
-257,Under Surveillance,Justice,A,3,0,0
-258,Lay Down the Law,Justice,A,3,0,0
-259,Making an Entrance,Justice,A,3,0,0
-260,One Way or Another,Justice,A,3,0,0
-261,Quake,Justice,A,1,0,0
-262,Sense of Justice,Justice,A,2,0,0
-263,Sonic Rifle,Justice,A,3,0,0
-264,Speed,Justice,A,1,0,0
-265,Spider-Man,Justice,A,1,0,0
-266,Surveillance Team,Justice,A,3,0,0
-267,"""Think Fast!""",Justice,A,3,0,0
-268,Venom,Justice,A,1,0,0
-269,Quasar,Justice,A,1,0,0
-270,Zone of Silence,Justice,A,1,0,0
-271,Agent Coulson,Justice,S,1,0,0
-272,Clear the Area,Justice,S,3,0,0
-273,Concussive Blow,Justice,S,3,0,0
-274,Daredevil,Justice,S,1,0,0
-275,Eros,Justice,S,1,0,0
-276,Impede,Justice,S,3,0,0
-277,Heroic Intuition,Justice,S,2,0,0
-278,Jessica Jones,Justice,S,1,0,0
-279,Skilled Investigator,Justice,S,2,0,0
-280,The Power of Justice,Justice,S,2,0,0
-281,Turn the Tide,Justice,S,3,0,0
-282,Wiccan,Justice,S,1,0,0
-283,Wraith,Justice,S,1,0,0
+1,Athletic Conditioning,Basic,C,1,0
+2,Beat 'Em Up,Basic,C,1,0
+3,Booster Boots,Basic,C,3,0
+4,Civic Duty,Basic,C,1,0
+5,Daughters of Thanos,Basic,C,2,0
+6,Emergency,Basic,C,1,0
+7,Espionage,Basic,C,3,0
+8,Flora and Fauna,Basic,C,2,0
+9,Haymaker,Basic,C,1,0
+10,Hit and Run,Basic,C,3,0
+11,Invulnerability,Basic,C,1,0
+12,Order and Chaos,Basic,C,2,0
+13,Plasma Pistol,Basic,C,3,0
+14,Resourceful,Basic,C,1,0
+15,Spiritual Meditation,Basic,C,3,0
+16,Swarm Tactics,Basic,C,2,0
+17,Tenacity,Basic,C,3,0
+18,To the Resue!,Basic,C,1,0
+19,Two Against the World,Basic,C,2,0
+20,Warning,Basic,C,1,0
+21,Adrenaline Rush,Basic,B,3,0
+22,Crew Quarters,Basic,B,2,0
+23,Earth's Mightiest Heroes,Basic,B,3,0
+24,Enhanced Awareness,Basic,B,3,0
+25,Enhanced Physique,Basic,B,3,0
+26,Enhanced Reflexes,Basic,B,3,0
+27,First Aid,Basic,B,1,0
+28,Honorary Avenger,Basic,B,3,0
+29,Honorary Guardian,Basic,B,3,0
+30,Pulse Grenade,Basic,B,3,0
+31,Ready to Rumble,Basic,B,3,0
+32,Recuperation,Basic,B,3,0
+33,Sidearm,Basic,B,3,0
+34,Team-Building Exercise,Basic,B,3,0
+35,Assess the Situation,Basic,A,3,0
+36,Avengers Tower,Basic,A,1,0
+37,C.I.T.T.,Basic,A,1,0
+38,Cosmo,Basic,A,1,0
+39,Deft Focus,Basic,A,2,0
+40,Down Time,Basic,A,2,0
+41,Drax,Basic,A,1,0
+42,Gamora,Basic,A,1,0
+43,Groot,Basic,A,1,0
+44,Heimdall,Basic,A,1,0
+45,Knowhere,Basic,A,1,0
+46,Martinex,Basic,A,1,0
+47,Quincarrier,Basic,A,1,0
+48,Rocket Racoon,Basic,A,1,0
+49,Side Holster,Basic,A,2,0
+50,Star-Lord,Basic,A,1,0
+51,Target Acquired,Basic,A,3,0
+52,The Power in All of Us,Basic,A,3,0
+53,War Machine,Basic,A,1,0
+54,Avengers Mansion,Basic,S,2,0
+55,Blade,Basic,S,1,0
+56,Endurance,Basic,S,3,0
+57,Energy,Basic,S,2,0
+58,Genius,Basic,S,2,0
+59,Helicarrier,Basic,S,2,0
+60,Ironheart,Basic,S,1,0
+61,Lockjaw,Basic,S,1,0
+62,Mockingbird,Basic,S,1,0
+63,Nick Fury,Basic,S,1,0
+64,Spider-Man,Basic,S,1,0
+65,Strength,Basic,S,2,0
+66,The Sorcerer Supreme,Basic,S,1,0
+67,Bait and Switch,Protection,B,2,0
+68,Dauntless,Protection,B,3,0
+69,Defensive Stance,Protection,B,2,0
+70,Defensive Training,Protection,B,2,0
+71,Ever Vigilant,Protection,B,3,0
+72,Expert Defense,Protection,B,2,0
+73,Hard Knocks,Protection,B,3,0
+74,Leading Blow,Protection,B,3,0
+75,Multiple Man,Protection,B,3,0
+76,Muster Courage,Protection,B,2,0
+77,Perserverance,Protection,B,3,0
+78,Second Wind,Protection,B,2,0
+79,Shake It Off,Protection,B,3,0
+80,Side Step,Protection,B,2,0
+81,Stand Together,Protection,B,3,0
+82,The Gardener,Protection,B,1,0
+83,True Grit,Protection,B,3,0
+84,Armored Vest,Protection,A,1,0
+85,Charlie-27,Protection,A,1,0
+86,Counter-Punch,Protection,A,2,0
+87,Deflection,Protection,A,3,0
+88,Desperate Defense,Protection,A,3,0
+89,Electrostatic Armor,Protection,A,2,0
+90,Fighting Fit,Protection,A,3,0
+91,First Hit,Protection,A,3,0
+92,Get Behind Me,Protection,A,2,0
+93,Preservation,Protection,A,1,0
+94,Martyr,Protection,A,1,0
+95,Momentum Shift,Protection,A,2,0
+96,Moondragon,Protection,A,1,0
+97,Never Back Down,Protection,A,3,0
+98,Nova,Protection,A,1,0
+99,Spell Shield,Protection,A,1,0
+100,Subdue,Protection,A,3,0
+101,Warlock,Protection,A,1,0
+102,Brother Voodoo,Protection,S,1,0
+103,Clea,Protection,S,1,0
+104,Energy Barrier,Protection,S,3,0
+105,Hard to Ignore,Protection,S,3,0
+106,Indomitable,Protection,S,2,0
+107,Iron Fist,Protection,S,1,0
+108,Med Team,Protection,S,2,0
+109,Nerves of Steel,Protection,S,2,0
+110,Preemptive Strike,Protection,S,3,0
+111,Starhawk,Protection,S,1,0
+112,Tackle,Protection,S,2,0
+113,The Night Nurse,Protection,S,1,0
+114,The Power of Protection,Protection,S,2,0
+115,Unflappable,Protection,S,2,0
+116,"""As One!""",Aggression,B,3,0
+117,Battle Furty,Aggression,B,3,0
+118,Boot Camp,Aggression,B,1,0
+119,Browbeat,Aggression,B,3,0
+120,Brute Force,Aggression,B,2,0
+121,Enraged,Aggression,B,2,0
+122,Follow Through,Aggression,B,2,0
+123,Fusilade,Aggression,B,3,0
+124,Get Over Here!,Aggression,B,2,0
+125,In-Betweener,Aggression,B,1,0
+126,Lie in Wait,Aggression,B,2,0
+127,Melee,Aggression,B,2,0
+128,Piercing Strike,Aggression,B,3,0
+129,Plan of Attack,Aggression,B,3,0
+130,Surprise Attack,Aggression,B,3,0
+131,Tac Team,Aggression,B,2,0
+132,Uppercut,Aggression,B,2,0
+133,"""You'll Pay for That!""",Aggression,B,2,0
+134,Audacity,Aggression,A,1,0
+135,Brawn,Aggression,A,1,0
+136,"""Bring It!""",Aggression,A,2,0
+137,Clobber,Aggression,A,3,0
+138,Counterattack,Aggression,A,3,0
+139,Dive Bomb,Aggression,A,3,0
+140,Energy Spear,Aggression,A,3,0
+141,Hercules,Aggression,A,1,0
+142,Magic Attack,Aggression,A,1,0
+143,Martial Prowess,Aggression,A,2,0
+144,Mean Swing,Aggression,A,3,0
+145,Moment of Triumph,Aggression,A,3,0
+146,Press the Advantage,Aggression,A,3,0
+147,Relentless Assault,Aggression,A,2,0
+148,She-Hulk,Aggression,A,1,0
+149,Skilled Strike,Aggression,A,3,0
+150,Toe to Toe,Aggression,A,3,0
+151,Valkyrie,Aggression,A,1,0
+152,Angela,Aggression,S,1,0
+153,Bug,Aggression,S,1,0
+154,Chase Them Down,Aggression,S,2,0
+155,Combat Training,Aggression,S,2,0
+156,Drop Kick,Aggression,S,3,0
+157,Godslayer,Aggression,S,1,0
+158,Hall of Heroes,Aggression,S,1,0
+159,Hand Cannon,Aggression,S,3,0
+160,Into the Fray,Aggression,S,2,0
+161,Jambjorn,Aggression,S,1,0
+162,Looking for Trouble,Aggression,S,3,0
+163,Marvel Boy,Aggression,S,1,0
+164,Sentry,Aggression,S,1,0
+165,Spider-Girl,Aggression,S,1,0
+166,The Power of Aggression,Aggression,S,2,0
+167,Thor,Aggression,S,1,0
+168,Wasp,Aggression,S,1,0
+169,Air Supremacy,Leadership,B,3,0
+170,All for One,Leadership,B,3,0
+171,Blaze of Glory,Leadership,B,3,0
+172,Comms Implant,Leadership,B,3,0
+173,Eternity,Leadership,B,1,0
+174,Inspiring Presence,Leadership,B,3,0
+175,Laser Blaster,Leadership,B,3,0
+176,Last Stand,Leadership,B,3,0
+177,Mass Attack,Leadership,B,3,0
+178,Moxie,Leadership,B,3,0
+179,Power Gloves,Leadership,B,3,0
+180,Quinjet,Leadership,B,3,0
+181,Sky Cycle,Leadership,B,3,0
+182,Target Practice,Leadership,B,3,0
+183,Teamwork,Leadership,B,3,0
+184,United We Stand,Leadership,B,3,0
+185,Adam Warlock,Leadership,A,1,0
+186,Avengers Assemble,Leadership,A,3,0
+187,Black Panther,Leadership,A,1,0
+188,Beta Ray Bill,Leadership,A,1,0
+189,Call for Aid,Leadership,A,3,0
+190,Captain America,Leadership,A,1,0
+191,Captain Marvel,Leadership,A,1,0
+192,Falcon,Leadership,A,1,0
+193,Giant-Man,Leadership,A,1,0
+194,Goliath,Leadership,A,1,0
+195,Guardians of the Galaxy,Leadership,A,2,0
+196,Hawkeye (Kate Bishop),Leadership,A,1,0
+197,Innovation,Leadership,A,1,0
+198,Lead from the Front,Leadership,A,3,0
+199,Mighty Avengers,Leadership,A,2,0
+200,Morale Boost,Leadership,A,3,0
+201,Power Man,Leadership,A,1,0
+202,Ready for Action,Leadership,A,3,0
+203,Reinforced Suit,Leadership,A,3,0
+204,Ronin,Leadership,A,1,0
+205,Sneak Attack,Leadership,A,3,0
+206,Stinger,Leadership,A,1,0
+207,Team Training,Leadership,A,2,0
+208,U.S.  Agent,Leadership,A,1,0
+209,Vision,Leadership,A,1,0
+210,Welcome Aboard,Leadership,A,3,0
+211,Wonder Man,Leadership,A,1,0
+212,Yondu,Leadership,A,1,0
+213,Ant-Man,Leadership,S,1,0
+214,Band Togetherr,Leadership,S,3,0
+215,Black Knight,Leadership,S,1,0
+216,Command Team,Leadership,S,3,0
+217,Get Ready,Leadership,S,3,0
+218,Go Down Swinging,Leadership,S,3,0
+219,Hawkeye (Clint Barton),Leadership,S,1,0
+220,Inspired,Leadership,S,3,0
+221,Iron Man,Leadership,S,1,0
+222,Kaluu,Leadership,S,1,0
+223,Major Victory,Leadership,S,1,0
+224,Make the Call,Leadership,S,3,0
+225,Maria Hill,Leadership,S,1,0
+226,Rapid Response,Leadership,S,3,0
+227,Regroup,Leadership,S,3,0
+228,Save the Day,Leadership,S,3,0
+229,Strength in Numbers,Leadership,S,3,0
+230,Summoning Spell,Leadership,S,1,0
+231,Squirrel Girl,Leadership,S,1,0
+232,The Power of Leadership,Leadership,S,2,0
+233,The Triskelion,Leadership,S,1,0
+234,White Tiger,Leadership,S,1,0
+235,Agile Flight,Justice,B,3,0
+236,Brains Over Brawn,Justice,B,3,0
+237,Counterintelligence,Justice,B,3,0
+238,Crisis Averted,Justice,B,3,0
+239,Followed,Justice,B,3,0
+240,Great Responsibility,Justice,B,3,0
+241,Interrogation Room,Justice,B,2,0
+242,Justice Served,Justice,B,3,0
+243,Living Tribunal,Justice,B,1,0
+244,Multitasking,Justice,B,3,0
+245,Pivotal Moment,Justice,B,3,0
+246,Running Interference,Justice,B,3,0
+247,Scare Tactic,Justice,B,3,0
+248,Spycraft,Justice,B,3,0
+249,Stealth Strike,Justice,B,3,0
+250,Swift Retribution,Justice,B,3,0
+251,Vigilante Training,Justice,B,3,0
+252,Beat Cop,Justice,A,3,0
+253,Determination,Justice,A,1,0
+254,Foiled!,Justice,A,3,0
+255,For Justice!,Justice,A,3,0
+256,Jack Flag,Justice,A,1,0
+257,Under Surveillance,Justice,A,3,0
+258,Lay Down the Law,Justice,A,3,0
+259,Making an Entrance,Justice,A,3,0
+260,One Way or Another,Justice,A,3,0
+261,Quake,Justice,A,1,0
+262,Sense of Justice,Justice,A,2,0
+263,Sonic Rifle,Justice,A,3,0
+264,Speed,Justice,A,1,0
+265,Spider-Man,Justice,A,1,0
+266,Surveillance Team,Justice,A,3,0
+267,"""Think Fast!""",Justice,A,3,0
+268,Venom,Justice,A,1,0
+269,Quasar,Justice,A,1,0
+270,Zone of Silence,Justice,A,1,0
+271,Agent Coulson,Justice,S,1,0
+272,Clear the Area,Justice,S,3,0
+273,Concussive Blow,Justice,S,3,0
+274,Daredevil,Justice,S,1,0
+275,Eros,Justice,S,1,0
+276,Impede,Justice,S,3,0
+277,Heroic Intuition,Justice,S,2,0
+278,Jessica Jones,Justice,S,1,0
+279,Skilled Investigator,Justice,S,2,0
+280,The Power of Justice,Justice,S,2,0
+281,Turn the Tide,Justice,S,3,0
+282,Wiccan,Justice,S,1,0
+283,Wraith,Justice,S,1,0

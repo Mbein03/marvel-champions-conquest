@@ -3,8 +3,8 @@ const rootURL = 'http://localhost:9000';
 export const api = {
   getCards: rootURL + '/api/cards',
   getPlayers: rootURL + '/api/players',
-  markLooted: rootURL + '/api/cards/mark-looted',
-  markSold: rootURL + '/api/cards/mark-sold',
+  markCardLooted: rootURL + '/api/cards/mark-looted',
+  markCardSold: rootURL + '/api/cards/mark-sold',
 };
 
 // Tier select options

@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as constants from '../helpers/constants';
-import useFetch from './useFetch';
 import { api } from '../helpers/constants';
 import * as helpers from '../helpers/helpers';
 
-const useLootRoll = () => {
-  const [player, setPlayer] = useState('Player 1');
+const useLootRollController = () => {
+  const [cards, setCards] = useState('');
+  const [players, setPlayers] = useState('');
+  const [player, setPlayer] = useState('');
   const [tier, setTier] = useState('T1');
   const [faction, setFaction] = useState('Basic');
   const [rolledTier, setRolledTier] = useState('');
@@ -14,13 +15,36 @@ const useLootRoll = () => {
   const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
   const [displayResults, setDisplayResults] = useState(false);
 
-  const cards = useFetch(api.getCards).data;
-  const players = useFetch(api.getPlayers).data;
+  useEffect(() => {
+    // Calls method to fetch cards from API on page load
+    helpers.fetchData(api.getCards).then((cards) => {
+      setCards(cards);
+    });
+    // Calls method to fetch players from API on page load
+    helpers.fetchData(api.getPlayers).then((players) => {
+      console.log(players);
+      setPlayers(players);
+      setPlayer(players[0].name);
+      console.log('HIT');
+    });
+  }, []);
+
+  useEffect(() => {
+    if (rolledCard) {
+      const selectedPlayer = players.filter((obj) => obj.name === player)[0];
+      helpers
+        .postData(api.markCardLooted, {
+          card: rolledCard,
+          player: selectedPlayer,
+        })
+        .then((card) => {
+          console.log('Card Looted:', card);
+        });
+    }
+  }, [rolledCard]);
 
   const rollLoot = () => {
     console.log(faction);
-    // Hide results from previous role
-    setDisplayResults(false);
 
     // Get potential loot array based on tier selected
     const potentialLoot = helpers.getPotentialLoot(constants.lootTable, tier);
@@ -57,7 +81,7 @@ const useLootRoll = () => {
 
     // Get card result
     const card = helpers.getCard(potentialCards);
-    card !== 'None' ? setRolledCard(card) : setRolledCard('');
+    card ? setRolledCard(card) : setRolledCard('');
     console.log('Card:', card);
 
     setDisplayResults(true);
@@ -101,4 +125,4 @@ const useLootRoll = () => {
   };
 };
 
-export default useLootRoll;
+export default useLootRollController;
