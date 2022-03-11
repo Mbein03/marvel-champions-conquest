@@ -1,8 +1,8 @@
-import CardHeader from './CardHeader';
-import Button from './Button';
-import InputLabel from './InputLabel';
-import SelectInput from './SelectInput';
-import * as constants from '../helpers/constants';
+import CardHeader from '../reusuable/CardHeader';
+import Button from '../reusuable/Button';
+import InputLabel from '../reusuable/InputLabel';
+import SelectInput from '../reusuable/SelectInput';
+import * as constants from '../../helpers/constants';
 
 const LootRollCard = ({
   players,

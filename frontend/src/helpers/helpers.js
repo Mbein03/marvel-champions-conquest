@@ -63,12 +63,14 @@ export const getCard = (potentialCards) =>
     ? potentialCards[Math.floor(Math.random() * potentialCards.length)]
     : null;
 
+// Reusable get request
 export const fetchData = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
   return data;
 };
 
+// Reusable post request
 export const postData = async (url, json) => {
   const requestOptions = {
     method: 'POST',

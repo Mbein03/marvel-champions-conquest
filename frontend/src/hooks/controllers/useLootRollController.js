@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import * as constants from '../helpers/constants';
-import { api } from '../helpers/constants';
-import * as helpers from '../helpers/helpers';
+import * as constants from '../../helpers/constants';
+import { api } from '../../helpers/constants';
+import * as helpers from '../../helpers/helpers';
 
 const useLootRollController = () => {
   const [cards, setCards] = useState('');
@@ -15,27 +15,23 @@ const useLootRollController = () => {
   const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
   const [displayResults, setDisplayResults] = useState(false);
 
+  // Calls method to fetch cards/players from API on page load
   useEffect(() => {
-    // Calls method to fetch cards from API on page load
     helpers.fetchData(api.getCards).then((cards) => {
       setCards(cards);
     });
-    // Calls method to fetch players from API on page load
     helpers.fetchData(api.getPlayers).then((players) => {
-      console.log(players);
       setPlayers(players);
       setPlayer(players[0].name);
-      console.log('HIT');
     });
   }, []);
 
   useEffect(() => {
+    // Fire off request to mark card as looted after roll
     if (rolledCard) {
-      const selectedPlayer = players.filter((obj) => obj.name === player)[0];
       helpers
         .postData(api.markCardLooted, {
           card: rolledCard,
-          player: selectedPlayer,
         })
         .then((card) => {
           console.log('Card Looted:', card);

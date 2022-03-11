@@ -18,12 +18,12 @@ async function fetch() {
 async function markLooted(data) {
   // Decrement card qty and mark as acquired for player
 
-  await db('cards')
-    .where('id', data.json.card.id)
-    .update({
-      qty: data.json.card.qty - 1,
-      is_acquired: 1,
-    });
+  // await db('cards')
+  //   .where('id', data.json.card.id)
+  //   .update({
+  //     qty: data.json.card.qty - 1,
+  //     is_acquired: 1,
+  //   });
 
   // Query for updated card row in DB
   return db('cards').where('id', data.json.card.id);
@@ -46,7 +46,6 @@ async function markSold(data) {
   //       p2_acquired: 1,
   //     });
   // }
-
   // Query for updated card row in DB
-  return db('cards').where('id', data.card.id);
+  // return db('cards').where('id', data.card.id);
 }

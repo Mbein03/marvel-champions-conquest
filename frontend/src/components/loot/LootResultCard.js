@@ -1,6 +1,6 @@
-import CardHeader from './CardHeader';
-import ResultLine from './ResultLine';
-import Button from './Button';
+import CardHeader from '../reusuable/CardHeader';
+import ResultLine from '../reusuable/ResultLine';
+import Button from '../reusuable/Button';
 
 const LootResultCard = ({ rolledCard, reset }) => {
   return (
