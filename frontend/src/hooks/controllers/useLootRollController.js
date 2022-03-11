@@ -18,12 +18,17 @@ const useLootRollController = () => {
   useEffect(() => {
     helpers.fetchData(api.getCards).then((cards) => {
       setCards(cards);
+      console.log(cards);
     });
     helpers.fetchData(api.getPlayers).then((players) => {
       setPlayers(players);
-      setPlayer(players[0].name);
+
+      // If player hasn't been set for select, set it
+      if (!player) {
+        setPlayer(players[0].name);
+      }
     });
-  }, []);
+  }, [rolledCard, player]);
 
   const rollLoot = () => {
     console.log(faction);
@@ -108,6 +113,7 @@ const useLootRollController = () => {
   }
 
   const reset = () => {
+    console.log('reset');
     setFaction('Basic');
     setRolledTier('');
     setRolledCard('');
