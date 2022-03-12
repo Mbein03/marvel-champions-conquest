@@ -5,6 +5,7 @@ export const api = {
   getPlayers: rootURL + '/api/players',
   markCardLooted: rootURL + '/api/cards/mark-looted',
   markCardSold: rootURL + '/api/cards/mark-sold',
+  updateDatabase: rootURL + '/api/cards/update-images',
 };
 
 // Tier select options

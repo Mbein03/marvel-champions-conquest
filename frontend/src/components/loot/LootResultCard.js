@@ -1,6 +1,7 @@
 import CardHeader from '../reusuable/CardHeader';
 import ResultLine from '../reusuable/ResultLine';
 import Button from '../reusuable/Button';
+import Image from '../reusuable/Image';
 
 const LootResultCard = ({ rolledCard, player, markCardSold, reset }) => {
   return (
@@ -16,6 +17,12 @@ const LootResultCard = ({ rolledCard, player, markCardSold, reset }) => {
         title={'Card'}
         result={rolledCard ? rolledCard.name : 'None'}
       />
+      {rolledCard && (
+        <Image
+          src={'https://marvelcdb.com/' + rolledCard.image_path}
+          alt={rolledCard.name}
+        />
+      )}
       {rolledCard && (
         <Button
           onClick={() => markCardSold(rolledCard, player)}

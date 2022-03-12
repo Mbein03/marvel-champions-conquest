@@ -1,52 +1,73 @@
 const express = require('express');
 const server = express.Router();
-const Cards = require('../models/card');
-const Players = require('../models/player');
+const Card = require('../models/card');
+const Player = require('../models/player');
 
 server.get('/api/cards', (req, res) => {
-  const fetch = async () => {
+  const execute = async () => {
     try {
-      const cards = await Cards.fetch();
+      const cards = await Card.getAvailable();
       res.status(200).json(cards);
     } catch (error) {
       res.status(500).json({ message: 'Unable to retrieve cards.' });
     }
   };
 
-  fetch();
+  execute();
+});
+
+server.get('/api/cards/update-images', (req, res) => {
+  const execute = async () => {
+    try {
+      const cards = await Card.updateImages();
+      res.status(200).json(cards);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ message: 'Unable to update card images.' });
+    }
+  };
+
+  execute();
 });
 
 server.get('/api/players', (req, res) => {
-  const fetch = async () => {
+  const execute = async () => {
     try {
-      const players = await Players.fetch();
+      const players = await Player.fetch();
       res.status(200).json(players);
     } catch (error) {
       res.status(500).json({ message: 'Unable to retrieve players.' });
     }
   };
 
-  fetch();
+  execute();
 });
 
 server.post('/api/cards/mark-looted', (req, res) => {
-  Cards.markLooted(req.body.data)
-    .then((card) => {
+  const execute = async () => {
+    try {
+      const card = await Card.markLooted(req.body.data);
       res.status(200).json(card);
-    })
-    .catch((error) => {
+    } catch (error) {
+      console.log(error);
       res.status(500).json({ message: 'Unable to mark card as looted.' });
-    });
+    }
+  };
+
+  execute();
 });
 
 server.post('/api/cards/mark-sold', (req, res) => {
-  Cards.markSold(req.body.data)
-    .then((card) => {
+  const execute = async () => {
+    try {
+      const card = await Card.markSold(req.body.data);
       res.status(200).json(card);
-    })
-    .catch((error) => {
+    } catch (error) {
       res.status(500).json({ message: 'Unable to mark card as sold.' });
-    });
+    }
+  };
+
+  execute();
 });
 
 module.exports = server;

@@ -19,6 +19,8 @@ export default function App() {
     rolledCard,
     markCardSold,
     reset,
+    updateCardImages,
+    imagesUpdating,
   } = useLootRoll();
 
   return (
@@ -30,7 +32,9 @@ export default function App() {
               <Button additionalClasses='mb-3' onClick={reset}>
                 Loot Roll
               </Button>
-              <Button>Battle Credits</Button>
+              <Button onClick={updateCardImages}>
+                {imagesUpdating ? 'Loading...' : 'Update Card Images'}
+              </Button>
             </ul>
           </div>
         </div>
