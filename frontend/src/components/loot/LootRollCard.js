@@ -15,6 +15,8 @@ const LootRollCard = ({
   setTierState,
   setFactionState,
   displayFactionSelect,
+  confirmRoll,
+  toggleRollConfirmation,
 }) => {
   return (
     <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
@@ -47,9 +49,16 @@ const LootRollCard = ({
           ></SelectInput>
         </>
       )}
-      <Button onClick={displayFactionSelect ? rollLootWithFaction : rollLoot}>
-        Roll
-      </Button>
+      {!confirmRoll ? (
+        <Button onClick={toggleRollConfirmation}>Roll</Button>
+      ) : (
+        <Button
+          onClick={displayFactionSelect ? rollLootWithFaction : rollLoot}
+          confirm={true}
+        >
+          Confirm Roll
+        </Button>
+      )}
     </div>
   );
 };

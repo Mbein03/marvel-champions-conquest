@@ -21,6 +21,10 @@ export default function App() {
     reset,
     updateCardImages,
     imagesUpdating,
+    confirmRoll,
+    toggleRollConfirmation,
+    confirmSale,
+    toggleSaleConfirmation,
   } = useLootRoll();
 
   return (
@@ -29,7 +33,7 @@ export default function App() {
         <div className='w-1/5 flex-shrink flex-grow-0'>
           <div className='sticky top-0 p-4 w-full'>
             <ul className='flex sm:flex-col overflow-hidden content-center justify-between'>
-              <Button additionalClasses='mb-3' onClick={reset}>
+              <Button onClick={reset} additionalClasses='mb-3'>
                 Loot Roll
               </Button>
               <Button onClick={updateCardImages}>
@@ -53,6 +57,8 @@ export default function App() {
                   setTierState={setTierState}
                   setFactionState={setFactionState}
                   displayFactionSelect={displayFactionSelect}
+                  confirmRoll={confirmRoll}
+                  toggleRollConfirmation={toggleRollConfirmation}
                 />
               ) : (
                 <LootResultCard
@@ -61,6 +67,8 @@ export default function App() {
                   player={player}
                   markCardSold={markCardSold}
                   reset={reset}
+                  confirmSale={confirmSale}
+                  toggleSaleConfirmation={toggleSaleConfirmation}
                 />
               )}
             </div>

@@ -14,6 +14,8 @@ const useLootRollController = () => {
   const [imagesUpdating, setImagesUpdating] = useState(false);
   const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
   const [displayResults, setDisplayResults] = useState(false);
+  const [confirmRoll, setConfirmRoll] = useState(false);
+  const [confirmSale, setConfirmSale] = useState(false);
 
   // Calls method to fetch cards/players from API on page load
   useEffect(() => {
@@ -110,6 +112,14 @@ const useLootRollController = () => {
     });
   };
 
+  const toggleRollConfirmation = () => {
+    setConfirmRoll(!confirmRoll);
+  };
+
+  const toggleSaleConfirmation = () => {
+    setConfirmSale(!confirmSale);
+  };
+
   function setPlayerState(value) {
     setPlayer(value);
   }
@@ -129,6 +139,8 @@ const useLootRollController = () => {
     setRolledCard('');
     setDisplayFactionSelect(false);
     setDisplayResults(false);
+    setConfirmRoll(false);
+    setConfirmSale(false);
   };
 
   return {
@@ -149,6 +161,10 @@ const useLootRollController = () => {
     reset,
     updateCardImages,
     imagesUpdating,
+    confirmRoll,
+    toggleRollConfirmation,
+    confirmSale,
+    toggleSaleConfirmation,
   };
 };
 

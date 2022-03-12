@@ -3,7 +3,14 @@ import ResultLine from '../reusuable/ResultLine';
 import Button from '../reusuable/Button';
 import Image from '../reusuable/Image';
 
-const LootResultCard = ({ rolledCard, player, markCardSold, reset }) => {
+const LootResultCard = ({
+  rolledCard,
+  player,
+  markCardSold,
+  reset,
+  confirmSale,
+  toggleSaleConfirmation,
+}) => {
   return (
     <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
       <CardHeader>Loot Roll</CardHeader>
@@ -23,15 +30,21 @@ const LootResultCard = ({ rolledCard, player, markCardSold, reset }) => {
           alt={rolledCard.name}
         />
       )}
-      {rolledCard && (
-        <Button
-          onClick={() => markCardSold(rolledCard, player)}
-          additionalClasses='mb-3'
-        >
+      {rolledCard && !confirmSale && (
+        <Button onClick={toggleSaleConfirmation} additionalClasses='mb-3'>
           Sell
         </Button>
       )}
-      <Button onClick={reset}>{rolledCard ? 'Add to Deck' : 'Reset'}</Button>
+      {rolledCard && confirmSale && (
+        <Button
+          onClick={() => markCardSold(rolledCard, player)}
+          additionalClasses='mb-3'
+          confirm={true}
+        >
+          Confirm Sale
+        </Button>
+      )}
+      <Button onClick={reset}>Reset</Button>
     </div>
   );
 };
