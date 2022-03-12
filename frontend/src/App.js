@@ -21,9 +21,9 @@ export default function App() {
     markCardSold,
     reset,
     confirmRoll,
-    toggleRollConfirmation,
     confirmSale,
-    toggleSaleConfirmation,
+    setConfirmRoll,
+    setConfirmSale,
   } = useLootRollController();
 
   const { updateCardImages, imagesUpdating } = useNavigationController();
@@ -59,7 +59,7 @@ export default function App() {
                   setFactionState={setFactionState}
                   displayFactionSelect={displayFactionSelect}
                   confirmRoll={confirmRoll}
-                  toggleRollConfirmation={toggleRollConfirmation}
+                  setConfirmRoll={setConfirmRoll}
                 />
               ) : (
                 <LootResultCard
@@ -69,7 +69,7 @@ export default function App() {
                   markCardSold={markCardSold}
                   reset={reset}
                   confirmSale={confirmSale}
-                  toggleSaleConfirmation={toggleSaleConfirmation}
+                  setConfirmSale={setConfirmSale}
                 />
               )}
             </div>

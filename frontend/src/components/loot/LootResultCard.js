@@ -9,7 +9,7 @@ const LootResultCard = ({
   markCardSold,
   reset,
   confirmSale,
-  toggleSaleConfirmation,
+  setConfirmSale,
 }) => {
   return (
     <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
@@ -31,7 +31,10 @@ const LootResultCard = ({
         />
       )}
       {rolledCard && !confirmSale && (
-        <Button onClick={toggleSaleConfirmation} additionalClasses='mb-3'>
+        <Button
+          onClick={() => setConfirmSale(!confirmSale)}
+          additionalClasses='mb-3'
+        >
           Sell
         </Button>
       )}

@@ -102,14 +102,6 @@ const useLootRollController = () => {
       });
   };
 
-  const toggleRollConfirmation = () => {
-    setConfirmRoll(!confirmRoll);
-  };
-
-  const toggleSaleConfirmation = () => {
-    setConfirmSale(!confirmSale);
-  };
-
   function setPlayerState(value) {
     setPlayer(value);
   }
@@ -150,9 +142,9 @@ const useLootRollController = () => {
     markCardSold,
     reset,
     confirmRoll,
-    toggleRollConfirmation,
     confirmSale,
-    toggleSaleConfirmation,
+    setConfirmRoll,
+    setConfirmSale,
   };
 };
 
