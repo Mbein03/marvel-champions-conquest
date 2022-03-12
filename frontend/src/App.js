@@ -1,6 +1,7 @@
 import LootRollCard from './components/loot/LootRollCard';
 import LootResultCard from './components/loot/LootResultCard';
-import useLootRoll from './hooks/controllers/useLootRollController';
+import useLootRollController from './hooks/controllers/useLootRollController';
+import useNavigationController from './hooks/controllers/useImageController';
 import Button from './components/reusuable/Button';
 
 export default function App() {
@@ -19,13 +20,13 @@ export default function App() {
     rolledCard,
     markCardSold,
     reset,
-    updateCardImages,
-    imagesUpdating,
     confirmRoll,
     toggleRollConfirmation,
     confirmSale,
     toggleSaleConfirmation,
-  } = useLootRoll();
+  } = useLootRollController();
+
+  const { updateCardImages, imagesUpdating } = useNavigationController();
 
   return (
     <>
@@ -36,7 +37,7 @@ export default function App() {
               <Button onClick={reset} additionalClasses='mb-3'>
                 Loot Roll
               </Button>
-              <Button onClick={updateCardImages}>
+              <Button onClick={updateCardImages} disabled={imagesUpdating}>
                 {imagesUpdating ? 'Loading...' : 'Update Card Images'}
               </Button>
             </ul>

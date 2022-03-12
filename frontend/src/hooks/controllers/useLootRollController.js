@@ -11,7 +11,6 @@ const useLootRollController = () => {
   const [rolledTier, setRolledTier] = useState('');
   const [rolledCard, setRolledCard] = useState('');
 
-  const [imagesUpdating, setImagesUpdating] = useState(false);
   const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
   const [displayResults, setDisplayResults] = useState(false);
   const [confirmRoll, setConfirmRoll] = useState(false);
@@ -103,15 +102,6 @@ const useLootRollController = () => {
       });
   };
 
-  // Fire off API request to update images in DB from marvel cdb API
-  const updateCardImages = () => {
-    setImagesUpdating(true);
-    helpers.fetchData(api.updateDatabase).then((cards) => {
-      setImagesUpdating(false);
-      console.log(cards);
-    });
-  };
-
   const toggleRollConfirmation = () => {
     setConfirmRoll(!confirmRoll);
   };
@@ -159,8 +149,6 @@ const useLootRollController = () => {
     rolledCard,
     markCardSold,
     reset,
-    updateCardImages,
-    imagesUpdating,
     confirmRoll,
     toggleRollConfirmation,
     confirmSale,
