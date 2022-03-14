@@ -3,7 +3,7 @@ const server = express.Router();
 const Card = require('../models/card');
 const Player = require('../models/player');
 
-server.get('/api/cards', (req, res) => {
+server.get('/api/lootable-cards', (req, res) => {
   const execute = async () => {
     try {
       const cards = await Card.getAvailable();

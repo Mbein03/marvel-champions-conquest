@@ -4,7 +4,7 @@ import ResultLine from '../reusuable/ResultLine';
 import Button from '../reusuable/Button';
 import Image from '../reusuable/Image';
 
-const Result = ({ rolledCard, player, markCardSold, resetLootRoll }) => {
+const Result = ({ card, player, markCardSold, resetLootRoll }) => {
   const [confirmSale, setConfirmSale] = useState(false);
 
   return (
@@ -13,38 +13,32 @@ const Result = ({ rolledCard, player, markCardSold, resetLootRoll }) => {
       <ResultLine
         title={'Card'}
         result={
-          rolledCard
-            ? ' ' +
-              rolledCard.name +
-              ' (' +
-              rolledCard.faction +
-              ' / ' +
-              rolledCard.tier +
-              ')'
+          card
+            ? ' ' + card.name + ' (' + card.faction + ' / ' + card.tier + ')'
             : 'None'
         }
       />
-      {rolledCard && (
+      {card && (
         <Image
-          src={'https://marvelcdb.com/' + rolledCard.image_path}
-          alt={rolledCard.name}
+          src={'https://marvelcdb.com/' + card.image_path}
+          alt={card.name}
         />
       )}
-      {rolledCard && !confirmSale && (
+      {card && !confirmSale && (
         <Button onClick={() => setConfirmSale(!confirmSale)} classStyle='mb-3'>
           Sell
         </Button>
       )}
-      {rolledCard && confirmSale && (
+      {card && confirmSale && (
         <Button
-          onClick={() => markCardSold(rolledCard, player)}
+          onClick={() => markCardSold(card, player)}
           color={'green'}
           classStyle='mb-3'
         >
           Confirm Sale
         </Button>
       )}
-      <Button onClick={resetLootRoll}>Reset</Button>
+      <Button onClick={() => resetLootRoll()}>Reset</Button>
     </div>
   );
 };

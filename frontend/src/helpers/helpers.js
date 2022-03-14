@@ -5,22 +5,22 @@ export const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
 // Returns array of strings
-// Filter loot table and return potential results based on tier selected
-export const getPotentialLoot = (lootTable, lootTier) =>
-  lootTable.filter((obj) => obj.tier === lootTier).map((obj) => obj.roll)[0];
+// Filter loot table and return potential results based on roll selected
+export const getPotentialResults = (lootTable, roll) =>
+  lootTable.filter((obj) => obj.roll === roll).map((obj) => obj.results)[0];
 
 // Returns string
 // Determine roll result
-export const getLootRollResult = (potentialLoot) =>
+export const getResult = (potentialLoot) =>
   potentialLoot[Math.floor(Math.random() * potentialLoot.length)];
 
 // Returns string
-// Get tier result for loot drop
+// Get card tier
 export const getTier = (roll) =>
   roll.includes('None') ? 'None' : roll.split(' ')[1];
 
 // Returns string
-// Get faction result for loot drop
+// Get card faction
 export const getFaction = (roll) => {
   if (roll.includes('None')) {
     return 'None';
@@ -33,8 +33,8 @@ export const getFaction = (roll) => {
 
 // Returns array of objects
 // Filter out cards from array based on quantity, tier, and faction
-export const filterCards = (tier, faction, availableCards) =>
-  availableCards
+export const filterCards = (tier, faction, lootableCards) =>
+  lootableCards
     .filter((obj) => obj.qty > 0)
     .filter((obj) => obj.tier === tier)
     .filter((obj) => obj.faction === faction);
@@ -56,7 +56,7 @@ export const getPotentialCards = (filteredCards) => {
   return cards;
 };
 
-// Returns object
+// Returns object OR null
 // Determine card result
 export const getCard = (potentialCards) =>
   potentialCards.length

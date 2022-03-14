@@ -2,12 +2,12 @@ const Button = ({ onClick, color, classStyle, disabled, children }) => {
   let defaultColor =
     'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800';
 
-  if (color === 'green') {
-    defaultColor =
-      'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800';
-  } else if (disabled) {
+  if (disabled) {
     defaultColor =
       'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800';
+  } else if (color === 'green') {
+    defaultColor =
+      'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800';
   }
 
   const defaultclassStyle =

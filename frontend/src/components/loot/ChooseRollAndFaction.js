@@ -5,13 +5,12 @@ import InputLabel from '../reusuable/InputLabel';
 import SelectInput from '../reusuable/SelectInput';
 import * as constants from '../../helpers/constants';
 
-const ChooseTierAndFaction = ({
-  tier,
+const ChooseRollAndFaction = ({
+  roll,
   faction,
   rollLoot,
-  rollLootWithFaction,
-  setTierState,
-  setFactionState,
+  setRoll,
+  setFaction,
   showFactionSelect,
 }) => {
   const [confirmRoll, setConfirmRoll] = useState(false);
@@ -19,15 +18,15 @@ const ChooseTierAndFaction = ({
   return (
     <div>
       <Header classStyle='text-center'>
-        {showFactionSelect ? 'Choose Faction' : 'Choose Roll Tier'}
+        {showFactionSelect ? 'Choose Faction' : 'Choose Roll'}
       </Header>
-      <InputLabel htmlFor={'tier'}>Tier Roll:</InputLabel>
+      <InputLabel htmlFor={'roll'}>Roll:</InputLabel>
       <SelectInput
-        id={'tier'}
-        name={'tier'}
-        value={tier}
-        data={constants.tiers}
-        onSelectChange={setTierState}
+        id={'roll'}
+        name={'roll'}
+        value={roll}
+        data={constants.rolls}
+        onSelectChange={setRoll}
         disabled={showFactionSelect}
       />
       {showFactionSelect && (
@@ -38,15 +37,12 @@ const ChooseTierAndFaction = ({
             name={'faction'}
             value={faction}
             data={constants.factions}
-            onSelectChange={setFactionState}
+            onSelectChange={setFaction}
           />
         </>
       )}
       {confirmRoll ? (
-        <Button
-          onClick={showFactionSelect ? rollLootWithFaction : rollLoot}
-          color={'green'}
-        >
+        <Button onClick={() => rollLoot()} color={'green'}>
           Confirm Roll
         </Button>
       ) : (
@@ -56,4 +52,4 @@ const ChooseTierAndFaction = ({
   );
 };
 
-export default ChooseTierAndFaction;
+export default ChooseRollAndFaction;

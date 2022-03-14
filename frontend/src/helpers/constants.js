@@ -1,7 +1,7 @@
 // API calls
 const rootURL = 'http://localhost:9000';
 export const api = {
-  getCards: rootURL + '/api/cards',
+  getLootableCards: rootURL + '/api/lootable-cards',
   getPlayers: rootURL + '/api/players',
   markCardLooted: rootURL + '/api/cards/mark-looted',
   markCardSold: rootURL + '/api/cards/mark-sold',
@@ -9,7 +9,7 @@ export const api = {
 };
 
 // Tier select options
-export const tiers = [
+export const rolls = [
   { id: 'T1', name: 'T1' },
   { id: 'T1+', name: 'T1+' },
   { id: 'T2', name: 'T2' },
@@ -33,8 +33,8 @@ export const factions = [
 // Primary loot table rolls
 export const lootTable = [
   {
-    tier: 'T1',
-    roll: [
+    roll: 'T1',
+    results: [
       'None',
       'None',
       'None',
@@ -50,8 +50,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T1+',
-    roll: [
+    roll: 'T1+',
+    results: [
       'None',
       'Tier C Basic',
       'Tier C Basic',
@@ -67,8 +67,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T2',
-    roll: [
+    roll: 'T2',
+    results: [
       'Tier C Basic',
       'Tier C Basic',
       'Tier C Basic',
@@ -84,8 +84,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T2+',
-    roll: [
+    roll: 'T2+',
+    results: [
       'Tier C Basic',
       'Tier B Roll',
       'Tier B Roll',
@@ -101,8 +101,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T3',
-    roll: [
+    roll: 'T3',
+    results: [
       'Tier B Roll',
       'Tier B Roll',
       'Tier B Roll',
@@ -118,8 +118,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T3+',
-    roll: [
+    roll: 'T3+',
+    results: [
       'Tier A Roll',
       'Tier A Roll',
       'Tier A Roll',
@@ -135,8 +135,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T4',
-    roll: [
+    roll: 'T4',
+    results: [
       'Tier A Roll',
       'Tier A Roll',
       'Tier A Roll',
@@ -152,8 +152,8 @@ export const lootTable = [
     ],
   },
   {
-    tier: 'T4+',
-    roll: [
+    roll: 'T4+',
+    results: [
       'Tier S Roll',
       'Tier S Roll',
       'Tier S Roll',
