@@ -1,4 +1,4 @@
-function SelectInput({ id, name, value, data, onSelectChange }) {
+function SelectInput({ id, name, value, data, onSelectChange, disabled }) {
   // Update state in useLootRoll.js so additional logic can be performed
   function updateSelected(event) {
     onSelectChange(event.target.value);
@@ -22,6 +22,7 @@ function SelectInput({ id, name, value, data, onSelectChange }) {
           value={value}
           className='form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none'
           onChange={updateSelected}
+          disabled={disabled}
         >
           {options}
         </select>

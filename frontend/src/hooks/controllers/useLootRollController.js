@@ -2,19 +2,16 @@ import { useState, useEffect } from 'react';
 import { api, lootTable } from '../../helpers/constants';
 import * as helpers from '../../helpers/helpers';
 
-const useLootRollController = () => {
+const useLootRollController = (player) => {
   const [cards, setCards] = useState('');
-  const [players, setPlayers] = useState('');
-  const [player, setPlayer] = useState('');
   const [tier, setTier] = useState('T1');
   const [faction, setFaction] = useState('Basic');
   const [rolledTier, setRolledTier] = useState('');
   const [rolledCard, setRolledCard] = useState('');
 
-  const [displayFactionSelect, setDisplayFactionSelect] = useState(false);
-  const [displayResults, setDisplayResults] = useState(false);
-  const [confirmRoll, setConfirmRoll] = useState(false);
-  const [confirmSale, setConfirmSale] = useState(false);
+  const [manualRoll, setManualRoll] = useState(false);
+  const [showFactionSelect, setshowFactionSelect] = useState(false);
+  const [showResults, setshowResults] = useState(false);
 
   // Calls method to fetch cards/players from API on page load
   useEffect(() => {
@@ -22,19 +19,10 @@ const useLootRollController = () => {
       setCards(cards);
       console.log(cards);
     });
-    helpers.fetchData(api.getPlayers).then((players) => {
-      setPlayers(players);
-
-      // If player hasn't been set for select, set it
-      if (!player) {
-        setPlayer(players[0].name);
-      }
-    });
-  }, [rolledCard, player]);
+  }, [rolledCard]);
 
   const rollLoot = () => {
-    console.log(faction);
-
+    console.log('Player:', player);
     // Get potential loot array based on tier selected
     const potentialLoot = helpers.getPotentialLoot(lootTable, tier);
     console.log('Loot:', potentialLoot);
@@ -50,7 +38,7 @@ const useLootRollController = () => {
     console.log('Faction:', rolledFaction);
 
     rolledFaction === 'Your Choice'
-      ? setDisplayFactionSelect(true)
+      ? setshowFactionSelect(true)
       : rollForCard(rolledTier, rolledFaction);
   };
 
@@ -76,7 +64,7 @@ const useLootRollController = () => {
     // Mark card looted
     if (card) markCardLooted(card);
 
-    setDisplayResults(true);
+    setshowResults(true);
   };
 
   const markCardLooted = (card) => {
@@ -97,54 +85,45 @@ const useLootRollController = () => {
         player: player,
       })
       .then((card) => {
-        reset();
+        resetLootRoll();
         console.log('Card Sold:', card);
       });
   };
 
-  function setPlayerState(value) {
-    setPlayer(value);
-  }
-
   function setTierState(value) {
     setTier(value);
+    console.log(value);
   }
 
   function setFactionState(value) {
     setFaction(value);
   }
 
-  const reset = () => {
-    console.log('reset');
+  const resetLootRoll = () => {
+    console.log('resetLootRoll');
     setFaction('Basic');
     setRolledTier('');
     setRolledCard('');
-    setDisplayFactionSelect(false);
-    setDisplayResults(false);
-    setConfirmRoll(false);
-    setConfirmSale(false);
+    setshowFactionSelect(false);
+    setshowResults(false);
+    setManualRoll(false);
   };
 
   return {
     cards,
-    players,
-    player,
     tier,
     faction,
     rollLoot,
     rollLootWithFaction,
-    setPlayerState,
     setTierState,
     setFactionState,
-    displayFactionSelect,
-    displayResults,
+    showFactionSelect,
+    showResults,
     rolledCard,
     markCardSold,
-    reset,
-    confirmRoll,
-    confirmSale,
-    setConfirmRoll,
-    setConfirmSale,
+    resetLootRoll,
+    manualRoll,
+    setManualRoll,
   };
 };
 

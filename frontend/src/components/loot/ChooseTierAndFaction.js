@@ -1,34 +1,26 @@
-import CardHeader from '../reusuable/CardHeader';
+import { useState } from 'react';
+import Header from '../reusuable/Header';
 import Button from '../reusuable/Button';
 import InputLabel from '../reusuable/InputLabel';
 import SelectInput from '../reusuable/SelectInput';
 import * as constants from '../../helpers/constants';
 
-const LootRollCard = ({
-  players,
-  player,
+const ChooseTierAndFaction = ({
   tier,
   faction,
   rollLoot,
   rollLootWithFaction,
-  setPlayerState,
   setTierState,
   setFactionState,
-  displayFactionSelect,
-  confirmRoll,
-  setConfirmRoll,
+  showFactionSelect,
 }) => {
+  const [confirmRoll, setConfirmRoll] = useState(false);
+
   return (
-    <div className='block p-6 rounded-lg shadow-lg bg-white max-w-sm w-80'>
-      <CardHeader>Loot Roll</CardHeader>
-      <InputLabel htmlFor={'player'}>Player:</InputLabel>
-      <SelectInput
-        id={'player'}
-        name={'player'}
-        value={player}
-        data={players}
-        onSelectChange={setPlayerState}
-      ></SelectInput>
+    <div>
+      <Header classStyle='text-center'>
+        {showFactionSelect ? 'Choose Faction' : 'Choose Roll Tier'}
+      </Header>
       <InputLabel htmlFor={'tier'}>Tier Roll:</InputLabel>
       <SelectInput
         id={'tier'}
@@ -36,8 +28,9 @@ const LootRollCard = ({
         value={tier}
         data={constants.tiers}
         onSelectChange={setTierState}
-      ></SelectInput>
-      {displayFactionSelect && (
+        disabled={showFactionSelect}
+      />
+      {showFactionSelect && (
         <>
           <InputLabel htmlFor={'faction'}>Choose Faction:</InputLabel>
           <SelectInput
@@ -46,21 +39,21 @@ const LootRollCard = ({
             value={faction}
             data={constants.factions}
             onSelectChange={setFactionState}
-          ></SelectInput>
+          />
         </>
       )}
-      {!confirmRoll ? (
-        <Button onClick={() => setConfirmRoll(!confirmRoll)}>Roll</Button>
-      ) : (
+      {confirmRoll ? (
         <Button
-          onClick={displayFactionSelect ? rollLootWithFaction : rollLoot}
-          confirm={true}
+          onClick={showFactionSelect ? rollLootWithFaction : rollLoot}
+          color={'green'}
         >
           Confirm Roll
         </Button>
+      ) : (
+        <Button onClick={() => setConfirmRoll(!confirmRoll)}>Roll</Button>
       )}
     </div>
   );
 };
 
-export default LootRollCard;
+export default ChooseTierAndFaction;
