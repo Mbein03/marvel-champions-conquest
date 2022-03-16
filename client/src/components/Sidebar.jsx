@@ -1,3 +1,4 @@
+import { useImageController as ImageController } from '../hooks/controllers/useImageController';
 import { Header } from './Header';
 import { Button } from './form/Button';
 
@@ -7,9 +8,9 @@ export const Sidebar = ({
   setPlayer,
   showResults,
   resetLootRoll,
-  updateCardImages,
-  imagesUpdating,
 }) => {
+  const { updateCardImages, imagesUpdating } = ImageController();
+
   return (
     <div className='w-1/4 flex-shrink flex-grow-0'>
       <div className='sticky top-0 p-4 w-full'>

@@ -112,18 +112,17 @@ export const useLootDropController = (player) => {
   };
 
   return {
-    lootableCards,
-    roll,
-    faction,
-    showFactionSelect,
-    showResults,
     card,
-    manualRoll,
-    rollLoot,
-    setRoll,
+    faction,
     setFaction,
-    markCardSold,
-    resetLootRoll,
+    showFactionSelect,
+    roll,
+    setRoll,
+    manualRoll,
     setManualRoll,
+    showResults,
+    rollLoot,
+    resetLootRoll,
+    markCardSold,
   };
 };

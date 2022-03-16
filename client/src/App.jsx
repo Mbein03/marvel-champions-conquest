@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useLootDropController as LootDropController } from './hooks/controllers/useLootDropController';
-import { useImageController } from './hooks/controllers/useImageController';
 import { Sidebar } from './components/Sidebar';
 import { Content } from './components/Content';
 import * as helpers from './helpers/helpers';
@@ -37,8 +36,6 @@ export const App = () => {
     markCardSold,
   } = LootDropController(player);
 
-  const { updateCardImages, imagesUpdating } = useImageController();
-
   return (
     <>
       <div className='w-full flex flex-col sm:flex-row flex-grow overflow-hidden'>
@@ -48,8 +45,6 @@ export const App = () => {
           setPlayer={setPlayer}
           showResults={showResults}
           resetLootRoll={resetLootRoll}
-          updateCardImages={updateCardImages}
-          imagesUpdating={imagesUpdating}
         />
         <Content
           player={player}
