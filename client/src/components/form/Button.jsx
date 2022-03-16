@@ -1,4 +1,4 @@
-const Button = ({ onClick, color, classStyle, disabled, children }) => {
+export const Button = ({ onClick, color, classStyle, disabled, children }) => {
   let defaultColor =
     'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800';
 
@@ -27,5 +27,3 @@ const Button = ({ onClick, color, classStyle, disabled, children }) => {
     </button>
   );
 };
-
-export default Button;

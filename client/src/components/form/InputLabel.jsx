@@ -1,4 +1,4 @@
-const InputLabel = ({ htmlFor, children }) => {
+export const InputLabel = ({ htmlFor, children }) => {
   return (
     <label
       htmlFor={htmlFor}
@@ -8,5 +8,3 @@ const InputLabel = ({ htmlFor, children }) => {
     </label>
   );
 };
-
-export default InputLabel;

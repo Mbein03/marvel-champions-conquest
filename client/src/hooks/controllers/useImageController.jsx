@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { api } from '../../helpers/constants';
 import * as helpers from '../../helpers/helpers';
 
-const useImageController = () => {
+export const useImageController = () => {
   const [imagesUpdating, setImagesUpdating] = useState(false);
   // Fire off API request to update images in DB from marvel cdb API
   const updateCardImages = () => {
@@ -17,5 +17,3 @@ const useImageController = () => {
     imagesUpdating,
   };
 };
-
-export default useImageController;

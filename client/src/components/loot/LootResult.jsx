@@ -1,16 +1,16 @@
 import { useState } from 'react';
-import Header from '../reusuable/Header';
-import ResultLine from '../reusuable/ResultLine';
-import Button from '../reusuable/Button';
-import Image from '../reusuable/Image';
+import { Header } from '../Header';
+import { Subheader } from '../Subheader';
+import { Button } from '../form/Button';
+import { Image } from '../Image';
 
-const Result = ({ card, player, markCardSold, resetLootRoll }) => {
+export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
   const [confirmSale, setConfirmSale] = useState(false);
 
   return (
     <div>
       <Header classStyle='text-center'>Roll Result</Header>
-      <ResultLine
+      <Subheader
         title={'Card'}
         result={
           card
@@ -42,5 +42,3 @@ const Result = ({ card, player, markCardSold, resetLootRoll }) => {
     </div>
   );
 };
-
-export default Result;

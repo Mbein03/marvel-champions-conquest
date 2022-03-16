@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Header from '../reusuable/Header';
-import Button from '../reusuable/Button';
-import InputLabel from '../reusuable/InputLabel';
-import SelectInput from '../reusuable/SelectInput';
+import { Header } from '../Header';
+import { Button } from '../form/Button';
+import { InputLabel } from '../form/InputLabel';
+import { SelectInput } from '../form/SelectInput';
 import * as constants from '../../helpers/constants';
 
-const ChooseRollAndFaction = ({
+export const SelectRoll = ({
   roll,
   faction,
   rollLoot,
@@ -24,9 +24,9 @@ const ChooseRollAndFaction = ({
       <SelectInput
         id={'roll'}
         name={'roll'}
-        value={roll}
         data={constants.rolls}
-        onSelectChange={setRoll}
+        value={roll}
+        onValueChange={setRoll}
         disabled={showFactionSelect}
       />
       {showFactionSelect && (
@@ -35,9 +35,9 @@ const ChooseRollAndFaction = ({
           <SelectInput
             id={'faction'}
             name={'faction'}
-            value={faction}
             data={constants.factions}
-            onSelectChange={setFaction}
+            value={faction}
+            onValueChange={setFaction}
           />
         </>
       )}
@@ -51,5 +51,3 @@ const ChooseRollAndFaction = ({
     </div>
   );
 };
-
-export default ChooseRollAndFaction;

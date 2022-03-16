@@ -7,7 +7,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './data/mcc-master.db3',
+      filename: './data/mcc-personal.db3',
     },
     useNullAsDefault: true,
   },

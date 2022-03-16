@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { api, lootTable } from '../../helpers/constants';
 import * as helpers from '../../helpers/helpers';
 
-const useLootDropController = (player) => {
+export const useLootDropController = (player) => {
   const [lootableCards, setLootableCards] = useState('');
   const [roll, setRoll] = useState('T1');
   const [faction, setFaction] = useState('');
@@ -10,8 +10,8 @@ const useLootDropController = (player) => {
   const [card, setCard] = useState('');
 
   const [manualRoll, setManualRoll] = useState(false);
-  const [showFactionSelect, setshowFactionSelect] = useState(false);
-  const [showResults, setshowResults] = useState(false);
+  const [showFactionSelect, setShowFactionSelect] = useState(false);
+  const [showResults, setShowResults] = useState(false);
 
   // Calls method to fetch lootable cards from API on page load
   useEffect(() => {
@@ -51,7 +51,7 @@ const useLootDropController = (player) => {
     // If given choice, set faction to default 'Basic' and show select input
     // Otherwise roll for card
     if (cardFaction === 'Your Choice') {
-      setshowFactionSelect(true);
+      setShowFactionSelect(true);
       setFaction('Basic');
     } else {
       rollForCard(cardTier, cardFaction);
@@ -76,7 +76,7 @@ const useLootDropController = (player) => {
     // Mark card looted
     if (card) markCardLooted(card);
 
-    setshowResults(true);
+    setShowResults(true);
   };
 
   const markCardLooted = (card) => {
@@ -106,8 +106,8 @@ const useLootDropController = (player) => {
     setFaction('');
     setTier('');
     setCard('');
-    setshowFactionSelect(false);
-    setshowResults(false);
+    setShowFactionSelect(false);
+    setShowResults(false);
     setManualRoll(false);
   };
 
@@ -127,5 +127,3 @@ const useLootDropController = (player) => {
     setManualRoll,
   };
 };
-
-export default useLootDropController;
