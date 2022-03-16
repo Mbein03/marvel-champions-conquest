@@ -25,7 +25,6 @@ export const Content = ({
       <div className='bg-slate-300 h-screen'>
         <div className='flex items-center justify-center h-screen'>
           <Card>
-            {' '}
             {!manualRoll && (
               <SelectLootDrop
                 setRoll={setRoll}

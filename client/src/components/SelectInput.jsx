@@ -13,9 +13,9 @@ export const SelectInput = ({
 
   // Iterate over data and map options
   const mapOptions = (data) => {
-    return data.map((data) => (
-      <option key={data.id} value={data.name}>
-        {data.name}
+    return data.map((value) => (
+      <option key={value.id} value={value.name}>
+        {value.name}
       </option>
     ));
   };

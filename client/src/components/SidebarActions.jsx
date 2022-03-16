@@ -8,7 +8,7 @@ export const SidebarActions = ({ resetLootRoll }) => {
   return (
     <>
       <Header>Actions:</Header>
-      <ul className='flex sm:flex-col overflow-hidden content-center justify-between'>
+      <ul className='px-1 flex sm:flex-col overflow-hidden content-center justify-between'>
         <Button onClick={() => resetLootRoll()} classStyle='mb-3'>
           Loot Drop
         </Button>

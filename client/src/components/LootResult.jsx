@@ -10,14 +10,15 @@ export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
   return (
     <div>
       <Header classStyle='text-center'>Roll Result</Header>
-      <Subheader
-        title={'Card'}
-        result={
-          card
-            ? ' ' + card.name + ' (' + card.faction + ' / ' + card.tier + ')'
-            : 'None'
-        }
-      />
+      {card ? (
+        <>
+          <Subheader title={'Card'} result={card.name} />
+          <Subheader title={'Faction'} result={card.faction} />
+          <Subheader title={'Tier'} result={card.tier} />
+        </>
+      ) : (
+        <Subheader title={'Card'} result={'None'} />
+      )}
       {card && (
         <Image
           src={'https://marvelcdb.com/' + card.image_path}
