@@ -30,6 +30,8 @@ export const App = () => {
     setRoll,
     manualRoll,
     setManualRoll,
+    disableRollSelect,
+    setDisableRollSelect,
     showResults,
     rollLoot,
     resetLootRoll,
@@ -55,6 +57,8 @@ export const App = () => {
         setRoll={setRoll}
         manualRoll={manualRoll}
         setManualRoll={setManualRoll}
+        disableRollSelect={disableRollSelect}
+        setDisableRollSelect={setDisableRollSelect}
         showResults={showResults}
         rollLoot={rollLoot}
         resetLootRoll={resetLootRoll}

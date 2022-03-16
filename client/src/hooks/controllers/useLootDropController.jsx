@@ -11,6 +11,7 @@ export const useLootDropController = (player) => {
 
   const [manualRoll, setManualRoll] = useState(false);
   const [showFactionSelect, setShowFactionSelect] = useState(false);
+  const [disableRollSelect, setDisableRollSelect] = useState(false);
   const [showResults, setShowResults] = useState(false);
 
   // Calls method to fetch lootable cards from API on page load
@@ -109,6 +110,7 @@ export const useLootDropController = (player) => {
     setShowFactionSelect(false);
     setShowResults(false);
     setManualRoll(false);
+    setDisableRollSelect(false);
   };
 
   return {
@@ -120,6 +122,8 @@ export const useLootDropController = (player) => {
     setRoll,
     manualRoll,
     setManualRoll,
+    disableRollSelect,
+    setDisableRollSelect,
     showResults,
     rollLoot,
     resetLootRoll,

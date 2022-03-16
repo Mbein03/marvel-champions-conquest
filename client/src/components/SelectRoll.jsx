@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Header } from '../Header';
-import { Button } from '../form/Button';
-import { InputLabel } from '../form/InputLabel';
-import { SelectInput } from '../form/SelectInput';
-import * as constants from '../../helpers/constants';
+import { useState, useEffect } from 'react';
+import { Header } from './Header';
+import { Button } from './Button';
+import { InputLabel } from './InputLabel';
+import { SelectInput } from './SelectInput';
+import * as constants from './../helpers/constants';
 
 export const SelectRoll = ({
   roll,
@@ -12,8 +12,16 @@ export const SelectRoll = ({
   setRoll,
   setFaction,
   showFactionSelect,
+  disableRollSelect,
+  setDisableRollSelect,
 }) => {
   const [confirmRoll, setConfirmRoll] = useState(false);
+
+  useEffect(() => {
+    if (showFactionSelect || confirmRoll) {
+      setDisableRollSelect(true);
+    }
+  }, [showFactionSelect, confirmRoll]);
 
   return (
     <div>
@@ -27,7 +35,7 @@ export const SelectRoll = ({
         data={constants.rolls}
         value={roll}
         onValueChange={setRoll}
-        disabled={showFactionSelect}
+        disabled={disableRollSelect}
       />
       {showFactionSelect && (
         <>

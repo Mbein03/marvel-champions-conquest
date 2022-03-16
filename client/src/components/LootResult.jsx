@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Header } from '../Header';
-import { Subheader } from '../Subheader';
-import { Button } from '../form/Button';
-import { Image } from '../Image';
+import { Header } from './Header';
+import { Subheader } from './Subheader';
+import { Button } from './Button';
+import { Image } from './Image';
 
 export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
   const [confirmSale, setConfirmSale] = useState(false);

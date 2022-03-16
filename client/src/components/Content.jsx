@@ -1,6 +1,6 @@
-import { SelectLootDrop } from './loot/SelectLootDrop';
-import { SelectRoll } from './loot/SelectRoll';
-import { LootResult } from './loot/LootResult';
+import { SelectLootDrop } from './SelectLootDrop';
+import { SelectRoll } from './SelectRoll';
+import { LootResult } from './LootResult';
 import { Card } from './Card';
 
 export const Content = ({
@@ -13,6 +13,8 @@ export const Content = ({
   setRoll,
   manualRoll,
   setManualRoll,
+  disableRollSelect,
+  setDisableRollSelect,
   showResults,
   rollLoot,
   resetLootRoll,
@@ -25,7 +27,11 @@ export const Content = ({
           <Card>
             {' '}
             {!manualRoll && (
-              <SelectLootDrop setRoll={setRoll} setManualRoll={setManualRoll} />
+              <SelectLootDrop
+                setRoll={setRoll}
+                setManualRoll={setManualRoll}
+                setDisableRollSelect={setDisableRollSelect}
+              />
             )}
             {manualRoll && !showResults && (
               <SelectRoll
@@ -35,6 +41,8 @@ export const Content = ({
                 setRoll={setRoll}
                 setFaction={setFaction}
                 showFactionSelect={showFactionSelect}
+                disableRollSelect={disableRollSelect}
+                setDisableRollSelect={setDisableRollSelect}
               />
             )}
             {manualRoll && showResults && (

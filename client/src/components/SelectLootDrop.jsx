@@ -1,9 +1,15 @@
-import { Header } from '../Header';
-import { Button } from '../form/Button';
+import { Header } from './Header';
+import { Button } from './Button';
 
-export const SelectLootDrop = ({ setRoll, setManualRoll }) => {
+export const SelectLootDrop = ({
+  setRoll,
+  setManualRoll,
+  setDisableRollSelect,
+}) => {
   const minionRoll = (roll) => {
     setRoll(roll);
+    setManualRoll(true);
+    setDisableRollSelect(true);
   };
   return (
     <div>
