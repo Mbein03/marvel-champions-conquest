@@ -4,7 +4,9 @@ import { App } from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className='w-full flex flex-col sm:flex-row flex-grow overflow-hidden'>
+      <App />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

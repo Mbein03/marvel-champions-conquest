@@ -38,30 +38,28 @@ export const App = () => {
 
   return (
     <>
-      <div className='w-full flex flex-col sm:flex-row flex-grow overflow-hidden'>
-        <Sidebar
-          players={players}
-          player={player}
-          setPlayer={setPlayer}
-          showResults={showResults}
-          resetLootRoll={resetLootRoll}
-        />
-        <Content
-          player={player}
-          card={card}
-          faction={faction}
-          setFaction={setFaction}
-          showFactionSelect={showFactionSelect}
-          roll={roll}
-          setRoll={setRoll}
-          manualRoll={manualRoll}
-          setManualRoll={setManualRoll}
-          showResults={showResults}
-          rollLoot={rollLoot}
-          resetLootRoll={resetLootRoll}
-          markCardSold={markCardSold}
-        />
-      </div>
+      <Sidebar
+        players={players}
+        player={player}
+        setPlayer={setPlayer}
+        showResults={showResults}
+        resetLootRoll={resetLootRoll}
+      />
+      <Content
+        player={player}
+        card={card}
+        faction={faction}
+        setFaction={setFaction}
+        showFactionSelect={showFactionSelect}
+        roll={roll}
+        setRoll={setRoll}
+        manualRoll={manualRoll}
+        setManualRoll={setManualRoll}
+        showResults={showResults}
+        rollLoot={rollLoot}
+        resetLootRoll={resetLootRoll}
+        markCardSold={markCardSold}
+      />
     </>
   );
 };
