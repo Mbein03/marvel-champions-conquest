@@ -55,12 +55,12 @@ async function updateImages() {
 
 async function markLooted(data) {
   // Decrement card qty and mark as acquired
-  // await db('cards')
-  //   .where('id', data.card.id)
-  //   .update({
-  //     qty: data.card.qty - 1,
-  //     is_acquired: 1,
-  //   });
+  await db('cards')
+    .where('id', data.card.id)
+    .update({
+      qty: data.card.qty - 1,
+      is_acquired: 1,
+    });
 
   // Query for updated card row in DB
   return db('cards').where('id', data.card.id).first();
@@ -68,11 +68,11 @@ async function markLooted(data) {
 
 async function markSold(data) {
   // Increment card qty
-  // await db('cards')
-  //   .where('id', data.card.id)
-  //   .update({
-  //     qty: data.card.qty + 1,
-  //   });
+  await db('cards')
+    .where('id', data.card.id)
+    .update({
+      qty: data.card.qty + 1,
+    });
 
   // Query for updated card row in DB
   return db('cards').where('id', data.card.id).first();
