@@ -18,33 +18,33 @@ This application was created to be a companion app for _Marvel Champions Conques
 ### Structure
 
 - Application is split into [client](client) and [server](server) folders that each have their own dependencies and package.json files.
-- Structure was split in such a way to allow others to create their own frontend if desired, while still being able to make use of API calls in [server](server/routes/index.js) folder
+- Structure was split in such a way to allow others to create their own frontend if desired, while still being able to make use of API calls in [server](server/routes/index.js) folder.
 
 ## Requirements & Installation
 
 - Node.js is required and can be downloaded [here](https://nodejs.org/en/download/).
 
-1. Clone repo to local machine
-2. Navigate to [server](server) folder in repo via terminal and run > npm install to install dependencies.
-3. Navigate to [client](client) folder in repo in via terminal and run > npm install to install dependencies.
-4. Run > npm start in [server](server) folder - served on [http://localhost:9000](http://localhost:9000).
-5. Run > npm start (seperate terminal tab) in [client](client) folder - served on [http://localhost:3000](http://localhost:3000).
-6. Run > npm run build-css (seperate terminal tab) to build public styles CSS file and watch for changes.
+1. Clone repo to local machine.
+2. Navigate to [server](server) folder in repo via terminal and run "npm install" to install dependencies.
+3. Navigate to [client](client) folder in repo in via terminal and run "npm install" to install dependencies.
+4. Run "npm start" in [server](server) folder - served on [http://localhost:9000](http://localhost:9000).
+5. Run "npm start" (seperate terminal tab) in [client](client) folder - served on [http://localhost:3000](http://localhost:3000).
+6. Run "npm run build-css" (seperate terminal tab) to build public styles CSS file and watch for changes.
 7. No need to run migrations, as a master DB file is included in repository.
-8. Navigate to [http://localhost:3000](http://localhost:3000) and enjoy!
+8. Navigate to [http://localhost:3000](http://localhost:3000) in browser and you should see app displayed.
 
 ## Usage
 
 1. Select player in top left corner of sidebar.
-2. Select loot drop type (ex. minion kills at varied HP or manual roll) based on rewards you need to roll for.
-3. If performing manual roll, select roll tiers (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various roll tier).
+2. Select loot drop type (ex. minion kills at varied HP or manual roll) based on rewards for which you need to roll.
+3. If performing manual roll, select roll tier (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various roll tiers).
 4. Click and confirm roll.
 5. In some cases, depending on your initial roll, you may have the opportunity to select card faction. If so, select faction and confirm roll.
 6. Loot card result will be displayed (name, faction, and card tier), along with card image. Card quantity will be decremented from potential card pool in database.
 7. Either sell and confirm card back to card pool (card quantity will be incremented in database) or reset and start a new roll.
 
 - The "Update Card Images" button will fire out a request to [Marvel Card Database API](https://marvelcdb.com/api/) to update images for any cards in database that do not already have images assigned.
-- At this point, credits are not being tracked in app, but there are plans to do so in the near future.
+- At this point, credits are not being tracked in app when selling cards, but there are plans to do so in the near future.
 
 ## Upcoming Tasks
 
@@ -60,6 +60,8 @@ This application was created to be a companion app for _Marvel Champions Conques
 - [ ] Add functionality to track credits acquired for completing side schemes.
 - [ ] Add functionality to manually enter player names and credits as necessary.
 - [ ] Add view to display acquired cards on a per player basis.
+- [ ] Add shop functionality to display cards available in shop.
+- [ ] Add functionality to track game achievements.
 
 ## Helpful Links
 
