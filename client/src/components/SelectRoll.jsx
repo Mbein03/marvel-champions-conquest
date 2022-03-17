@@ -21,7 +21,7 @@ export const SelectRoll = ({
     if (showFactionSelect || confirmRoll) {
       setDisableRollSelect(true);
     }
-  }, [showFactionSelect, confirmRoll]);
+  });
 
   return (
     <div>

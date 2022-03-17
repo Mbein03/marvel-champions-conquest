@@ -1,284 +1,284 @@
-id,name,faction,tier,qty,marvel_cdb_id,image_path,is_acquired
-1,Athletic Conditioning,Basic,C,1,13034,/bundles/cards/13034.jpg,0
-2,Beat 'Em Up,Basic,C,1,14032,/bundles/cards/14032.jpg,0
-3,Booster Boots,Basic,C,3,16052,/bundles/cards/16052.jpg,0
-4,Civic Duty,Basic,C,1,14023,/bundles/cards/14023.jpg,0
-5,Daughters of Thanos,Basic,C,2,22022,/bundles/cards/22022.png,0
-6,Emergency,Basic,C,1,01085,/bundles/cards/01085.png,0
-7,Espionage,Basic,C,3,08033,/bundles/cards/08033.jpg,0
-8,Flora and Fauna,Basic,C,2,16020,/bundles/cards/16020.jpg,0
-9,Haymaker,Basic,C,1,01087,/bundles/cards/01087.png,0
-10,Hit and Run,Basic,C,3,18020,/bundles/cards/18020.png,0
-11,Invulnerability,Basic,C,1,06021,/bundles/cards/06021.jpg,0
-12,Order and Chaos,Basic,C,2,14018,/bundles/cards/14018.jpg,0
-13,Plasma Pistol,Basic,C,3,20022,/bundles/cards/20022.png,0
-14,Resourceful,Basic,C,1,10032,/bundles/cards/10032.jpg,0
-15,Spiritual Meditation,Basic,C,3,15019,/bundles/cards/15019.png,0
-16,Swarm Tactics,Basic,C,2,13020,/bundles/cards/13020.jpg,0
-17,Tenacity,Basic,C,3,01093,/bundles/cards/01093.png,0
-18,To the Rescue!,Basic,C,1,10019,/bundles/cards/10019.jpg,0
-19,Two Against the World,Basic,C,2,23024,/bundles/cards/23024.png,0
-20,Warning,Basic,C,1,09021,/bundles/cards/09021.jpg,0
-21,Adrenaline Rush,Basic,B,3,14022,/bundles/cards/14022.jpg,0
-22,Crew Quarters,Basic,B,2,20029,/bundles/cards/20029.png,0
-23,Earth's Mightiest Heroes,Basic,B,3,04022,/bundles/cards/04022.jpg,0
-24,Enhanced Awareness,Basic,B,3,03034,/bundles/cards/03034.png,0
-25,Enhanced Physique,Basic,B,3,06034,/bundles/cards/06034.jpg,0
-26,Enhanced Reflexes,Basic,B,3,05024,/bundles/cards/05024.png,0
-27,First Aid,Basic,B,1,01086,/bundles/cards/01086.png,0
-28,Honorary Avenger,Basic,B,3,03025,/bundles/cards/03025.png,0
-29,Honorary Guardian,Basic,B,3,22035,/bundles/cards/22035.png,0
-30,Pulse Grenade,Basic,B,3,17023,/bundles/cards/17023.png,0
-31,Ready to Rumble,Basic,B,3,21022,/bundles/cards/21022.png,0
-32,Recuperation,Basic,B,3,15031,/bundles/cards/15031.png,0
-33,Sidearm,Basic,B,3,23035,/bundles/cards/23035.png,0
-34,Team-Building Exercise,Basic,B,3,12024,/bundles/cards/12024.jpg,0
-35,Assess the Situation,Basic,A,3,12033,/bundles/cards/12033.jpg,0
-36,Avengers Tower,Basic,A,1,03024,/bundles/cards/03024.png,0
-37,C.I.T.T.,Basic,A,1,17021,/bundles/cards/17021.png,0
-38,Cosmo,Basic,A,1,17020,/bundles/cards/17020.png,0
-39,Deft Focus,Basic,A,2,16024,/bundles/cards/16024.jpg,0
-40,Down Time,Basic,A,2,05033,/bundles/cards/05033.png,0
-41,Drax,Basic,A,1,18019,/bundles/cards/18019.png,0
-42,Gamora,Basic,A,1,18001a,/bundles/cards/18001a.png,0
-43,Groot,Basic,A,1,16001a,/bundles/cards/16001a.png,0
-44,Heimdall,Basic,A,1,06020,/bundles/cards/06020.jpg,0
-45,Knowhere,Basic,A,1,17022,/bundles/cards/17022.png,0
-46,Martinex,Basic,A,1,21065,/bundles/cards/21065.png,0
-47,Quincarrier,Basic,A,1,08023,/bundles/cards/08023.jpg,0
-48,Rocket Raccoon,Basic,A,1,16019,/bundles/cards/16019.jpg,0
-49,Side Holster,Basic,A,2,20021,/bundles/cards/20021.png,0
-50,Star-Lord,Basic,A,1,17001a,/bundles/cards/17001a.png,0
-51,Target Acquired,Basic,A,3,08024,/bundles/cards/08024.jpg,0
-52,The Power in All of Us,Basic,A,3,13024,/bundles/cards/13024.jpg,0
-53,War Machine,Basic,A,1,01030,/bundles/cards/01030.png,0
-54,Avengers Mansion,Basic,S,2,01091,/bundles/cards/01091.png,0
-55,Blade,Basic,S,1,21019,/bundles/cards/21019.png,0
-56,Endurance,Basic,S,3,05023,/bundles/cards/05023.png,0
-57,Energy,Basic,S,2,01088,/bundles/cards/01088.png,0
-58,Genius,Basic,S,2,01089,/bundles/cards/01089.png,0
-59,Helicarrier,Basic,S,2,01092,/bundles/cards/01092.png,0
-60,Ironheart,Basic,S,1,13018,/bundles/cards/13018.jpg,0
-61,Lockjaw,Basic,S,1,05018,/bundles/cards/05018.png,0
-62,Mockingbird,Basic,S,1,01083,/bundles/cards/01083.png,0
-63,Nick Fury,Basic,S,1,01084,/bundles/cards/01084.png,0
-64,Spider-Man,Basic,S,1,01001a,/bundles/cards/01001a.png,0
-65,Strength,Basic,S,2,01090,/bundles/cards/01090.png,0
-66,The Sorcerer Supreme,Basic,S,1,09026,/bundles/cards/09026.jpg,0
-67,Bait and Switch,Protection,B,2,15030,/bundles/cards/15030.png,0
-68,Dauntless,Protection,B,3,16016,/bundles/cards/16016.jpg,0
-69,Defensive Stance,Protection,B,2,08032,/bundles/cards/08032.jpg,0
-70,Defensive Training,Protection,B,2,22034,/bundles/cards/22034.png,0
-71,Ever Vigilant,Protection,B,3,17030,/bundles/cards/17030.png,0
-72,Expert Defense,Protection,B,2,03033,/bundles/cards/03033.png,0
-73,Hard Knocks,Protection,B,3,19016,/bundles/cards/19016.png,0
-74,Leading Blow,Protection,B,3,19017,/bundles/cards/19017.png,0
-75,Multiple Man,Protection,B,3,14012,/bundles/cards/14012.jpg,0
-76,Muster Courage,Protection,B,2,12032,/bundles/cards/12032.jpg,0
-77,Perseverance,Protection,B,3,13033,/bundles/cards/13033.jpg,0
-78,Second Wind,Protection,B,2,06033,/bundles/cards/06033.jpg,0
-79,Shake it Off,Protection,B,3,20028,/bundles/cards/20028.png,0
-80,Side Step,Protection,B,2,14015,/bundles/cards/14015.jpg,0
-81,Stand Together,Protection,B,3,23034,/bundles/cards/23034.png,0
-82,The Gardener,Protection,B,1,21060,/bundles/cards/21060.png,0
-83,True Grit,Protection,B,3,18031,/bundles/cards/18031.png,0
-84,Armored Vest,Protection,A,1,01081,/bundles/cards/01081.png,0
-85,Charlie-27,Protection,A,1,21059,/bundles/cards/21059.png,0
-86,Counter-Punch,Protection,A,2,01077,/bundles/cards/01077.png,0
-87,Deflection,Protection,A,3,19015,/bundles/cards/19015.png,0
-88,Desperate Defense,Protection,A,3,09015,/bundles/cards/09015.jpg,0
-89,Electrostatic Armor,Protection,A,2,10031,/bundles/cards/10031.jpg,0
-90,Fighting Fit,Protection,A,3,16014,/bundles/cards/16014.jpg,0
-91,First Hit,Protection,A,3,18015,/bundles/cards/18015.png,0
-92,Get Behind Me!,Protection,A,2,01078,/bundles/cards/01078.png,0
-93,Preservation,Protection,A,1,21064,/bundles/cards/21064.png,0
-94,Martyr,Protection,A,1,19012,/bundles/cards/19012.png,0
-95,Momentum Shift,Protection,A,2,09016,/bundles/cards/09016.jpg,0
-96,Moondragon,Protection,A,1,19013,/bundles/cards/19013.png,0
-97,Never Back Down,Protection,A,3,14014,/bundles/cards/14014.jpg,0
-98,Nova,Protection,A,1,05012,/bundles/cards/05012.png,0
-99,Shield Spell,Protection,A,1,21061,/bundles/cards/21061.png,0
-100,Subdue,Protection,A,3,19018,/bundles/cards/19018.png,0
-101,Warlock,Protection,A,1,14013,/bundles/cards/14013.jpg,0
-102,Brother Voodoo,Protection,S,1,09012,/bundles/cards/09012.jpg,0
-103,Clea,Protection,S,1,09013,/bundles/cards/09013.jpg,0
-104,Energy Barrier,Protection,S,3,05017,/bundles/cards/05017.png,0
-105,Hard to Ignore,Protection,S,3,16017,/bundles/cards/16017.jpg,0
-106,Indomitable,Protection,S,2,01082,/bundles/cards/01082.png,0
-107,Iron Fist,Protection,S,1,09014,/bundles/cards/09014.jpg,0
-108,Med Team,Protection,S,2,01080,/bundles/cards/01080.png,0
-109,Nerves of Steel,Protection,S,2,14017,/bundles/cards/14017.jpg,0
-110,Preemptive Strike,Protection,S,3,05014,/bundles/cards/05014.png,0
-111,Starhawk,Protection,S,1,16012,/bundles/cards/16012.jpg,0
-112,Tackle,Protection,S,2,05015,/bundles/cards/05015.png,0
-113,The Night Nurse,Protection,S,1,09019,/bundles/cards/09019.jpg,0
-114,The Power of Protection,Protection,S,2,01079,/bundles/cards/01079.png,0
-115,Unflappable,Protection,S,2,09020,/bundles/cards/09020.jpg,0
-116,As One!,Aggression,B,3,23032,/bundles/cards/23032.png,0
-117,Battle Fury,Aggression,B,3,06018,/bundles/cards/06018.png,0
-118,Boot Camp,Aggression,B,1,13016,/bundles/cards/13016.jpg,0
-119,Browbeat,Aggression,B,3,15028,/bundles/cards/15028.png,0
-120,Brute Force,Aggression,B,2,14029,/bundles/cards/14029.jpg,0
-121,Enraged,Aggression,B,2,03031,/bundles/cards/03031.png,0
-122,Follow Through,Aggression,B,2,16045,/bundles/cards/16045.jpg,0
-123,Fusillade,Aggression,B,3,20026,/bundles/cards/20026.png,0
-124,Get Over Here!,Aggression,B,2,06014,/bundles/cards/06014.jpg,0
-125,In-Betweener,Aggression,B,1,21042,/bundles/cards/21042.png,0
-126,Lie in Wait,Aggression,B,2,13017,/bundles/cards/13017.jpg,0
-127,Melee,Aggression,B,2,05030,/bundles/cards/05030.png,0
-128,Piercing Strike,Aggression,B,3,04044,/bundles/cards/04044.jpg,0
-129,Plan of Attack,Aggression,B,3,18013,/bundles/cards/18013.png,0
-130,Surprise Attack,Aggression,B,3,13014,/bundles/cards/13014.jpg,0
-131,Tac Team,Aggression,B,2,01056,/bundles/cards/01056.png,0
-132,Uppercut,Aggression,B,2,01054,/bundles/cards/01054.png,0
-133,"""You'll Pay for That!""",Aggression,B,2,10016,/bundles/cards/10016.jpg,0
-134,Audacity,Aggression,A,1,21046,/bundles/cards/21046.png,0
-135,Brawn,Aggression,A,1,10011,/bundles/cards/10011.jpg,0
-136,"""Bring It!""",Aggression,A,2,19030,/bundles/cards/19030.png,0
-137,Clobber,Aggression,A,3,18012,/bundles/cards/18012.png,0
-138,Counterattack,Aggression,A,3,08030,/bundles/cards/08030.jpg,0
-139,Dive Bomb,Aggression,A,3,17028,/bundles/cards/17028.png,0
-140,Energy Spear,Aggression,A,3,22032,/bundles/cards/22032.png,0
-141,Hercules,Aggression,A,1,06011,/bundles/cards/06011.png,0
-142,Magic Attack,Aggression,A,1,21043,/bundles/cards/21043.png,0
-143,Martial Prowess,Aggression,A,2,10018,/bundles/cards/10018.jpg,0
-144,Mean Swing,Aggression,A,3,06015,/bundles/cards/06015.jpg,0
-145,Moment of Triumph,Aggression,A,3,12030,/bundles/cards/12030.jpg,0
-146,Press the Advantage,Aggression,A,3,04043,/bundles/cards/04043.jpg,0
-147,Relentless Assault,Aggression,A,2,01053,/bundles/cards/01053.png,0
-148,She-Hulk,Aggression,A,1,01019a,/bundles/cards/01019a.png,0
-149,Skilled Strike,Aggression,A,3,09037,/bundles/cards/09037.jpg,0
-150,Toe to Toe,Aggression,A,3,10015,/bundles/cards/10015.jpg,0
-151,Valkyrie,Aggression,A,1,06012,/bundles/cards/06012.png,0
-152,Angela,Aggression,S,1,18011,/bundles/cards/18011.png,0
-153,Bug,Aggression,S,1,16040,/bundles/cards/16040.jpg,0
-154,Chase Them Down,Aggression,S,2,01052,/bundles/cards/01052.png,0
-155,Combat Training,Aggression,S,2,01057,/bundles/cards/01057.png,0
-156,Drop Kick,Aggression,S,3,10014,/bundles/cards/10014.jpg,0
-157,Godslayer,Aggression,S,1,18018,/bundles/cards/18018.png,0
-158,Hall of Heroes,Aggression,S,1,06017,/bundles/cards/06017.png,0
-159,Hand Cannon,Aggression,S,3,16046,/bundles/cards/16046.jpg,0
-160,Into the Fray,Aggression,S,2,13013,/bundles/cards/13013.jpg,0
-161,Jarnbjorn,Aggression,S,1,06019,/bundles/cards/06019.png,0
-162,Looking for Trouble,Aggression,S,3,16043,/bundles/cards/16043.jpg,0
-163,Marvel Boy,Aggression,S,1,21041,/bundles/cards/21041.png,0
-164,Sentry,Aggression,S,1,10012,/bundles/cards/10012.jpg,0
-165,Spider-Girl,Aggression,S,1,04040,/bundles/cards/04040.jpg,0
-166,The Power of Aggression,Aggression,S,2,01055,/bundles/cards/01055.png,0
-167,Thor,Aggression,S,1,06001a,/bundles/cards/06001a.png,0
-168,Wasp,Aggression,S,1,12002,/bundles/cards/12002.jpg,0
-169,Air Supremacy,Leadership,B,3,17014,/bundles/cards/17014.png,0
-170,All for One,Leadership,B,3,13032,/bundles/cards/13032.jpg,0
-171,Blaze of Glory,Leadership,B,3,17015,/bundles/cards/17015.png,0
-172,Comms Implant,Leadership,B,3,18030,/bundles/cards/18030.png,0
-173,Eternity,Leadership,B,1,21054,/bundles/cards/21054.png,0
-174,Inspiring Presence,Leadership,B,3,10030,/bundles/cards/10030.jpg,0
-175,Laser Blaster,Leadership,B,3,17019,/bundles/cards/17019.png,0
-176,Last Stand,Leadership,B,3,15029,/bundles/cards/15029.png,0
-177,Mass Attack,Leadership,B,3,21016,/bundles/cards/21016.png,0
-178,Moxie,Leadership,B,3,12016,/bundles/cards/12016.jpg,0
-179,Power Gloves,Leadership,B,3,12017,/bundles/cards/12017.jpg,0
-180,Quinjet,Leadership,B,3,03019,/bundles/cards/03019.png,0
-181,Sky Cycle,Leadership,B,3,04015,/bundles/cards/04015.jpg,0
-182,Target Practice,Leadership,B,3,17017,/bundles/cards/17017.png,0
-183,Teamwork,Leadership,B,3,06032,/bundles/cards/06032.png,0
-184,United We Stand,Leadership,B,3,14031,/bundles/cards/14031.jpg,0
-185,Adam Warlock,Leadership,A,1,17011,/bundles/cards/17011.png,0
-186,Avengers Assemble!,Leadership,A,3,03015,/bundles/cards/03015.png,0
-187,Black Panther,Leadership,A,1,01040a,/bundles/cards/01040a.png,0
-188,Beta Ray Bill,Leadership,A,1,17012,/bundles/cards/17012.png,0
-189,Call for Aid,Leadership,A,3,12015,/bundles/cards/12015.jpg,0
-190,Captain America,Leadership,A,1,03001a,/bundles/cards/03001a.png,0
-191,Captain Marvel,Leadership,A,1,01010a,/bundles/cards/01010a.png,0
-192,Falcon,Leadership,A,1,03011,/bundles/cards/03011.png,0
-193,Giant-Man,Leadership,A,1,12012,/bundles/cards/12012.jpg,0
-194,Goliath,Leadership,A,1,04013,/bundles/cards/04013.jpg,0
-195,Guardians of the Galaxy,Leadership,A,2,22033,/bundles/cards/22033.png,0
-196,Hawkeye (Kate Bishop),Leadership,A,1,04011,/bundles/cards/04011.jpg,0
-197,Innovation,Leadership,A,1,21058,/bundles/cards/21058.png,0
-198,Lead from the Front,Leadership,A,3,01070,/bundles/cards/01070.png,0
-199,Mighty Avengers,Leadership,A,2,21015,/bundles/cards/21015.png,0
-200,Morale Boost,Leadership,A,3,05032,/bundles/cards/05032.png,0
-201,Power Man,Leadership,A,1,21012,/bundles/cards/21012.png,0
-202,Ready for Action,Leadership,A,3,04017,/bundles/cards/04017.jpg,0
-203,Reinforced Suit,Leadership,A,3,12018,/bundles/cards/12018.jpg,0
-204,Ronin,Leadership,A,1,12013,/bundles/cards/12013.jpg,0
-205,Sneak Attack,Leadership,A,3,23017,/bundles/cards/23017.png,0
-206,Stinger,Leadership,A,1,12014,/bundles/cards/12014.jpg,0
-207,Team Training,Leadership,A,2,04016,/bundles/cards/04016.jpg,0
-208,U.S.  Agent,Leadership,A,1,04014,/bundles/cards/04014.jpg,0
-209,Vision,Leadership,A,1,01068,/bundles/cards/01068.png,0
-210,Welcome Aboard,Leadership,A,3,20027,/bundles/cards/20027.png,0
-211,Wonder Man,Leadership,A,1,03014,/bundles/cards/03014.png,0
-212,Yondu,Leadership,A,1,17013,/bundles/cards/17013.png,0
-213,Ant-Man,Leadership,S,1,12001a,/bundles/cards/12001a.png,0
-214,Band Together,Leadership,S,3,21018,/bundles/cards/21018.png,0
-215,Black Knight,Leadership,S,1,04012,/bundles/cards/04012.jpg,0
-216,Command Team,Leadership,S,3,23016,/bundles/cards/23016.png,0
-217,Get Ready,Leadership,S,3,01069,/bundles/cards/01069.png,0
-218,Go Down Swinging,Leadership,S,3,23019,/bundles/cards/23019.png,0
-219,Hawkeye (Clint Barton),Leadership,S,1,01066,/bundles/cards/01066.png,0
-220,Inspired,Leadership,S,3,01074,/bundles/cards/01074.png,0
-221,Iron Man,Leadership,S,1,01029a,/bundles/cards/01029a.png,0
-222,Kaluu,Leadership,S,1,21014,/bundles/cards/21014.png,0
-223,Major Victory,Leadership,S,1,21053,/bundles/cards/21053.png,0
-224,Make the Call,Leadership,S,3,01071,/bundles/cards/01071.png,0
-225,Maria Hill,Leadership,S,1,01067,/bundles/cards/01067.png,0
-226,Rapid Response,Leadership,S,3,08031,/bundles/cards/08031.jpg,0
-227,Regroup,Leadership,S,3,19032,/bundles/cards/19032.png,0
-228,Save the Day,Leadership,S,3,23018,/bundles/cards/23018.png,0
-229,Strength In Numbers,Leadership,S,3,03017,/bundles/cards/03017.png,0
-230,Summoning Spell,Leadership,S,1,21055,/bundles/cards/21055.png,0
-231,Squirrel Girl,Leadership,S,1,03013,/bundles/cards/03013.png,0
-232,The Power of Leadership,Leadership,S,2,01072,/bundles/cards/01072.png,0
-233,The Triskelion,Leadership,S,1,01073,/bundles/cards/01073.png,0
-234,White Tiger,Leadership,S,1,04099,/bundles/cards/04099.jpg,0
-235,Agile Flight,Justice,B,3,17029,/bundles/cards/17029.png,0
-236,Brains Over Brawn,Justice,B,3,22018,/bundles/cards/22018.png,0
-237,Counterintelligence,Justice,B,3,08017,/bundles/cards/08017.jpg,0
-238,Crisis Averted,Justice,B,3,15012,/bundles/cards/15012.png,0
-239,Followed,Justice,B,3,03032,/bundles/cards/03032.png,0
-240,Great Responsibility,Justice,B,3,01061,/bundles/cards/01061.png,0
-241,Interrogation Room,Justice,B,2,01063,/bundles/cards/01063.png,0
-242,Justice Served,Justice,B,3,22014,/bundles/cards/22014.png,0
-243,Living Tribunal,Justice,B,1,21048,/bundles/cards/21048.png,0
-244,Multitasking,Justice,B,3,15013,/bundles/cards/15013.png,0
-245,Pivotal Moment,Justice,B,3,18029,/bundles/cards/18029.png,0
-246,Running Interference,Justice,B,3,13031,/bundles/cards/13031.jpg,0
-247,Scare Tactic,Justice,B,3,20012,/bundles/cards/20012.png,0
-248,Spycraft,Justice,B,3,08018,/bundles/cards/08018.jpg,0
-249,Stealth Strike,Justice,B,3,08013,/bundles/cards/08013.jpg,0
-250,Swift Retribution,Justice,B,3,15014,/bundles/cards/15014.png,0
-251,Vigilante Training,Justice,B,3,23033,/bundles/cards/23033.png,0
-252,Beat Cop,Justice,A,3,10029,/bundles/cards/10029.jpg,0
-253,Determination,Justice,A,1,21052,/bundles/cards/21052.png,0
-254,Foiled!,Justice,A,3,09038,/bundles/cards/09038.jpg,0
-255,For Justice!,Justice,A,3,01060,/bundles/cards/01060.png,0
-256,Jack Flag,Justice,A,1,20011,/bundles/cards/20011.png,0
-257,Under Surveillance,Justice,A,3,06031,/bundles/cards/06031.jpg,0
-258,Lay Down the Law,Justice,A,3,12031,/bundles/cards/12031.jpg,0
-259,Making an Entrance,Justice,A,3,20013,/bundles/cards/20013.png,0
-260,One Way or Another,Justice,A,3,22015,/bundles/cards/22015.png,0
-261,Quake,Justice,A,1,08012,/bundles/cards/08012.jpg,0
-262,Sense of Justice,Justice,A,2,14030,/bundles/cards/14030.jpg,0
-263,Sonic Rifle,Justice,A,3,20015,/bundles/cards/20015.png,0
-264,Speed,Justice,A,1,15010,/bundles/cards/15010.png,0
-265,Spider-Man,Justice,A,1,01001a,/bundles/cards/01001a.png,0
-266,Surveillance Team,Justice,A,3,01064,/bundles/cards/01064.png,0
-267,"""Think Fast!""",Justice,A,3,19031,/bundles/cards/19031.png,0
-268,Venom,Justice,A,1,20001a,/bundles/cards/20001a.png,0
-269,Quasar,Justice,A,1,21047,/bundles/cards/21047.png,0
-270,Zone of Silence,Justice,A,1,21050,/bundles/cards/21050.png,0
-271,Agent Coulson,Justice,S,1,08011,/bundles/cards/08011.jpg,0
-272,Clear the Area,Justice,S,3,04049,/bundles/cards/04049.jpg,0
-273,Concussive Blow,Justice,S,3,05031,/bundles/cards/05031.png,0
-274,Daredevil,Justice,S,1,01058,/bundles/cards/01058.png,0
-275,Eros,Justice,S,1,22011,/bundles/cards/22011.png,0
-276,Impede,Justice,S,3,18016,/bundles/cards/18016.png,0
-277,Heroic Intuition,Justice,S,2,01065,/bundles/cards/01065.png,0
-278,Jessica Jones,Justice,S,1,01059,/bundles/cards/01059.png,0
-279,Skilled Investigator,Justice,S,2,04047,/bundles/cards/04047.jpg,0
-280,The Power of Justice,Justice,S,2,01062,/bundles/cards/01062.png,0
-281,Turn the Tide,Justice,S,3,15015,/bundles/cards/15015.png,0
-282,Wiccan,Justice,S,1,15011,/bundles/cards/15011.png,0
-283,Wraith,Justice,S,1,22012,/bundles/cards/22012.png,0
+id,name,faction,tier,marvel_cdb_id,image_path,qty,is_acquired
+1,Athletic Conditioning,Basic,C,13034,/bundles/cards/13034.jpg,1,0
+2,Beat 'Em Up,Basic,C,14032,/bundles/cards/14032.jpg,1,0
+3,Booster Boots,Basic,C,16052,/bundles/cards/16052.jpg,3,0
+4,Civic Duty,Basic,C,14023,/bundles/cards/14023.jpg,1,0
+5,Daughters of Thanos,Basic,C,22022,/bundles/cards/22022.png,2,0
+6,Emergency,Basic,C,01085,/bundles/cards/01085.png,1,0
+7,Espionage,Basic,C,08033,/bundles/cards/08033.jpg,3,0
+8,Flora and Fauna,Basic,C,16020,/bundles/cards/16020.jpg,2,0
+9,Haymaker,Basic,C,01087,/bundles/cards/01087.png,1,0
+10,Hit and Run,Basic,C,18020,/bundles/cards/18020.png,3,0
+11,Invulnerability,Basic,C,06021,/bundles/cards/06021.jpg,1,0
+12,Order and Chaos,Basic,C,14018,/bundles/cards/14018.jpg,2,0
+13,Plasma Pistol,Basic,C,20022,/bundles/cards/20022.png,3,0
+14,Resourceful,Basic,C,10032,/bundles/cards/10032.jpg,2,0
+15,Spiritual Meditation,Basic,C,15019,/bundles/cards/15019.png,3,0
+16,Swarm Tactics,Basic,C,13020,/bundles/cards/13020.jpg,2,0
+17,Tenacity,Basic,C,01093,/bundles/cards/01093.png,3,0
+18,To the Rescue!,Basic,C,10019,/bundles/cards/10019.jpg,1,0
+19,Two Against the World,Basic,C,23024,/bundles/cards/23024.png,2,0
+20,Warning,Basic,C,09021,/bundles/cards/09021.jpg,1,0
+21,Adrenaline Rush,Basic,B,14022,/bundles/cards/14022.jpg,3,0
+22,Crew Quarters,Basic,B,20029,/bundles/cards/20029.png,2,0
+23,Earth's Mightiest Heroes,Basic,B,04022,/bundles/cards/04022.jpg,3,0
+24,Enhanced Awareness,Basic,B,03034,/bundles/cards/03034.png,3,0
+25,Enhanced Physique,Basic,B,06034,/bundles/cards/06034.jpg,3,0
+26,Enhanced Reflexes,Basic,B,05024,/bundles/cards/05024.png,3,0
+27,First Aid,Basic,B,01086,/bundles/cards/01086.png,1,0
+28,Honorary Avenger,Basic,B,03025,/bundles/cards/03025.png,3,0
+29,Honorary Guardian,Basic,B,22035,/bundles/cards/22035.png,3,0
+30,Pulse Grenade,Basic,B,17023,/bundles/cards/17023.png,3,0
+31,Ready to Rumble,Basic,B,21022,/bundles/cards/21022.png,3,0
+32,Recuperation,Basic,B,15031,/bundles/cards/15031.png,3,0
+33,Sidearm,Basic,B,23035,/bundles/cards/23035.png,3,0
+34,Team-Building Exercise,Basic,B,12024,/bundles/cards/12024.jpg,3,0
+35,Assess the Situation,Basic,A,12033,/bundles/cards/12033.jpg,3,0
+36,Avengers Tower,Basic,A,03024,/bundles/cards/03024.png,1,0
+37,C.I.T.T.,Basic,A,17021,/bundles/cards/17021.png,1,0
+38,Cosmo,Basic,A,17020,/bundles/cards/17020.png,1,0
+39,Deft Focus,Basic,A,16024,/bundles/cards/16024.jpg,2,0
+40,Down Time,Basic,A,05033,/bundles/cards/05033.png,2,0
+41,Drax,Basic,A,18019,/bundles/cards/18019.png,1,0
+42,Gamora,Basic,A,18001a,/bundles/cards/18001a.png,1,0
+43,Groot,Basic,A,16001a,/bundles/cards/16001a.png,1,0
+44,Heimdall,Basic,A,06020,/bundles/cards/06020.jpg,1,0
+45,Knowhere,Basic,A,17022,/bundles/cards/17022.png,1,0
+46,Martinex,Basic,A,21065,/bundles/cards/21065.png,1,0
+47,Quincarrier,Basic,A,08023,/bundles/cards/08023.jpg,1,0
+48,Rocket Raccoon,Basic,A,16019,/bundles/cards/16019.jpg,1,0
+49,Side Holster,Basic,A,20021,/bundles/cards/20021.png,2,0
+50,Star-Lord,Basic,A,17001a,/bundles/cards/17001a.png,1,0
+51,Target Acquired,Basic,A,08024,/bundles/cards/08024.jpg,3,0
+52,The Power in All of Us,Basic,A,13024,/bundles/cards/13024.jpg,3,0
+53,War Machine,Basic,A,01030,/bundles/cards/01030.png,1,0
+54,Avengers Mansion,Basic,S,01091,/bundles/cards/01091.png,2,0
+55,Blade,Basic,S,21019,/bundles/cards/21019.png,1,0
+56,Endurance,Basic,S,05023,/bundles/cards/05023.png,3,0
+57,Energy,Basic,S,01088,/bundles/cards/01088.png,2,0
+58,Genius,Basic,S,01089,/bundles/cards/01089.png,2,0
+59,Helicarrier,Basic,S,01092,/bundles/cards/01092.png,2,0
+60,Ironheart,Basic,S,13018,/bundles/cards/13018.jpg,1,0
+61,Lockjaw,Basic,S,05018,/bundles/cards/05018.png,1,0
+62,Mockingbird,Basic,S,01083,/bundles/cards/01083.png,1,0
+63,Nick Fury,Basic,S,01084,/bundles/cards/01084.png,1,0
+64,Spider-Man,Basic,S,01001a,/bundles/cards/01001a.png,1,0
+65,Strength,Basic,S,01090,/bundles/cards/01090.png,2,0
+66,The Sorcerer Supreme,Basic,S,09026,/bundles/cards/09026.jpg,1,0
+67,Bait and Switch,Protection,B,15030,/bundles/cards/15030.png,2,0
+68,Dauntless,Protection,B,16016,/bundles/cards/16016.jpg,3,0
+69,Defensive Stance,Protection,B,08032,/bundles/cards/08032.jpg,2,0
+70,Defensive Training,Protection,B,22034,/bundles/cards/22034.png,2,0
+71,Ever Vigilant,Protection,B,17030,/bundles/cards/17030.png,3,0
+72,Expert Defense,Protection,B,03033,/bundles/cards/03033.png,2,0
+73,Hard Knocks,Protection,B,19016,/bundles/cards/19016.png,3,0
+74,Leading Blow,Protection,B,19017,/bundles/cards/19017.png,3,0
+75,Multiple Man,Protection,B,14012,/bundles/cards/14012.jpg,3,0
+76,Muster Courage,Protection,B,12032,/bundles/cards/12032.jpg,2,0
+77,Perseverance,Protection,B,13033,/bundles/cards/13033.jpg,3,0
+78,Second Wind,Protection,B,06033,/bundles/cards/06033.jpg,2,0
+79,Shake it Off,Protection,B,20028,/bundles/cards/20028.png,3,0
+80,Side Step,Protection,B,14015,/bundles/cards/14015.jpg,2,0
+81,Stand Together,Protection,B,23034,/bundles/cards/23034.png,3,0
+82,The Gardener,Protection,B,21060,/bundles/cards/21060.png,1,0
+83,True Grit,Protection,B,18031,/bundles/cards/18031.png,3,0
+84,Armored Vest,Protection,A,01081,/bundles/cards/01081.png,1,0
+85,Charlie-27,Protection,A,21059,/bundles/cards/21059.png,1,0
+86,Counter-Punch,Protection,A,01077,/bundles/cards/01077.png,2,0
+87,Deflection,Protection,A,19015,/bundles/cards/19015.png,3,0
+88,Desperate Defense,Protection,A,09015,/bundles/cards/09015.jpg,3,0
+89,Electrostatic Armor,Protection,A,10031,/bundles/cards/10031.jpg,2,0
+90,Fighting Fit,Protection,A,16014,/bundles/cards/16014.jpg,3,0
+91,First Hit,Protection,A,18015,/bundles/cards/18015.png,3,0
+92,Get Behind Me!,Protection,A,01078,/bundles/cards/01078.png,2,0
+93,Preservation,Protection,A,21064,/bundles/cards/21064.png,1,0
+94,Martyr,Protection,A,19012,/bundles/cards/19012.png,1,0
+95,Momentum Shift,Protection,A,09016,/bundles/cards/09016.jpg,2,0
+96,Moondragon,Protection,A,19013,/bundles/cards/19013.png,1,0
+97,Never Back Down,Protection,A,14014,/bundles/cards/14014.jpg,3,0
+98,Nova,Protection,A,05012,/bundles/cards/05012.png,1,0
+99,Shield Spell,Protection,A,21061,/bundles/cards/21061.png,1,0
+100,Subdue,Protection,A,19018,/bundles/cards/19018.png,3,0
+101,Warlock,Protection,A,14013,/bundles/cards/14013.jpg,1,0
+102,Brother Voodoo,Protection,S,09012,/bundles/cards/09012.jpg,1,0
+103,Clea,Protection,S,09013,/bundles/cards/09013.jpg,1,0
+104,Energy Barrier,Protection,S,05017,/bundles/cards/05017.png,3,0
+105,Hard to Ignore,Protection,S,16017,/bundles/cards/16017.jpg,3,0
+106,Indomitable,Protection,S,01082,/bundles/cards/01082.png,2,0
+107,Iron Fist,Protection,S,09014,/bundles/cards/09014.jpg,1,0
+108,Med Team,Protection,S,01080,/bundles/cards/01080.png,2,0
+109,Nerves of Steel,Protection,S,14017,/bundles/cards/14017.jpg,2,0
+110,Preemptive Strike,Protection,S,05014,/bundles/cards/05014.png,3,0
+111,Starhawk,Protection,S,16012,/bundles/cards/16012.jpg,1,0
+112,Tackle,Protection,S,05015,/bundles/cards/05015.png,2,0
+113,The Night Nurse,Protection,S,09019,/bundles/cards/09019.jpg,1,0
+114,The Power of Protection,Protection,S,01079,/bundles/cards/01079.png,2,0
+115,Unflappable,Protection,S,09020,/bundles/cards/09020.jpg,2,0
+116,As One!,Aggression,B,23032,/bundles/cards/23032.png,3,0
+117,Battle Fury,Aggression,B,06018,/bundles/cards/06018.png,3,0
+118,Boot Camp,Aggression,B,13016,/bundles/cards/13016.jpg,1,0
+119,Browbeat,Aggression,B,15028,/bundles/cards/15028.png,3,0
+120,Brute Force,Aggression,B,14029,/bundles/cards/14029.jpg,2,0
+121,Enraged,Aggression,B,03031,/bundles/cards/03031.png,2,0
+122,Follow Through,Aggression,B,16045,/bundles/cards/16045.jpg,2,0
+123,Fusillade,Aggression,B,20026,/bundles/cards/20026.png,3,0
+124,Get Over Here!,Aggression,B,06014,/bundles/cards/06014.jpg,2,0
+125,In-Betweener,Aggression,B,21042,/bundles/cards/21042.png,1,0
+126,Lie in Wait,Aggression,B,13017,/bundles/cards/13017.jpg,2,0
+127,Melee,Aggression,B,05030,/bundles/cards/05030.png,2,0
+128,Piercing Strike,Aggression,B,04044,/bundles/cards/04044.jpg,3,0
+129,Plan of Attack,Aggression,B,18013,/bundles/cards/18013.png,3,0
+130,Surprise Attack,Aggression,B,13014,/bundles/cards/13014.jpg,3,0
+131,Tac Team,Aggression,B,01056,/bundles/cards/01056.png,2,0
+132,Uppercut,Aggression,B,01054,/bundles/cards/01054.png,2,0
+133,"""You'll Pay for That!""",Aggression,B,10016,/bundles/cards/10016.jpg,2,0
+134,Audacity,Aggression,A,21046,/bundles/cards/21046.png,1,0
+135,Brawn,Aggression,A,10011,/bundles/cards/10011.jpg,1,0
+136,"""Bring It!""",Aggression,A,19030,/bundles/cards/19030.png,2,0
+137,Clobber,Aggression,A,18012,/bundles/cards/18012.png,3,0
+138,Counterattack,Aggression,A,08030,/bundles/cards/08030.jpg,3,0
+139,Dive Bomb,Aggression,A,17028,/bundles/cards/17028.png,3,0
+140,Energy Spear,Aggression,A,22032,/bundles/cards/22032.png,3,0
+141,Hercules,Aggression,A,06011,/bundles/cards/06011.png,1,0
+142,Magic Attack,Aggression,A,21043,/bundles/cards/21043.png,1,0
+143,Martial Prowess,Aggression,A,10018,/bundles/cards/10018.jpg,2,0
+144,Mean Swing,Aggression,A,06015,/bundles/cards/06015.jpg,3,0
+145,Moment of Triumph,Aggression,A,12030,/bundles/cards/12030.jpg,3,0
+146,Press the Advantage,Aggression,A,04043,/bundles/cards/04043.jpg,3,0
+147,Relentless Assault,Aggression,A,01053,/bundles/cards/01053.png,2,0
+148,She-Hulk,Aggression,A,01019a,/bundles/cards/01019a.png,1,0
+149,Skilled Strike,Aggression,A,09037,/bundles/cards/09037.jpg,3,0
+150,Toe to Toe,Aggression,A,10015,/bundles/cards/10015.jpg,3,0
+151,Valkyrie,Aggression,A,06012,/bundles/cards/06012.png,1,0
+152,Angela,Aggression,S,18011,/bundles/cards/18011.png,1,0
+153,Bug,Aggression,S,16040,/bundles/cards/16040.jpg,1,0
+154,Chase Them Down,Aggression,S,01052,/bundles/cards/01052.png,2,0
+155,Combat Training,Aggression,S,01057,/bundles/cards/01057.png,2,0
+156,Drop Kick,Aggression,S,10014,/bundles/cards/10014.jpg,3,0
+157,Godslayer,Aggression,S,18018,/bundles/cards/18018.png,1,0
+158,Hall of Heroes,Aggression,S,06017,/bundles/cards/06017.png,1,0
+159,Hand Cannon,Aggression,S,16046,/bundles/cards/16046.jpg,3,0
+160,Into the Fray,Aggression,S,13013,/bundles/cards/13013.jpg,2,0
+161,Jarnbjorn,Aggression,S,06019,/bundles/cards/06019.png,1,0
+162,Looking for Trouble,Aggression,S,16043,/bundles/cards/16043.jpg,3,0
+163,Marvel Boy,Aggression,S,21041,/bundles/cards/21041.png,1,0
+164,Sentry,Aggression,S,10012,/bundles/cards/10012.jpg,1,0
+165,Spider-Girl,Aggression,S,04040,/bundles/cards/04040.jpg,1,0
+166,The Power of Aggression,Aggression,S,01055,/bundles/cards/01055.png,2,0
+167,Thor,Aggression,S,06001a,/bundles/cards/06001a.png,1,0
+168,Wasp,Aggression,S,12002,/bundles/cards/12002.jpg,1,0
+169,Air Supremacy,Leadership,B,17014,/bundles/cards/17014.png,3,0
+170,All for One,Leadership,B,13032,/bundles/cards/13032.jpg,3,0
+171,Blaze of Glory,Leadership,B,17015,/bundles/cards/17015.png,3,0
+172,Comms Implant,Leadership,B,18030,/bundles/cards/18030.png,3,0
+173,Eternity,Leadership,B,21054,/bundles/cards/21054.png,1,0
+174,Inspiring Presence,Leadership,B,10030,/bundles/cards/10030.jpg,3,0
+175,Laser Blaster,Leadership,B,17019,/bundles/cards/17019.png,3,0
+176,Last Stand,Leadership,B,15029,/bundles/cards/15029.png,3,0
+177,Mass Attack,Leadership,B,21016,/bundles/cards/21016.png,3,0
+178,Moxie,Leadership,B,12016,/bundles/cards/12016.jpg,3,0
+179,Power Gloves,Leadership,B,12017,/bundles/cards/12017.jpg,3,0
+180,Quinjet,Leadership,B,03019,/bundles/cards/03019.png,3,0
+181,Sky Cycle,Leadership,B,04015,/bundles/cards/04015.jpg,3,0
+182,Target Practice,Leadership,B,17017,/bundles/cards/17017.png,3,0
+183,Teamwork,Leadership,B,06032,/bundles/cards/06032.png,3,0
+184,United We Stand,Leadership,B,14031,/bundles/cards/14031.jpg,3,0
+185,Adam Warlock,Leadership,A,17011,/bundles/cards/17011.png,1,0
+186,Avengers Assemble!,Leadership,A,03015,/bundles/cards/03015.png,3,0
+187,Black Panther,Leadership,A,01040a,/bundles/cards/01040a.png,1,0
+188,Beta Ray Bill,Leadership,A,17012,/bundles/cards/17012.png,1,0
+189,Call for Aid,Leadership,A,12015,/bundles/cards/12015.jpg,3,0
+190,Captain America,Leadership,A,03001a,/bundles/cards/03001a.png,1,0
+191,Captain Marvel,Leadership,A,01010a,/bundles/cards/01010a.png,1,0
+192,Falcon,Leadership,A,03011,/bundles/cards/03011.png,1,0
+193,Giant-Man,Leadership,A,12012,/bundles/cards/12012.jpg,1,0
+194,Goliath,Leadership,A,04013,/bundles/cards/04013.jpg,1,0
+195,Guardians of the Galaxy,Leadership,A,22033,/bundles/cards/22033.png,2,0
+196,Hawkeye (Kate Bishop),Leadership,A,04011,/bundles/cards/04011.jpg,1,0
+197,Innovation,Leadership,A,21058,/bundles/cards/21058.png,1,0
+198,Lead from the Front,Leadership,A,01070,/bundles/cards/01070.png,3,0
+199,Mighty Avengers,Leadership,A,21015,/bundles/cards/21015.png,2,0
+200,Morale Boost,Leadership,A,05032,/bundles/cards/05032.png,3,0
+201,Power Man,Leadership,A,21012,/bundles/cards/21012.png,1,0
+202,Ready for Action,Leadership,A,04017,/bundles/cards/04017.jpg,3,0
+203,Reinforced Suit,Leadership,A,12018,/bundles/cards/12018.jpg,3,0
+204,Ronin,Leadership,A,12013,/bundles/cards/12013.jpg,1,0
+205,Sneak Attack,Leadership,A,23017,/bundles/cards/23017.png,3,0
+206,Stinger,Leadership,A,12014,/bundles/cards/12014.jpg,1,0
+207,Team Training,Leadership,A,04016,/bundles/cards/04016.jpg,2,0
+208,U.S.  Agent,Leadership,A,04014,/bundles/cards/04014.jpg,1,0
+209,Vision,Leadership,A,01068,/bundles/cards/01068.png,1,0
+210,Welcome Aboard,Leadership,A,20027,/bundles/cards/20027.png,3,0
+211,Wonder Man,Leadership,A,03014,/bundles/cards/03014.png,1,0
+212,Yondu,Leadership,A,17013,/bundles/cards/17013.png,1,0
+213,Ant-Man,Leadership,S,12001a,/bundles/cards/12001a.png,1,0
+214,Band Together,Leadership,S,21018,/bundles/cards/21018.png,3,0
+215,Black Knight,Leadership,S,04012,/bundles/cards/04012.jpg,1,0
+216,Command Team,Leadership,S,23016,/bundles/cards/23016.png,3,0
+217,Get Ready,Leadership,S,01069,/bundles/cards/01069.png,3,0
+218,Go Down Swinging,Leadership,S,23019,/bundles/cards/23019.png,3,0
+219,Hawkeye (Clint Barton),Leadership,S,01066,/bundles/cards/01066.png,1,0
+220,Inspired,Leadership,S,01074,/bundles/cards/01074.png,3,0
+221,Iron Man,Leadership,S,01029a,/bundles/cards/01029a.png,1,0
+222,Kaluu,Leadership,S,21014,/bundles/cards/21014.png,1,0
+223,Major Victory,Leadership,S,21053,/bundles/cards/21053.png,1,0
+224,Make the Call,Leadership,S,01071,/bundles/cards/01071.png,3,0
+225,Maria Hill,Leadership,S,01067,/bundles/cards/01067.png,1,0
+226,Rapid Response,Leadership,S,08031,/bundles/cards/08031.jpg,3,0
+227,Regroup,Leadership,S,19032,/bundles/cards/19032.png,3,0
+228,Save the Day,Leadership,S,23018,/bundles/cards/23018.png,3,0
+229,Strength In Numbers,Leadership,S,03017,/bundles/cards/03017.png,3,0
+230,Summoning Spell,Leadership,S,21055,/bundles/cards/21055.png,1,0
+231,Squirrel Girl,Leadership,S,03013,/bundles/cards/03013.png,1,0
+232,The Power of Leadership,Leadership,S,01072,/bundles/cards/01072.png,2,0
+233,The Triskelion,Leadership,S,01073,/bundles/cards/01073.png,1,0
+234,White Tiger,Leadership,S,04099,/bundles/cards/04099.jpg,1,0
+235,Agile Flight,Justice,B,17029,/bundles/cards/17029.png,3,0
+236,Brains Over Brawn,Justice,B,22018,/bundles/cards/22018.png,3,0
+237,Counterintelligence,Justice,B,08017,/bundles/cards/08017.jpg,3,0
+238,Crisis Averted,Justice,B,15012,/bundles/cards/15012.png,3,0
+239,Followed,Justice,B,03032,/bundles/cards/03032.png,3,0
+240,Great Responsibility,Justice,B,01061,/bundles/cards/01061.png,3,0
+241,Interrogation Room,Justice,B,01063,/bundles/cards/01063.png,2,0
+242,Justice Served,Justice,B,22014,/bundles/cards/22014.png,3,0
+243,Living Tribunal,Justice,B,21048,/bundles/cards/21048.png,1,0
+244,Multitasking,Justice,B,15013,/bundles/cards/15013.png,3,0
+245,Pivotal Moment,Justice,B,18029,/bundles/cards/18029.png,3,0
+246,Running Interference,Justice,B,13031,/bundles/cards/13031.jpg,3,0
+247,Scare Tactic,Justice,B,20012,/bundles/cards/20012.png,3,0
+248,Spycraft,Justice,B,08018,/bundles/cards/08018.jpg,3,0
+249,Stealth Strike,Justice,B,08013,/bundles/cards/08013.jpg,3,0
+250,Swift Retribution,Justice,B,15014,/bundles/cards/15014.png,3,0
+251,Vigilante Training,Justice,B,23033,/bundles/cards/23033.png,2,0
+252,Beat Cop,Justice,A,10029,/bundles/cards/10029.jpg,3,0
+253,Determination,Justice,A,21052,/bundles/cards/21052.png,1,0
+254,Foiled!,Justice,A,09038,/bundles/cards/09038.jpg,3,0
+255,For Justice!,Justice,A,01060,/bundles/cards/01060.png,3,0
+256,Jack Flag,Justice,A,20011,/bundles/cards/20011.png,1,0
+257,Under Surveillance,Justice,A,06031,/bundles/cards/06031.jpg,3,0
+258,Lay Down the Law,Justice,A,12031,/bundles/cards/12031.jpg,3,0
+259,Making an Entrance,Justice,A,20013,/bundles/cards/20013.png,3,0
+260,One Way or Another,Justice,A,22015,/bundles/cards/22015.png,3,0
+261,Quake,Justice,A,08012,/bundles/cards/08012.jpg,1,0
+262,Sense of Justice,Justice,A,14030,/bundles/cards/14030.jpg,2,0
+263,Sonic Rifle,Justice,A,20015,/bundles/cards/20015.png,3,0
+264,Speed,Justice,A,15010,/bundles/cards/15010.png,1,0
+265,Spider-Man,Justice,A,01001a,/bundles/cards/01001a.png,1,0
+266,Surveillance Team,Justice,A,01064,/bundles/cards/01064.png,3,0
+267,"""Think Fast!""",Justice,A,19031,/bundles/cards/19031.png,3,0
+268,Venom,Justice,A,20001a,/bundles/cards/20001a.png,1,0
+269,Quasar,Justice,A,21047,/bundles/cards/21047.png,1,0
+270,Zone of Silence,Justice,A,21050,/bundles/cards/21050.png,1,0
+271,Agent Coulson,Justice,S,08011,/bundles/cards/08011.jpg,1,0
+272,Clear the Area,Justice,S,04049,/bundles/cards/04049.jpg,3,0
+273,Concussive Blow,Justice,S,05031,/bundles/cards/05031.png,3,0
+274,Daredevil,Justice,S,01058,/bundles/cards/01058.png,1,0
+275,Eros,Justice,S,22011,/bundles/cards/22011.png,1,0
+276,Impede,Justice,S,18016,/bundles/cards/18016.png,3,0
+277,Heroic Intuition,Justice,S,01065,/bundles/cards/01065.png,2,0
+278,Jessica Jones,Justice,S,01059,/bundles/cards/01059.png,1,0
+279,Skilled Investigator,Justice,S,04047,/bundles/cards/04047.jpg,2,0
+280,The Power of Justice,Justice,S,01062,/bundles/cards/01062.png,2,0
+281,Turn the Tide,Justice,S,15015,/bundles/cards/15015.png,3,0
+282,Wiccan,Justice,S,15011,/bundles/cards/15011.png,1,0
+283,Wraith,Justice,S,22012,/bundles/cards/22012.png,1,0

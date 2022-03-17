@@ -1,6 +1,5 @@
 import { Header } from './Header';
 import { Button } from './Button';
-import { Subheader } from './Subheader';
 
 export const PlayerSelect = ({ players, player, setPlayer, showResults }) => {
   const mapPlayers = (players) => {
@@ -15,7 +14,6 @@ export const PlayerSelect = ({ players, player, setPlayer, showResults }) => {
         >
           {players ? person.name : ''}
         </Button>
-        <Subheader title={'CR'} result={person.credits} />
       </div>
     ));
   };
