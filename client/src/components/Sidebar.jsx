@@ -1,4 +1,4 @@
-import { PlayerSelect } from './PlayerSelect';
+import { SelectPlayer } from './SelectPlayer';
 import { SidebarActions } from './SidebarActions';
 
 export const Sidebar = ({
@@ -11,7 +11,7 @@ export const Sidebar = ({
   return (
     <div className='w-1/4 flex-shrink flex-grow-0'>
       <div className='sticky top-0 p-4 w-full'>
-        <PlayerSelect
+        <SelectPlayer
           players={players}
           player={player}
           setPlayer={setPlayer}

@@ -9,7 +9,7 @@ export const SidebarActions = ({ resetLootRoll }) => {
     <>
       <Header>Actions:</Header>
       <ul className='px-1 flex sm:flex-col overflow-hidden content-center justify-between'>
-        <Button onClick={() => resetLootRoll()} classStyle='mb-3'>
+        <Button onClick={() => resetLootRoll()} marginBottom={true}>
           Loot Drop
         </Button>
         <Button onClick={() => updateCardImages()} disabled={imagesUpdating}>

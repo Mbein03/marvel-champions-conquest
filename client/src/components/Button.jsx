@@ -1,25 +1,44 @@
-export const Button = ({ onClick, color, classStyle, disabled, children }) => {
-  let defaultColor =
-    'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800';
+import classNames from 'classnames';
 
-  if (disabled) {
-    defaultColor =
-      'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800';
-  } else if (color === 'green') {
-    defaultColor =
-      'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800';
-  }
+export const Button = ({
+  onClick,
+  color,
+  marginBottom,
+  disabled,
+  children,
+}) => {
+  const btnClass = classNames({
+    transition: true,
+    uppercase: true,
+    rounded: true,
+    'w-full': true,
+    'px-6': true,
+    'py-2.5': true,
+    'text-white': true,
+    'font-medium': true,
+    'text-xs': true,
+    'leading-tight': true,
+    'shadow-md': true,
+    'hover:shadow-lg': true,
+    'focus:shadow-lg': true,
+    'focus:outline-none': true,
+    'focus:ring-0': true,
+    'active:shadow-lg': true,
+    'duration-150': true,
+    'ease-in-out': true,
+    'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800':
+      !disabled && !color,
+    'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800':
+      disabled,
+    'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800':
+      !disabled && color === 'green',
+    'mb-3': marginBottom,
+  });
 
-  const defaultclassStyle =
-    'w-full px-6 py-2.5 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out ';
-
-  const classes = classStyle
-    ? classStyle + ' ' + defaultclassStyle + defaultColor
-    : defaultclassStyle + defaultColor;
   return (
     <button
       type='button'
-      className={classes}
+      className={btnClass}
       onClick={onClick}
       disabled={disabled}
     >

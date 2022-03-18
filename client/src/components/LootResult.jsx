@@ -9,7 +9,7 @@ export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
 
   return (
     <div>
-      <Header classStyle='text-center'>Roll Result</Header>
+      <Header textCenter={true}>Roll Result</Header>
       {card ? (
         <>
           <Subheader title={'Card'} result={card.name} />
@@ -26,7 +26,10 @@ export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
         />
       )}
       {card && !confirmSale && (
-        <Button onClick={() => setConfirmSale(!confirmSale)} classStyle='mb-3'>
+        <Button
+          onClick={() => setConfirmSale(!confirmSale)}
+          marginBottom={true}
+        >
           Sell
         </Button>
       )}
@@ -34,7 +37,7 @@ export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
         <Button
           onClick={() => markCardSold(card, player)}
           color={'green'}
-          classStyle='mb-3'
+          marginBottom={true}
         >
           Confirm Sale
         </Button>

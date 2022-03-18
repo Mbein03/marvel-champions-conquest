@@ -29,6 +29,7 @@ export const useLootDropController = (player) => {
       rollForCard(tier, faction);
       return;
     }
+
     console.log('Player:', player);
     console.log('Roll:', roll);
 

@@ -13,14 +13,14 @@ export const SelectLootDrop = ({
   };
   return (
     <div>
-      <Header classStyle='text-center'>Select Loot Drop</Header>
-      <Button onClick={() => minionRoll('T1')} classStyle='mb-3'>
+      <Header textCenter={true}>Select Loot Drop</Header>
+      <Button onClick={() => minionRoll('T1')} marginBottom={true}>
         Killed Minion (2-4 Health)
       </Button>
-      <Button onClick={() => minionRoll('T1+')} classStyle='mb-3'>
+      <Button onClick={() => minionRoll('T1+')} marginBottom={true}>
         Killed Minion (5-7 Health)
       </Button>
-      <Button onClick={() => minionRoll('T2')} classStyle='mb-3'>
+      <Button onClick={() => minionRoll('T2')} marginBottom={true}>
         Killed Minion (8+ Health)
       </Button>
       <Button onClick={() => setManualRoll(true)}>Manual Roll</Button>

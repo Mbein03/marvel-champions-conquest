@@ -1,14 +1,14 @@
 import { Header } from './Header';
 import { Button } from './Button';
 
-export const PlayerSelect = ({ players, player, setPlayer, showResults }) => {
+export const SelectPlayer = ({ players, player, setPlayer, showResults }) => {
   const mapPlayers = (players) => {
     return players.map((person) => (
       <div key={person.id} className='w-1/2 flex-shrink flex-grow-0 px-1'>
         <Button
           test={person.id}
           onClick={() => setPlayer(person)}
-          classStyle='mb-3'
+          marginBottom={true}
           color={player.id === person.id ? 'green' : ''}
           disabled={showResults}
         >

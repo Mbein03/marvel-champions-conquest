@@ -28,7 +28,9 @@ async function updateImages() {
 
   cards.forEach((card) => {
     // Loop over cards from API and find matches to those in local DB by name
-    const cardData = responseData.filter((obj) => obj.name === card.name);
+    const cardData = responseData.filter(
+      (obj) => obj.name === card.name && obj.faction_name === card.faction
+    );
 
     // If card has match and image, then update local DB
     if (cardData[0] && cardData[0].imagesrc) {

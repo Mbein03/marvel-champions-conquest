@@ -1,8 +1,13 @@
-export const Header = ({ classStyle, children }) => {
-  const defaultclassStyle = 'font-bold text-xl text-left mb-3';
-  const classes = classStyle
-    ? classStyle + ' ' + defaultclassStyle
-    : defaultclassStyle;
+import classNames from 'classnames';
 
-  return <h1 className={classes}>{children}</h1>;
+export const Header = ({ textCenter, children }) => {
+  const headerClass = classNames({
+    'mb-3': true,
+    'font-bold': true,
+    'text-xl': true,
+    'text-left': !textCenter,
+    'text-center': textCenter,
+  });
+
+  return <h1 className={headerClass}>{children}</h1>;
 };

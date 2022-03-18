@@ -25,8 +25,8 @@ export const SelectRoll = ({
 
   return (
     <div>
-      <Header classStyle='text-center'>
-        {showFactionSelect ? 'Choose Faction' : 'Choose Roll'}
+      <Header textCenter={true}>
+        {showFactionSelect ? 'Select Faction' : 'Select Roll'}
       </Header>
       <InputLabel htmlFor={'roll'}>Roll:</InputLabel>
       <SelectInput
@@ -39,7 +39,7 @@ export const SelectRoll = ({
       />
       {showFactionSelect && (
         <>
-          <InputLabel htmlFor={'faction'}>Choose Faction:</InputLabel>
+          <InputLabel htmlFor={'faction'}>Faction:</InputLabel>
           <SelectInput
             id={'faction'}
             name={'faction'}
