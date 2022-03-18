@@ -34,7 +34,7 @@ export const SelectRoll = ({
         name={'roll'}
         data={constants.rolls}
         value={roll}
-        onValueChange={setRoll}
+        onSelect={setRoll}
         disabled={disableRollSelect}
       />
       {showFactionSelect && (
@@ -45,7 +45,7 @@ export const SelectRoll = ({
             name={'faction'}
             data={constants.factions}
             value={faction}
-            onValueChange={setFaction}
+            onSelect={setFaction}
           />
         </>
       )}
