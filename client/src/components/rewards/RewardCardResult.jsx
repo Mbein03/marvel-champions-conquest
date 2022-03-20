@@ -1,21 +1,21 @@
 import { useState, useContext } from 'react';
-import { LootDropContext } from '../../App';
+import { RewardContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Subheader } from '../headers/Subheader';
 import { Button } from '../buttons/Button';
 import { Image } from '../images/Image';
-import * as helpers from '../../helpers/helpers';
+import * as api from '../../helpers/api';
 
 export const RewardCardResult = ({ player }) => {
   // Set state to toggle sale confirmation button
   const [confirmSale, setConfirmSale] = useState(false);
 
   // Set variables from necessary controllers via context
-  const { rewardCard, resetRewardRoll } = useContext(LootDropContext);
+  const { rewardCard, resetRewardRoll } = useContext(RewardContext);
 
   // When sale is confirmed, mark card sold and reset loot roll process
   const saleConfirmed = async () => {
-    const soldCard = await helpers.markCardSold(rewardCard, player);
+    const soldCard = await api.markCardSold(rewardCard, player);
     console.log('Card Sold:', soldCard);
     if (soldCard) resetRewardRoll();
   };

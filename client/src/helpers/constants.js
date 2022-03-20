@@ -1,13 +1,3 @@
-// API calls
-const rootURL = 'http://localhost:9000';
-export const url = {
-  fetchCardPool: rootURL + '/api/cards/pool',
-  fetchPlayers: rootURL + '/api/players',
-  updateCardImages: rootURL + '/api/cards/update-images',
-  markCardAcquired: rootURL + '/api/cards/mark-acquired',
-  markCardSold: rootURL + '/api/cards/mark-sold',
-};
-
 const None = 'None';
 const TierCBasic = 'Tier C Basic';
 const TierBRoll = 'Tier B Roll';

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { LootDropContext } from '../../App';
+import { RewardContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Button } from '../buttons/Button';
 import { SelectInput } from '../inputs/SelectInput';
@@ -19,7 +19,7 @@ export const RewardRollSelect = () => {
     disableRewardRollInput,
     setDisableRewardRollInput,
     rollForReward,
-  } = useContext(LootDropContext);
+  } = useContext(RewardContext);
 
   useEffect(() => {
     // If faction select is showing or user is in process of confirming reward, disable reward select input
@@ -34,8 +34,8 @@ export const RewardRollSelect = () => {
         {showFactionSelectInput ? 'Select Faction' : 'Select Reward Roll'}
       </Header>
       <SelectInput
-        id={'rewardRoll'}
-        name={'rewardRoll'}
+        id={'roll'}
+        name={'roll'}
         labelText={'Roll:'}
         data={constants.rewardRolls}
         value={rewardRoll}

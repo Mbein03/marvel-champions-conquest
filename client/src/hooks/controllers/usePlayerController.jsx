@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as helpers from '../../helpers/helpers';
+import * as api from '../../helpers/api';
 
 export const usePlayerController = (card) => {
   // Set states to track players and selected player
@@ -9,7 +9,7 @@ export const usePlayerController = (card) => {
   useEffect(() => {
     // Call method to fetch players from API when selected player changes or card is updated
     const getPlayers = async () => {
-      const players = await helpers.fetchPlayers();
+      const players = await api.fetchPlayers();
       setPlayers(players);
 
       // If no player has been selected (initial load), set selected to first in array

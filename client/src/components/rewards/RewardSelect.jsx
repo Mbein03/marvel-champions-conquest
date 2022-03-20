@@ -1,16 +1,16 @@
 import { useContext } from 'react';
-import { LootDropContext } from '../../App';
+import { RewardContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Button } from '../buttons/Button';
 
 export const RewardSelect = () => {
   // Set variables from necessary controllers via context
   const { setRewardRoll, setSkipRewardSelect, setDisableRewardRollInput } =
-    useContext(LootDropContext);
+    useContext(RewardContext);
 
-  // Set reward based on minion reward type selected and proceed to next step
-  const setMinionRewardRoll = (rewardRoll) => {
-    setRewardRoll(rewardRoll);
+  // Set reward roll based on minion selected and proceed to next step
+  const setMinionRewardRoll = (roll) => {
+    setRewardRoll(roll);
     setSkipRewardSelect(true);
     setDisableRewardRollInput(true);
   };

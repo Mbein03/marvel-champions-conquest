@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { LootDropContext } from '../../App';
+import { RewardContext } from '../../App';
 import { PlayerContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Button } from './Button';
 
 export const SelectPlayerButtons = () => {
   // Set variables from necessary controllers via context
-  const { showRewardResults } = useContext(LootDropContext);
+  const { showRewardResults } = useContext(RewardContext);
   const { players, selectedPlayer, setSelectedPlayer } =
     useContext(PlayerContext);
 

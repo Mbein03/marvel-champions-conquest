@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { LootDropContext } from '../../App';
+import { RewardContext } from '../../App';
 import { useCardImageController as CardImageController } from '../../hooks/controllers/useCardImageController';
 import { Header } from '../headers/Header';
 import { Button } from './Button';
 
 export const NavigationButtons = () => {
   // Set variables from necessary controllers (via context for loot)
-  const { resetRewardRoll } = useContext(LootDropContext);
+  const { resetRewardRoll } = useContext(RewardContext);
   const { updateCardImages, imagesUpdating } = CardImageController();
 
   return (
