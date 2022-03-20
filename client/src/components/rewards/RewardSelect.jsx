@@ -16,15 +16,15 @@ export const RewardSelect = () => {
   };
   return (
     <div>
-      <Header textCenter={true}>Select Reward</Header>
+      <Header textCenter={true}>Rewards</Header>
       <Button onClick={() => setMinionRewardRoll('T1')} marginBottom={true}>
-        Minion Kill (2-4 Health)
+        Minion Defeated (2-4 Health)
       </Button>
       <Button onClick={() => setMinionRewardRoll('T1+')} marginBottom={true}>
-        Minion Kill (5-7 Health)
+        Minion Defeated (5-7 Health)
       </Button>
       <Button onClick={() => setMinionRewardRoll('T2')} marginBottom={true}>
-        Minion Kill (8+ Health)
+        Minion Defeated (8+ Health)
       </Button>
       <Button onClick={() => setSkipRewardSelect(true)}>Manual Roll</Button>
     </div>

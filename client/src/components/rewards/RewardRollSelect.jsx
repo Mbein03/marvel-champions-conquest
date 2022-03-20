@@ -30,9 +30,7 @@ export const RewardRollSelect = () => {
 
   return (
     <div>
-      <Header textCenter={true}>
-        {showFactionSelectInput ? 'Select Faction' : 'Select Reward Roll'}
-      </Header>
+      <Header textCenter={true}>Reward Roll</Header>
       <SelectInput
         id={'roll'}
         name={'roll'}

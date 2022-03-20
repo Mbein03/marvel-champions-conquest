@@ -22,7 +22,7 @@ export const RewardCardResult = ({ player }) => {
 
   return (
     <div>
-      <Header textCenter={true}>Card Reward</Header>
+      <Header textCenter={true}>Reward Result</Header>
       {rewardCard ? (
         <>
           <Subheader title={'Card'} result={rewardCard.name} />
