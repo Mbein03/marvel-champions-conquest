@@ -18,7 +18,7 @@ export const RewardRollSelect = () => {
     setRewardRoll,
     disableRewardRollInput,
     setDisableRewardRollInput,
-    rollReward,
+    rollForReward,
   } = useContext(LootDropContext);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const RewardRollSelect = () => {
         </>
       )}
       {confirmReward ? (
-        <Button onClick={() => rollReward()} color={'green'}>
+        <Button onClick={() => rollForReward()} color={'green'}>
           Confirm
         </Button>
       ) : (

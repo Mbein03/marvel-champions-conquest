@@ -43,14 +43,14 @@ server.get('/api/players', (req, res) => {
   execute();
 });
 
-server.post('/api/cards/mark-looted', (req, res) => {
+server.post('/api/cards/mark-acquired', (req, res) => {
   const execute = async () => {
     try {
-      const card = await Card.markLooted(req.body.data);
+      const card = await Card.markAcquired(req.body.data);
       res.status(200).json(card);
     } catch (error) {
       console.log(error);
-      res.status(500).json({ message: 'Unable to mark card as looted.' });
+      res.status(500).json({ message: 'Unable to mark card as acquired.' });
     }
   };
 

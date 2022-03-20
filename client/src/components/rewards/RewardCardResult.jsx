@@ -11,34 +11,34 @@ export const RewardCardResult = ({ player }) => {
   const [confirmSale, setConfirmSale] = useState(false);
 
   // Set variables from necessary controllers via context
-  const { card, resetLootRoll } = useContext(LootDropContext);
+  const { rewardCard, resetRewardRoll } = useContext(LootDropContext);
 
   // When sale is confirmed, mark card sold and reset loot roll process
   const saleConfirmed = async () => {
-    const soldCard = await helpers.markCardSold(card, player);
+    const soldCard = await helpers.markCardSold(rewardCard, player);
     console.log('Card Sold:', soldCard);
-    if (soldCard) resetLootRoll();
+    if (soldCard) resetRewardRoll();
   };
 
   return (
     <div>
       <Header textCenter={true}>Card Reward</Header>
-      {card ? (
+      {rewardCard ? (
         <>
-          <Subheader title={'Card'} result={card.name} />
-          <Subheader title={'Faction'} result={card.faction} />
-          <Subheader title={'Tier'} result={card.tier} />
+          <Subheader title={'Card'} result={rewardCard.name} />
+          <Subheader title={'Faction'} result={rewardCard.faction} />
+          <Subheader title={'Tier'} result={rewardCard.tier} />
         </>
       ) : (
         <Subheader title={'Card'} result={'None'} />
       )}
-      {card && (
+      {rewardCard && (
         <Image
-          src={'https://marvelcdb.com/' + card.image_path}
-          alt={card.name}
+          src={'https://marvelcdb.com/' + rewardCard.image_path}
+          alt={rewardCard.name}
         />
       )}
-      {card && !confirmSale && (
+      {rewardCard && !confirmSale && (
         <Button
           onClick={() => setConfirmSale(!confirmSale)}
           marginBottom={true}
@@ -46,7 +46,7 @@ export const RewardCardResult = ({ player }) => {
           Sell
         </Button>
       )}
-      {card && confirmSale && (
+      {rewardCard && confirmSale && (
         <Button
           onClick={() => saleConfirmed()}
           color={'green'}
@@ -55,7 +55,7 @@ export const RewardCardResult = ({ player }) => {
           Confirm
         </Button>
       )}
-      <Button onClick={() => resetLootRoll()}>Reset</Button>
+      <Button onClick={() => resetRewardRoll()}>Reset</Button>
     </div>
   );
 };

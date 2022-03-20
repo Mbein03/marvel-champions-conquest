@@ -100,9 +100,9 @@ export const updateCardImages = async () => {
   return updatedCards;
 };
 
-export const markCardLooted = async (card) => {
-  const lootedCard = await postData(url.markCardLooted, { card: card });
-  return lootedCard;
+export const markCardAcquired = async (card) => {
+  const acquiredCard = await postData(url.markCardAcquired, { card: card });
+  return acquiredCard;
 };
 
 export const markCardSold = async (card, player) => {

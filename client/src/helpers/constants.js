@@ -4,7 +4,7 @@ export const url = {
   fetchCardPool: rootURL + '/api/cards/pool',
   fetchPlayers: rootURL + '/api/players',
   updateCardImages: rootURL + '/api/cards/update-images',
-  markCardLooted: rootURL + '/api/cards/mark-looted',
+  markCardAcquired: rootURL + '/api/cards/mark-acquired',
   markCardSold: rootURL + '/api/cards/mark-sold',
 };
 

@@ -7,7 +7,7 @@ const db = knex(config.development);
 module.exports = {
   getAvailable,
   updateImages,
-  markLooted,
+  markAcquired,
   markSold,
 };
 
@@ -55,7 +55,7 @@ async function updateImages() {
   return updatedCards;
 }
 
-async function markLooted(data) {
+async function markAcquired(data) {
   // Decrement card qty and mark as acquired
   await db('cards')
     .where('id', data.card.id)

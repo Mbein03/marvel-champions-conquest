@@ -7,7 +7,7 @@ export const useLootDropController = () => {
   const [rewardRoll, setRewardRoll] = useState('T1');
   const [rewardTier, setRewardTier] = useState('');
   const [rewardFaction, setRewardFaction] = useState('');
-  const [card, setCard] = useState('');
+  const [rewardCard, setRewardCard] = useState('');
 
   const [showRewards, setShowRewards] = useState(false);
   const [disableRewardRollInput, setDisableRewardRollInput] = useState(false);
@@ -23,19 +23,19 @@ export const useLootDropController = () => {
     };
 
     getCardPool();
-  }, [card]);
+  }, [rewardCard]);
 
-  const rollReward = () => {
+  const rollForReward = () => {
     // If reward tier and faction are already set (initial roll has occured)
     // Skip roll logic and return
     if (rewardTier && rewardFaction) {
-      rollCard(rewardTier, rewardFaction);
+      rollForCard(rewardTier, rewardFaction);
       return;
     }
 
     console.log('Reward:', rewardRoll);
 
-    // Get potential loot array based on selected reward tier
+    // Get potential reward array based on selected reward tier
     const potentialRewardResults = helpers.getPotentialRewardResults(
       rewardTable,
       rewardRoll
@@ -61,12 +61,12 @@ export const useLootDropController = () => {
       setShowFactionSelectInput(true);
       setRewardFaction('Basic');
     } else {
-      rollCard(tier, faction);
+      rollForCard(tier, faction);
     }
   };
 
   // Randomly select card from card pool
-  const rollCard = (tier, faction) => {
+  const rollForCard = (tier, faction) => {
     // Filter card pool selection based on availability, tier, and faction
     const filteredCards = helpers.filterCards(tier, faction, cardPool);
     console.log('Filtered cards:', filteredCards);
@@ -75,27 +75,24 @@ export const useLootDropController = () => {
     const potentialCards = helpers.getPotentialCards(filteredCards);
     console.log('Potential cards:', potentialCards);
 
-    // Get card result
+    // Get card result and mark looted
     const card = helpers.getCard(potentialCards);
-    card ? setCard(card) : setCard('');
     console.log('Card:', card);
-
-    // Mark card looted
-    if (card) lootCard(card);
+    card ? lootCard(card) : setRewardCard('');
 
     setShowRewardResults(true);
   };
 
   const lootCard = async (card) => {
-    const lootedCard = await helpers.markCardLooted(card);
+    const lootedCard = await helpers.markCardAcquired(card);
     console.log('Card Looted:', lootedCard);
-    if (lootedCard) setCard(lootedCard);
+    if (lootedCard) setRewardCard(lootedCard);
   };
 
-  const resetLootRoll = () => {
+  const resetRewardRoll = () => {
     setRewardTier('');
     setRewardFaction('');
-    setCard('');
+    setRewardCard('');
     setDisableRewardRollInput(false);
     setShowFactionSelectInput(false);
     setShowRewards(false);
@@ -103,7 +100,7 @@ export const useLootDropController = () => {
   };
 
   return {
-    card,
+    rewardCard,
     rewardFaction,
     setRewardFaction,
     showFactionSelectInput,
@@ -114,7 +111,7 @@ export const useLootDropController = () => {
     disableRewardRollInput,
     setDisableRewardRollInput,
     showRewardResults,
-    rollReward,
-    resetLootRoll,
+    rollForReward,
+    resetRewardRoll,
   };
 };

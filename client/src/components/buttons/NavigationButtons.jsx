@@ -6,14 +6,14 @@ import { Button } from './Button';
 
 export const NavigationButtons = () => {
   // Set variables from necessary controllers (via context for loot)
-  const { resetLootRoll } = useContext(LootDropContext);
+  const { resetRewardRoll } = useContext(LootDropContext);
   const { updateCardImages, imagesUpdating } = CardImageController();
 
   return (
     <>
       <Header>Navigation:</Header>
       <ul className='px-1 flex sm:flex-col overflow-hidden content-center justify-between'>
-        <Button onClick={() => resetLootRoll()} marginBottom={true}>
+        <Button onClick={() => resetRewardRoll()} marginBottom={true}>
           Rewards
         </Button>
         <Button onClick={() => updateCardImages()} disabled={imagesUpdating}>
