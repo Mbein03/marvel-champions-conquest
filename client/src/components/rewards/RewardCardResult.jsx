@@ -1,15 +1,28 @@
-import { useState } from 'react';
-import { Header } from './Header';
-import { Subheader } from './Subheader';
-import { Button } from './Button';
-import { Image } from './Image';
+import { useState, useContext } from 'react';
+import { LootDropContext } from '../../App';
+import { Header } from '../headers/Header';
+import { Subheader } from '../headers/Subheader';
+import { Button } from '../buttons/Button';
+import { Image } from '../images/Image';
+import * as helpers from '../../helpers/helpers';
 
-export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
+export const RewardCardResult = ({ player }) => {
+  // Set state to toggle sale confirmation button
   const [confirmSale, setConfirmSale] = useState(false);
+
+  // Set variables from necessary controllers via context
+  const { card, resetLootRoll } = useContext(LootDropContext);
+
+  // When sale is confirmed, mark card sold and reset loot roll process
+  const saleConfirmed = async () => {
+    const soldCard = await helpers.markCardSold(card, player);
+    console.log('Card Sold:', soldCard);
+    if (soldCard) resetLootRoll();
+  };
 
   return (
     <div>
-      <Header textCenter={true}>Roll Result</Header>
+      <Header textCenter={true}>Card Reward</Header>
       {card ? (
         <>
           <Subheader title={'Card'} result={card.name} />
@@ -35,11 +48,11 @@ export const LootResult = ({ card, player, markCardSold, resetLootRoll }) => {
       )}
       {card && confirmSale && (
         <Button
-          onClick={() => markCardSold(card, player)}
+          onClick={() => saleConfirmed()}
           color={'green'}
           marginBottom={true}
         >
-          Confirm Sale
+          Confirm
         </Button>
       )}
       <Button onClick={() => resetLootRoll()}>Reset</Button>

@@ -1,69 +1,74 @@
 import { useState, useEffect } from 'react';
-import { api, lootTable } from '../../helpers/constants';
+import { rewardTable } from '../../helpers/constants';
 import * as helpers from '../../helpers/helpers';
 
-export const useLootDropController = (player) => {
-  const [lootableCards, setLootableCards] = useState('');
-  const [roll, setRoll] = useState('T1');
-  const [faction, setFaction] = useState('');
-  const [tier, setTier] = useState('');
+export const useLootDropController = () => {
+  const [cardPool, setCardPool] = useState('');
+  const [rewardRoll, setRewardRoll] = useState('T1');
+  const [rewardTier, setRewardTier] = useState('');
+  const [rewardFaction, setRewardFaction] = useState('');
   const [card, setCard] = useState('');
 
-  const [manualRoll, setManualRoll] = useState(false);
-  const [showFactionSelect, setShowFactionSelect] = useState(false);
-  const [disableRollSelect, setDisableRollSelect] = useState(false);
-  const [showResults, setShowResults] = useState(false);
+  const [showRewards, setShowRewards] = useState(false);
+  const [disableRewardRollInput, setDisableRewardRollInput] = useState(false);
+  const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
+  const [showRewardResults, setShowRewardResults] = useState(false);
 
-  // Calls method to fetch lootable cards from API on page load
+  // Calls method to fetch card pool from API on page load
   useEffect(() => {
-    helpers.fetchData(api.getLootableCards).then((lootableCards) => {
-      setLootableCards(lootableCards);
-      // console.log(lootableCards);
-    });
+    const getCardPool = async () => {
+      const cardPool = await helpers.fetchCardPool();
+      setCardPool(cardPool);
+      // console.log(cardPool);
+    };
+
+    getCardPool();
   }, [card]);
 
-  const rollLoot = () => {
-    // If tier and faction are already set (initial roll has occured)
+  const rollReward = () => {
+    // If reward tier and faction are already set (initial roll has occured)
     // Skip roll logic and return
-    if (tier && faction) {
-      rollForCard(tier, faction);
+    if (rewardTier && rewardFaction) {
+      rollCard(rewardTier, rewardFaction);
       return;
     }
 
-    console.log('Player:', player);
-    console.log('Roll:', roll);
+    console.log('Reward:', rewardRoll);
 
-    // Get potential loot array based on selected roll
-    const potentialResults = helpers.getPotentialResults(lootTable, roll);
-    console.log('Loot:', potentialResults);
+    // Get potential loot array based on selected reward tier
+    const potentialRewardResults = helpers.getPotentialRewardResults(
+      rewardTable,
+      rewardRoll
+    );
+    console.log('Potential Rewards Results:', potentialRewardResults);
 
-    // Get roll result
-    const result = helpers.getResult(potentialResults);
-    console.log('Roll Results:', result);
+    // Get reward result
+    const rewardResult = helpers.getRewardResult(potentialRewardResults);
+    console.log('Reward Result:', rewardResult);
 
-    // Get card tier
-    const cardTier = helpers.getTier(result);
-    setTier(cardTier);
-    console.log('Tier:', cardTier);
+    // Get reward tier
+    const tier = helpers.getRewardTier(rewardResult);
+    setRewardTier(tier);
+    console.log('Reward Tier:', tier);
 
-    // Get card faction
-    const cardFaction = helpers.getFaction(result);
-    console.log('Faction:', cardFaction);
+    // Get reward faction
+    const faction = helpers.getRewardFaction(rewardResult);
+    console.log('Reward Faction:', faction);
 
     // If given choice, set faction to default 'Basic' and show select input
     // Otherwise roll for card
-    if (cardFaction === 'Your Choice') {
-      setShowFactionSelect(true);
-      setFaction('Basic');
+    if (faction === 'Your Choice') {
+      setShowFactionSelectInput(true);
+      setRewardFaction('Basic');
     } else {
-      rollForCard(cardTier, cardFaction);
+      rollCard(tier, faction);
     }
   };
 
-  // Randomly select card from lootable pool of cards
-  const rollForCard = (tier, faction) => {
-    // Filter lootable card selection based on availability, roll, and faction
-    const filteredCards = helpers.filterCards(tier, faction, lootableCards);
+  // Randomly select card from card pool
+  const rollCard = (tier, faction) => {
+    // Filter card pool selection based on availability, tier, and faction
+    const filteredCards = helpers.filterCards(tier, faction, cardPool);
     console.log('Filtered cards:', filteredCards);
 
     // Add additional rows to cards array based on qty available to account for all potential cards
@@ -76,58 +81,40 @@ export const useLootDropController = (player) => {
     console.log('Card:', card);
 
     // Mark card looted
-    if (card) markCardLooted(card);
+    if (card) lootCard(card);
 
-    setShowResults(true);
+    setShowRewardResults(true);
   };
 
-  const markCardLooted = (card) => {
-    helpers
-      .postData(api.markCardLooted, {
-        card: card,
-      })
-      .then((card) => {
-        console.log('Card Looted:', card);
-        setCard(card);
-      });
-  };
-
-  const markCardSold = (card, player) => {
-    helpers
-      .postData(api.markCardSold, {
-        card: card,
-        player: player,
-      })
-      .then((card) => {
-        resetLootRoll();
-        console.log('Card Sold:', card);
-      });
+  const lootCard = async (card) => {
+    const lootedCard = await helpers.markCardLooted(card);
+    console.log('Card Looted:', lootedCard);
+    if (lootedCard) setCard(lootedCard);
   };
 
   const resetLootRoll = () => {
-    setFaction('');
-    setTier('');
+    setRewardTier('');
+    setRewardFaction('');
     setCard('');
-    setShowFactionSelect(false);
-    setShowResults(false);
-    setManualRoll(false);
-    setDisableRollSelect(false);
+    setDisableRewardRollInput(false);
+    setShowFactionSelectInput(false);
+    setShowRewards(false);
+    setShowRewardResults(false);
   };
 
   return {
     card,
-    faction,
-    setFaction,
-    showFactionSelect,
-    roll,
-    setRoll,
-    manualRoll,
-    setManualRoll,
-    disableRollSelect,
-    setDisableRollSelect,
-    showResults,
-    rollLoot,
+    rewardFaction,
+    setRewardFaction,
+    showFactionSelectInput,
+    rewardRoll,
+    setRewardRoll,
+    showRewards,
+    setShowRewards,
+    disableRewardRollInput,
+    setDisableRewardRollInput,
+    showRewardResults,
+    rollReward,
     resetLootRoll,
-    markCardSold,
   };
 };

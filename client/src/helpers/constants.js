@@ -1,11 +1,11 @@
 // API calls
 const rootURL = 'http://localhost:9000';
-export const api = {
-  getLootableCards: rootURL + '/api/lootable-cards',
-  getPlayers: rootURL + '/api/players',
+export const url = {
+  fetchCardPool: rootURL + '/api/cards/pool',
+  fetchPlayers: rootURL + '/api/players',
+  updateCardImages: rootURL + '/api/cards/update-images',
   markCardLooted: rootURL + '/api/cards/mark-looted',
   markCardSold: rootURL + '/api/cards/mark-sold',
-  updateDatabase: rootURL + '/api/cards/update-images',
 };
 
 const None = 'None';
@@ -16,7 +16,7 @@ const TierSRoll = 'Tier S Roll';
 const Shawarma = 'Shawarma';
 
 // Tier select options
-export const rolls = [
+export const rewardRolls = [
   { id: 'T1', name: 'T1' },
   { id: 'T1+', name: 'T1+' },
   { id: 'T2', name: 'T2' },
@@ -38,7 +38,7 @@ export const factions = [
 ];
 
 // Primary loot table rolls
-export const lootTable = [
+export const rewardTable = [
   {
     roll: 'T1',
     results: [

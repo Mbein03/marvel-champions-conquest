@@ -1,40 +1,42 @@
-import { factions } from './constants';
+import { url, factions } from './constants';
 
 // Returns integer between two intervals
 export const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
 // Returns array of strings
-// Filter loot table and return potential results based on roll selected
-export const getPotentialResults = (lootTable, roll) =>
-  lootTable.filter((obj) => obj.roll === roll).map((obj) => obj.results)[0];
+// Filter loot table and return potential rewards results based on reward roll selected
+export const getPotentialRewardResults = (rewardTable, rewardRoll) =>
+  rewardTable
+    .filter((obj) => obj.roll === rewardRoll)
+    .map((obj) => obj.results)[0];
 
 // Returns string
-// Determine roll result
-export const getResult = (potentialLoot) =>
+// Determine reward result
+export const getRewardResult = (potentialLoot) =>
   potentialLoot[Math.floor(Math.random() * potentialLoot.length)];
 
 // Returns string
 // Get card tier
-export const getTier = (roll) =>
-  roll.includes('None') ? 'None' : roll.split(' ')[1];
+export const getRewardTier = (rewardResult) =>
+  rewardResult.includes('None') ? 'None' : rewardResult.split(' ')[1];
 
 // Returns string
 // Get card faction
-export const getFaction = (roll) => {
-  if (roll.includes('None')) {
+export const getRewardFaction = (rewardResult) => {
+  if (rewardResult.includes('None')) {
     return 'None';
-  } else if (roll.includes('Roll')) {
+  } else if (rewardResult.includes('Roll')) {
     return factions[randomIntFromInterval(0, 5)].name;
   } else {
-    return roll.split(' ')[2];
+    return rewardResult.split(' ')[2];
   }
 };
 
 // Returns array of objects
 // Filter out cards from array based on quantity, tier, and faction
-export const filterCards = (tier, faction, lootableCards) =>
-  lootableCards
+export const filterCards = (tier, faction, cardPool) =>
+  cardPool
     .filter((obj) => obj.qty > 0)
     .filter((obj) => obj.tier === tier)
     .filter((obj) => obj.faction === faction);
@@ -81,4 +83,32 @@ export const postData = async (url, data) => {
   const response = await fetch(url, requestOptions);
   const responseData = await response.json();
   return responseData;
+};
+
+export const fetchPlayers = async () => {
+  const players = await fetchData(url.fetchPlayers);
+  return players;
+};
+
+export const fetchCardPool = async () => {
+  const cardPool = await fetchData(url.fetchCardPool);
+  return cardPool;
+};
+
+export const updateCardImages = async () => {
+  const updatedCards = await fetchData(url.updateCardImages);
+  return updatedCards;
+};
+
+export const markCardLooted = async (card) => {
+  const lootedCard = await postData(url.markCardLooted, { card: card });
+  return lootedCard;
+};
+
+export const markCardSold = async (card, player) => {
+  const soldCard = await postData(url.markCardSold, {
+    card: card,
+    player: player,
+  });
+  return soldCard;
 };

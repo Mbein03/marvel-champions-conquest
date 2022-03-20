@@ -1,69 +1,27 @@
-import { useState, useEffect } from 'react';
-import { useLootDropController as LootDropController } from './hooks/controllers/useLootDropController';
-import { Sidebar } from './components/Sidebar';
-import { Content } from './components/Content';
-import * as helpers from './helpers/helpers';
-import { api } from './helpers/constants';
+import { createContext } from 'react';
+import { useLootDropController } from './hooks/controllers/useLootDropController';
+import { usePlayerController } from './hooks/controllers/usePlayerController';
+import { Sidebar } from './components/content/Sidebar';
+import { Main } from './components/content/Main';
+
+// Create contexts
+export const LootDropContext = createContext();
+export const PlayerContext = createContext();
 
 export const App = () => {
-  const [players, setPlayers] = useState('');
-  const [player, setPlayer] = useState('');
-
-  // Calls method to fetch players from API on page load
-  useEffect(() => {
-    helpers.fetchData(api.getPlayers).then((players) => {
-      setPlayers(players);
-
-      // If player hasn't been set for select, set it
-      if (!player) {
-        setPlayer(players[0]);
-      }
-    });
-  }, [player]);
-
-  const {
-    card,
-    faction,
-    setFaction,
-    showFactionSelect,
-    roll,
-    setRoll,
-    manualRoll,
-    setManualRoll,
-    disableRollSelect,
-    setDisableRollSelect,
-    showResults,
-    rollLoot,
-    resetLootRoll,
-    markCardSold,
-  } = LootDropController(player);
+  // Set controllers in prep for passing to context providers
+  // Must pass in card to PlayerController b/c players must be refreshed when card updates
+  const LootDropController = useLootDropController();
+  const PlayerController = usePlayerController(LootDropController.card);
 
   return (
     <>
-      <Sidebar
-        players={players}
-        player={player}
-        setPlayer={setPlayer}
-        showResults={showResults}
-        resetLootRoll={resetLootRoll}
-      />
-      <Content
-        player={player}
-        card={card}
-        faction={faction}
-        setFaction={setFaction}
-        showFactionSelect={showFactionSelect}
-        roll={roll}
-        setRoll={setRoll}
-        manualRoll={manualRoll}
-        setManualRoll={setManualRoll}
-        disableRollSelect={disableRollSelect}
-        setDisableRollSelect={setDisableRollSelect}
-        showResults={showResults}
-        rollLoot={rollLoot}
-        resetLootRoll={resetLootRoll}
-        markCardSold={markCardSold}
-      />
+      <LootDropContext.Provider value={LootDropController}>
+        <PlayerContext.Provider value={PlayerController}>
+          <Sidebar />
+          <Main />
+        </PlayerContext.Provider>
+      </LootDropContext.Provider>
     </>
   );
 };

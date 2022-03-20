@@ -3,13 +3,13 @@ const server = express.Router();
 const Card = require('../models/card');
 const Player = require('../models/player');
 
-server.get('/api/lootable-cards', (req, res) => {
+server.get('/api/cards/pool', (req, res) => {
   const execute = async () => {
     try {
       const cards = await Card.getAvailable();
       res.status(200).json(cards);
     } catch (error) {
-      res.status(500).json({ message: 'Unable to retrieve cards.' });
+      res.status(500).json({ message: 'Unable to retrieve card pool.' });
     }
   };
 
@@ -61,6 +61,7 @@ server.post('/api/cards/mark-sold', (req, res) => {
   const execute = async () => {
     try {
       const card = await Card.markSold(req.body.data);
+      console.log(card);
       res.status(200).json(card);
     } catch (error) {
       res.status(500).json({ message: 'Unable to mark card as sold.' });

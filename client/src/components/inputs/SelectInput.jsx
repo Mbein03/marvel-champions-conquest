@@ -1,6 +1,7 @@
 export const SelectInput = ({
   id,
   name,
+  labelText,
   data,
   value,
   onSelect: setState,
@@ -24,6 +25,12 @@ export const SelectInput = ({
 
   return (
     <>
+      <label
+        htmlFor={id}
+        className='form-label inline-block mb-2 text-gray-700'
+      >
+        {labelText}
+      </label>
       <div className='form-group mb-6'>
         <select
           id={id}
