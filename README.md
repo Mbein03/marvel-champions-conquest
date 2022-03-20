@@ -37,7 +37,7 @@ This application was created to be a companion app for _Marvel Champions Conques
 
 1. Select player in top left corner of sidebar.
 2. Select reward (ex. minion kills at varied HP or manual roll) based on rewards for which you need to roll.
-3. If performing manual roll, select roll value (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various roll tier values).
+3. If performing manual roll, select reward roll value (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various roll rewards). If minion kill was chosen, roll value will be selected for you and locked.
 4. Click and confirm roll.
 5. In some cases, depending on your initial roll, you may have the opportunity to select card faction. If so, select faction and confirm roll.
 6. Reward card will be displayed (name, faction, and card tier), along with card image. Card quantity will be decremented from potential card pool in database.
