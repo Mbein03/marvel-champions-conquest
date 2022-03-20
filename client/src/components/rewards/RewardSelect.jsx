@@ -5,13 +5,13 @@ import { Button } from '../buttons/Button';
 
 export const RewardSelect = () => {
   // Set variables from necessary controllers via context
-  const { setRewardRoll, setShowRewards, setDisableRewardRollInput } =
+  const { setRewardRoll, setSkipRewardSelect, setDisableRewardRollInput } =
     useContext(LootDropContext);
 
   // Set reward based on minion reward type selected and proceed to next step
   const setMinionRewardRoll = (rewardRoll) => {
     setRewardRoll(rewardRoll);
-    setShowRewards(true);
+    setSkipRewardSelect(true);
     setDisableRewardRollInput(true);
   };
   return (
@@ -26,7 +26,7 @@ export const RewardSelect = () => {
       <Button onClick={() => setMinionRewardRoll('T2')} marginBottom={true}>
         Minion Kill (8+ Health)
       </Button>
-      <Button onClick={() => setShowRewards(true)}>Manual Roll</Button>
+      <Button onClick={() => setSkipRewardSelect(true)}>Manual Roll</Button>
     </div>
   );
 };

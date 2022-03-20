@@ -9,7 +9,7 @@ export const useLootDropController = () => {
   const [rewardFaction, setRewardFaction] = useState('');
   const [rewardCard, setRewardCard] = useState('');
 
-  const [showRewards, setShowRewards] = useState(false);
+  const [skipRewardSelect, setSkipRewardSelect] = useState(false);
   const [disableRewardRollInput, setDisableRewardRollInput] = useState(false);
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
   const [showRewardResults, setShowRewardResults] = useState(false);
@@ -95,7 +95,7 @@ export const useLootDropController = () => {
     setRewardCard('');
     setDisableRewardRollInput(false);
     setShowFactionSelectInput(false);
-    setShowRewards(false);
+    setSkipRewardSelect(false);
     setShowRewardResults(false);
   };
 
@@ -106,8 +106,8 @@ export const useLootDropController = () => {
     showFactionSelectInput,
     rewardRoll,
     setRewardRoll,
-    showRewards,
-    setShowRewards,
+    skipRewardSelect,
+    setSkipRewardSelect,
     disableRewardRollInput,
     setDisableRewardRollInput,
     showRewardResults,
