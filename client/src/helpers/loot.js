@@ -5,9 +5,9 @@ export const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
 // Returns array of strings
-// Filter rewards table and return potential reward results based on drop selected
-export const getPotentialRewardResults = (table, drop) =>
-  table.filter((obj) => obj.drop === drop).map((obj) => obj.results)[0];
+// Filter rewards table and return potential reward results based on loot drop selected
+export const getPotentialRewardResults = (table, lootDrop) =>
+  table.filter((obj) => obj.lootDrop === lootDrop).map((obj) => obj.results)[0];
 
 // Returns string
 // Determine reward result

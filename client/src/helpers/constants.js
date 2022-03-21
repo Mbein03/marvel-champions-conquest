@@ -30,7 +30,7 @@ export const factions = [
 // Primary loot table rolls
 export const rewardTable = [
   {
-    drop: 'T1',
+    lootDrop: 'T1',
     results: [
       None,
       None,
@@ -47,7 +47,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T1+',
+    lootDrop: 'T1+',
     results: [
       None,
       TierCBasic,
@@ -64,7 +64,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T2',
+    lootDrop: 'T2',
     results: [
       TierCBasic,
       TierCBasic,
@@ -81,7 +81,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T2+',
+    lootDrop: 'T2+',
     results: [
       TierCBasic,
       TierBRoll,
@@ -98,7 +98,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T3',
+    lootDrop: 'T3',
     results: [
       TierBRoll,
       TierBRoll,
@@ -115,7 +115,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T3+',
+    lootDrop: 'T3+',
     results: [
       TierARoll,
       TierARoll,
@@ -132,7 +132,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T4',
+    lootDrop: 'T4',
     results: [
       TierARoll,
       TierARoll,
@@ -149,7 +149,7 @@ export const rewardTable = [
     ],
   },
   {
-    drop: 'T4+',
+    lootDrop: 'T4+',
     results: [
       TierSRoll,
       TierSRoll,
