@@ -6,7 +6,7 @@ const TierSRoll = 'Tier S Roll';
 const Shawarma = 'Shawarma';
 
 // Tier select options
-export const rewardRolls = [
+export const lootDrops = [
   { id: 'T1', name: 'T1' },
   { id: 'T1+', name: 'T1+' },
   { id: 'T2', name: 'T2' },
@@ -30,7 +30,7 @@ export const factions = [
 // Primary loot table rolls
 export const rewardTable = [
   {
-    roll: 'T1',
+    drop: 'T1',
     results: [
       None,
       None,
@@ -47,7 +47,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T1+',
+    drop: 'T1+',
     results: [
       None,
       TierCBasic,
@@ -64,7 +64,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T2',
+    drop: 'T2',
     results: [
       TierCBasic,
       TierCBasic,
@@ -81,7 +81,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T2+',
+    drop: 'T2+',
     results: [
       TierCBasic,
       TierBRoll,
@@ -98,7 +98,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T3',
+    drop: 'T3',
     results: [
       TierBRoll,
       TierBRoll,
@@ -115,7 +115,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T3+',
+    drop: 'T3+',
     results: [
       TierARoll,
       TierARoll,
@@ -132,7 +132,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T4',
+    drop: 'T4',
     results: [
       TierARoll,
       TierARoll,
@@ -149,7 +149,7 @@ export const rewardTable = [
     ],
   },
   {
-    roll: 'T4+',
+    drop: 'T4+',
     results: [
       TierSRoll,
       TierSRoll,

@@ -36,8 +36,8 @@ This application was created to be a companion app for _Marvel Champions Conques
 ## Usage
 
 1. Select player in top left corner of sidebar.
-2. Select reward (ex. minion defeated or manual roll) based on rewards you have earned.
-3. If performing manual roll, select reward roll value (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various roll rewards and how they are earned). If minion kill was chosen, roll value will be selected for you and locked.
+2. Select reward (ex. minion defeated or manually select drop) based on rewards you have earned during play.
+3. If manually selecting drop, select loot drop value (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various loot drop rewards and how they are earned). If minion kill was chosen, loot drop value will be selected for you and locked.
 4. Click and confirm roll.
 5. In some cases, depending on your initial reward roll, you may have the opportunity to select your desired card faction. If so, select faction and confirm roll.
 6. Reward card will be displayed (name, faction, and card tier), along with card image. Card quantity will be decremented from potential card pool in database.

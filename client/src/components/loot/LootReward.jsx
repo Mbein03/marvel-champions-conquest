@@ -1,28 +1,28 @@
 import { useState, useContext } from 'react';
-import { RewardContext } from '../../App';
+import { LootContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Subheader } from '../headers/Subheader';
 import { Button } from '../buttons/Button';
 import { Image } from '../images/Image';
 import * as api from '../../helpers/api';
 
-export const RewardCardResult = ({ player }) => {
+export const LootReward = ({ player }) => {
   // Set state to toggle sale confirmation button
   const [confirmSale, setConfirmSale] = useState(false);
 
   // Set variables from necessary controllers via context
-  const { rewardCard, resetRewardRoll } = useContext(RewardContext);
+  const { rewardCard, resetLootProcess } = useContext(LootContext);
 
   // When sale is confirmed, mark card sold and reset loot roll process
   const saleConfirmed = async () => {
     const soldCard = await api.markCardSold(rewardCard, player);
     console.log('Card Sold:', soldCard);
-    if (soldCard) resetRewardRoll();
+    if (soldCard) resetLootProcess();
   };
 
   return (
     <div>
-      <Header textCenter={true}>Reward Result</Header>
+      <Header textCenter={true}>Reward</Header>
       {rewardCard ? (
         <>
           <Subheader title={'Card'} result={rewardCard.name} />
@@ -43,7 +43,7 @@ export const RewardCardResult = ({ player }) => {
           onClick={() => setConfirmSale(!confirmSale)}
           marginBottom={true}
         >
-          Sell
+          Sell Card
         </Button>
       )}
       {rewardCard && confirmSale && (
@@ -52,10 +52,10 @@ export const RewardCardResult = ({ player }) => {
           color={'green'}
           marginBottom={true}
         >
-          Confirm
+          Confirm Sale
         </Button>
       )}
-      <Button onClick={() => resetRewardRoll()}>Reset</Button>
+      <Button onClick={() => resetLootProcess()}>Reset</Button>
     </div>
   );
 };

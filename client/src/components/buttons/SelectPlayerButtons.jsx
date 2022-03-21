@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { RewardContext } from '../../App';
+import { LootContext } from '../../App';
 import { PlayerContext } from '../../App';
 import { Header } from '../headers/Header';
 import { Button } from './Button';
 
 export const SelectPlayerButtons = () => {
   // Set variables from necessary controllers via context
-  const { showRewardResults } = useContext(RewardContext);
+  const { showLootResults } = useContext(LootContext);
   const { players, selectedPlayer, setSelectedPlayer } =
     useContext(PlayerContext);
 
@@ -17,7 +17,7 @@ export const SelectPlayerButtons = () => {
         <Button
           onClick={() => setSelectedPlayer(player)}
           color={selectedPlayer.id === player.id ? 'green' : ''}
-          disabled={showRewardResults}
+          disabled={showLootResults}
           marginBottom={true}
         >
           {player.name}
