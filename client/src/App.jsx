@@ -12,7 +12,7 @@ export const App = () => {
   // Set controllers in prep for passing to context providers
   // Must pass in card to PlayerController b/c players must be refreshed when reward card updates
   const LootController = useLootController();
-  const PlayerController = usePlayerController(LootContext.rewardCard);
+  const PlayerController = usePlayerController(LootController.rewardCard);
 
   return (
     <>

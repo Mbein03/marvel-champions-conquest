@@ -46,7 +46,7 @@ export const LootDropSelect = () => {
             id={'faction'}
             name={'faction'}
             labelText={'Faction:'}
-            data={constants.factions}
+            data={constants.factions.slice(0, -1)}
             value={rewardFaction}
             onSelect={setRewardFaction}
           />
