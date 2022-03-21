@@ -5,7 +5,6 @@ import { Header } from '../headers/Header';
 import { Button } from './Button';
 
 export const NavigationButtons = () => {
-  // Set variables from necessary controllers (via context for loot)
   const { resetLootProcess } = useContext(LootContext);
   const { updateCardImages, imagesUpdating } = CardImageController();
 

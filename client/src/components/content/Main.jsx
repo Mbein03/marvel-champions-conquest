@@ -6,7 +6,6 @@ import { LootReward } from '../loot/LootReward';
 import { Card } from './Card';
 
 export const Main = () => {
-  // Set variables from necessary controllers via context
   const { skipLootActionSelect, showReward } = useContext(LootContext);
   return (
     <main role='main' className='w-full h-full flex-grow overflow-auto'>

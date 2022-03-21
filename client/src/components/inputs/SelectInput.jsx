@@ -7,12 +7,10 @@ export const SelectInput = ({
   onSelect: setState,
   disabled,
 }) => {
-  // Update state in controller
   const updateState = (event) => {
     setState(event.target.value);
   };
 
-  // Iterate over data and map options
   const mapOptions = (data) => {
     return data.map((value) => (
       <option key={value.id} value={value.name}>

@@ -7,38 +7,33 @@ import { Image } from '../images/Image';
 import * as api from '../../helpers/api';
 
 export const LootReward = ({ player }) => {
-  // Set state to toggle sale confirmation button
   const [confirmSale, setConfirmSale] = useState(false);
+  const { reward, resetLootProcess } = useContext(LootContext);
 
-  // Set variables from necessary controllers via context
-  const { rewardCard, resetLootProcess } = useContext(LootContext);
-
-  // When sale is confirmed, mark card sold and reset loot roll process
   const saleConfirmed = async () => {
-    const soldCard = await api.markCardSold(rewardCard, player);
-    console.log('Card Sold:', soldCard);
+    const soldCard = await api.markCardSold(reward.card, player);
     if (soldCard) resetLootProcess();
   };
 
   return (
     <div>
       <Header textCenter={true}>Reward</Header>
-      {rewardCard ? (
+      {reward.card ? (
         <>
-          <Subheader title={'Card'} result={rewardCard.name} />
-          <Subheader title={'Faction'} result={rewardCard.faction} />
-          <Subheader title={'Tier'} result={rewardCard.tier} />
+          <Subheader title={'Card'} result={reward.card.name} />
+          <Subheader title={'Faction'} result={reward.card.faction} />
+          <Subheader title={'Tier'} result={reward.card.tier} />
         </>
       ) : (
         <Subheader title={'Card'} result={'None'} />
       )}
-      {rewardCard && (
+      {reward.card && (
         <Image
-          src={'https://marvelcdb.com/' + rewardCard.image_path}
-          alt={rewardCard.name}
+          src={'https://marvelcdb.com/' + reward.card.image_path}
+          alt={reward.card.name}
         />
       )}
-      {rewardCard && !confirmSale && (
+      {reward.card && !confirmSale && (
         <Button
           onClick={() => setConfirmSale(!confirmSale)}
           marginBottom={true}
@@ -46,7 +41,7 @@ export const LootReward = ({ player }) => {
           Sell Card
         </Button>
       )}
-      {rewardCard && confirmSale && (
+      {reward.card && confirmSale && (
         <Button
           onClick={() => saleConfirmed()}
           color={'green'}

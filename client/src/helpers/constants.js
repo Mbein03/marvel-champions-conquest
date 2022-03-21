@@ -5,7 +5,6 @@ const TierARoll = 'Tier A Roll';
 const TierSRoll = 'Tier S Roll';
 const Shawarma = 'Shawarma';
 
-// Tier select options
 export const lootDrops = [
   { id: 'T1', name: 'T1' },
   { id: 'T1+', name: 'T1+' },
@@ -17,7 +16,6 @@ export const lootDrops = [
   { id: 'T4+', name: 'T4+' },
 ];
 
-// Faction options
 export const factions = [
   { id: 'Basic', name: 'Basic' },
   { id: 'Protection', name: 'Protection' },
@@ -27,7 +25,6 @@ export const factions = [
   { id: 'Your Choice', name: 'Your Choice' },
 ];
 
-// Primary loot table rolls
 export const rewardTable = [
   {
     lootDrop: 'T1',

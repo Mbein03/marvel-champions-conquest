@@ -6,23 +6,19 @@ import { SelectInput } from '../inputs/SelectInput';
 import * as constants from '../../helpers/constants';
 
 export const LootDropSelect = () => {
-  // Set state to toggle drop confirmation button
   const [confirmLootDrop, setConfirmLootDrop] = useState(false);
 
-  // Set variables from necessary controllers via context
   const {
-    rewardFaction,
-    setRewardFaction,
+    reward,
     showFactionSelectInput,
-    lootDrop,
-    setLootDrop,
+    updateRewardLootDrop,
     disableLootDropInput,
     setDisableLootDropInput,
     rollForReward,
+    updateRewardFaction,
   } = useContext(LootContext);
 
   useEffect(() => {
-    // If faction select is showing or user is in process of confirming loot drop, disable loot drop select input
     if (showFactionSelectInput || confirmLootDrop) {
       setDisableLootDropInput(true);
     }
@@ -36,8 +32,8 @@ export const LootDropSelect = () => {
         name={'lootDrop'}
         labelText={'Loot Drop:'}
         data={constants.lootDrops}
-        value={lootDrop}
-        onSelect={setLootDrop}
+        value={reward.lootDrop}
+        onSelect={updateRewardLootDrop}
         disabled={disableLootDropInput}
       />
       {showFactionSelectInput && (
@@ -47,8 +43,8 @@ export const LootDropSelect = () => {
             name={'faction'}
             labelText={'Faction:'}
             data={constants.factions.slice(0, -1)}
-            value={rewardFaction}
-            onSelect={setRewardFaction}
+            value={reward.faction}
+            onSelect={updateRewardFaction}
           />
         </>
       )}

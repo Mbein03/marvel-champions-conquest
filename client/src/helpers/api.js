@@ -1,4 +1,3 @@
-// API calls
 const rootURL = 'http://localhost:9000';
 const url = {
   fetchCardPool: rootURL + '/api/cards/pool',
@@ -8,14 +7,12 @@ const url = {
   markCardSold: rootURL + '/api/cards/mark-sold',
 };
 
-// Reusable get request
 export const fetchData = async (url) => {
   const response = await fetch(url);
   const responseData = await response.json();
   return responseData;
 };
 
-// Reusable post request
 export const postData = async (url, data) => {
   const requestOptions = {
     method: 'POST',

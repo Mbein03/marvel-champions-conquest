@@ -5,12 +5,10 @@ import { Header } from '../headers/Header';
 import { Button } from './Button';
 
 export const SelectPlayerButtons = () => {
-  // Set variables from necessary controllers via context
   const { showLootResults } = useContext(LootContext);
   const { players, selectedPlayer, setSelectedPlayer } =
     useContext(PlayerContext);
 
-  // Map button elements to player data
   const mapPlayers = (players) => {
     return players.map((player) => (
       <div key={player.id} className='w-1/2 flex-shrink flex-grow-0 px-1'>
@@ -26,7 +24,6 @@ export const SelectPlayerButtons = () => {
     ));
   };
 
-  // Conditional check will only return elements once players have been loaded in
   const playerElements = players ? mapPlayers(players) : [];
 
   return (
