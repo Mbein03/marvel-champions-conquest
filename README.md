@@ -51,7 +51,7 @@ This application was created to be a companion app for _Marvel Champions Conques
 ### Code
 
 - [x] Add NPM package classnames for react components
-- [ ] Add controllers to [server](server) folder to follow MVC architecture.
+- [x] Add controllers to [server](server) folder to follow MVC architecture.
 - [ ] Add intermediate table to track acquired player cards.
 
 ### New Features

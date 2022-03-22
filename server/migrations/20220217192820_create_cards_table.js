@@ -10,7 +10,7 @@ exports.up = function (knex) {
       table.string('tier'),
       table.string('marvel_cdb_id'),
       table.string('image_path'),
-      table.integer('qty').notNullable(),
+      table.integer('qty').unsigned().notNullable(),
       table.boolean('is_acquired').defaultTo(0);
   });
 };

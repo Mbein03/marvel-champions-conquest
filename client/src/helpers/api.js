@@ -1,16 +1,16 @@
 const rootURL = 'http://localhost:9000';
 const url = {
-  fetchCardPool: rootURL + '/api/cards/pool',
   fetchPlayers: rootURL + '/api/players',
   updateCardImages: rootURL + '/api/cards/update-images',
+  fetchCardPool: rootURL + '/api/cards/pool',
   markCardAcquired: rootURL + '/api/cards/mark-acquired',
   markCardSold: rootURL + '/api/cards/mark-sold',
 };
 
 export const fetchData = async (url) => {
   const response = await fetch(url);
-  const responseData = await response.json();
-  return responseData;
+  const json = await response.json();
+  return json;
 };
 
 export const postData = async (url, data) => {
@@ -21,8 +21,8 @@ export const postData = async (url, data) => {
   };
 
   const response = await fetch(url, requestOptions);
-  const responseData = await response.json();
-  return responseData;
+  const json = await response.json();
+  return json;
 };
 
 export const fetchPlayers = async () => {
@@ -30,14 +30,14 @@ export const fetchPlayers = async () => {
   return players;
 };
 
-export const fetchCardPool = async () => {
-  const cardPool = await fetchData(url.fetchCardPool);
-  return cardPool;
-};
-
 export const updateCardImages = async () => {
   const updatedCards = await fetchData(url.updateCardImages);
   return updatedCards;
+};
+
+export const fetchCardPool = async () => {
+  const cardPool = await fetchData(url.fetchCardPool);
+  return cardPool;
 };
 
 export const markCardAcquired = async (card) => {
