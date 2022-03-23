@@ -3,8 +3,8 @@ const url = {
   fetchPlayers: rootURL + '/api/players',
   updateCardImages: rootURL + '/api/cards/update-images',
   fetchCardPool: rootURL + '/api/cards/pool',
-  markCardAcquired: rootURL + '/api/cards/mark-acquired',
-  markCardSold: rootURL + '/api/cards/mark-sold',
+  markCardAcquired: rootURL + '/api/card/mark-acquired',
+  markCardSold: rootURL + '/api/card/mark-sold',
 };
 
 export const fetchData = async (url) => {
@@ -40,8 +40,11 @@ export const fetchCardPool = async () => {
   return cardPool;
 };
 
-export const markCardAcquired = async (card) => {
-  const acquiredCard = await postData(url.markCardAcquired, { card: card });
+export const markCardAcquired = async (card, player) => {
+  const acquiredCard = await postData(url.markCardAcquired, {
+    card: card,
+    player: player,
+  });
   return acquiredCard;
 };
 

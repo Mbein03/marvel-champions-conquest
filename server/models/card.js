@@ -1,4 +1,3 @@
-// Set up db config
 const knex = require('knex');
 const config = require('../knexfile');
 const fetch = require('node-fetch');
@@ -10,7 +9,8 @@ const fetchCardsFromMarvelApi = async () => {
   return json;
 };
 
-const FilterForMarvelApiCard = (card, marvelApiCards) => {
+const findMarvelApiCardMatch = (card, marvelApiCards) => {
+  // TODO: Change to find and test
   const marvelApiCard = marvelApiCards.filter(
     (obj) =>
       obj.name === card.name &&
@@ -22,13 +22,10 @@ const FilterForMarvelApiCard = (card, marvelApiCards) => {
 };
 
 const updateCardImage = async (card, marvelApiCard) => {
-  const success = await db('cards')
-    .where('id', card.id)
-    .update({
-      marvel_cdb_id: marvelApiCard.code,
-      image_path: marvelApiCard.imagesrc,
-    })
-    .returning('*');
+  const success = await db('cards').where('id', card.id).update({
+    marvel_cdb_id: marvelApiCard.code,
+    image_path: marvelApiCard.imagesrc,
+  });
 
   return success;
 };
@@ -39,7 +36,7 @@ const updateCardImages = async () => {
   const updatedCardIds = [];
 
   cardsMissingImage.forEach((card) => {
-    const marvelApiCard = FilterForMarvelApiCard(card, marvelApiCards);
+    const marvelApiCard = findMarvelApiCardMatch(card, marvelApiCards);
 
     if (marvelApiCard) {
       const success = updateCardImage(card, marvelApiCard);
@@ -57,7 +54,6 @@ const fetchCardPool = async () => {
 };
 
 const markCardAcquired = async (data) => {
-  // Decrement card qty and mark as acquired
   await db('cards')
     .where('id', data.card.id)
     .update({
@@ -65,19 +61,48 @@ const markCardAcquired = async (data) => {
       is_acquired: 1,
     });
 
-  // Query for updated card row in DB
+  const playerCard = await db('player_cards')
+    .where('player_id', data.player.id)
+    .where('card_id', data.card.id)
+    .first();
+
+  if (playerCard) {
+    await db('player_cards')
+      .where('player_id', data.player.id)
+      .where('card_id', data.card.id)
+      .update({
+        qty: playerCard.qty + 1,
+      });
+  } else {
+    await db('player_cards').insert({
+      player_id: data.player.id,
+      card_id: data.card.id,
+      qty: 1,
+    });
+  }
+
   return db('cards').where('id', data.card.id).first();
 };
 
 const markCardSold = async (data) => {
-  // Increment card qty
   await db('cards')
     .where('id', data.card.id)
     .update({
       qty: data.card.qty + 1,
     });
 
-  // Query for updated card row in DB
+  const playerCard = await db('player_cards')
+    .where('player_id', data.player.id)
+    .where('card_id', data.card.id)
+    .first();
+
+  await db('player_cards')
+    .where('player_id', data.player.id)
+    .where('card_id', data.card.id)
+    .update({
+      qty: playerCard.qty - 1,
+    });
+
   return db('cards').where('id', data.card.id).first();
 };
 
