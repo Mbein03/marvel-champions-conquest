@@ -4,7 +4,7 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable('players', (table) => {
-    table.increments(),
+    table.increments('player_id'),
       table.string('name').index().notNullable(),
       table.float('credits').defaultTo(0);
   });

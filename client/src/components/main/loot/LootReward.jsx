@@ -1,17 +1,23 @@
-import { useState, useContext } from 'react';
-import { LootContext } from '../../App';
-import { Header } from '../headers/Header';
-import { Subheader } from '../headers/Subheader';
-import { Button } from '../buttons/Button';
-import { Image } from '../images/Image';
-import * as api from '../../helpers/api';
+import { useState, useEffect, useContext } from 'react';
+import { PlayerContext } from '../../../App';
+import { LootContext } from '../../../App';
+import { Header } from '../../Header';
+import { Subheader } from '../../Subheader';
+import { Button } from '../../Button';
+import { Image } from '../../Image';
+import * as api from '../../../helpers/api';
 
-export const LootReward = ({ player }) => {
+export const LootReward = () => {
   const [confirmSale, setConfirmSale] = useState(false);
+  const { selectedPlayer, setDisablePlayerSelect } = useContext(PlayerContext);
   const { reward, resetLootProcess } = useContext(LootContext);
 
+  useEffect(() => {
+    setDisablePlayerSelect(true);
+  });
+
   const saleConfirmed = async () => {
-    const soldCard = await api.markCardSold(reward.card, player);
+    const soldCard = await api.markCardSold(reward.card, selectedPlayer);
     if (soldCard) resetLootProcess();
   };
 
@@ -20,12 +26,12 @@ export const LootReward = ({ player }) => {
       <Header textCenter={true}>Reward</Header>
       {reward.card ? (
         <>
-          <Subheader title={'Card'} result={reward.card.name} />
-          <Subheader title={'Faction'} result={reward.card.faction} />
-          <Subheader title={'Tier'} result={reward.card.tier} />
+          <Subheader title={'Card'} text={reward.card.name} />
+          <Subheader title={'Faction'} text={reward.card.faction} />
+          <Subheader title={'Tier'} text={reward.card.tier} />
         </>
       ) : (
-        <Subheader title={'Card'} result={'None'} />
+        <Subheader title={'Card'} text={'None'} />
       )}
       {reward.card && (
         <Image

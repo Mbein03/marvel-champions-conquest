@@ -1,25 +1,29 @@
 import { useContext } from 'react';
-import { LootContext } from '../../App';
-import { PlayerContext } from '../../App';
-import { Header } from '../headers/Header';
-import { Button } from './Button';
+import { PlayerContext } from '../../../App';
+import { Header } from '../../Header';
+import { Button } from '../../Button';
 
 export const SelectPlayerButtons = () => {
-  const { showLootResults } = useContext(LootContext);
-  const { players, selectedPlayer, setSelectedPlayer } =
+  const { players, selectedPlayer, setSelectedPlayer, disablePlayerSelect } =
     useContext(PlayerContext);
 
   const mapPlayers = (players) => {
     return players.map((player) => (
-      <div key={player.id} className='w-1/2 flex-shrink flex-grow-0 px-1'>
+      <div
+        key={player.player_id}
+        className='w-1/2 flex-shrink flex-grow-0 px-1'
+      >
         <Button
           onClick={() => setSelectedPlayer(player)}
-          color={selectedPlayer.id === player.id ? 'green' : ''}
-          disabled={showLootResults}
+          color={selectedPlayer.player_id === player.player_id ? 'green' : ''}
+          disabled={
+            selectedPlayer.player_id !== player.player_id && disablePlayerSelect
+          }
           marginBottom={true}
         >
           {player.name}
         </Button>
+        <h3>Credits: {player.credits}</h3>
       </div>
     ));
   };

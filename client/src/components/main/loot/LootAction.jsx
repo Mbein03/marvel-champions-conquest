@@ -1,20 +1,18 @@
 import { useContext } from 'react';
-import { LootContext } from '../../App';
-import { Header } from '../headers/Header';
-import { Button } from '../buttons/Button';
+import { LootContext } from '../../../App';
+import { Header } from '../../Header';
+import { Button } from '../../Button';
 
-export const LootActionSelect = () => {
-  const {
-    updateRewardLootDrop,
-    setSkipLootActionSelect,
-    setDisableLootDropInput,
-  } = useContext(LootContext);
+export const LootAction = () => {
+  const { setMainContent, updateRewardLootDrop, setDisableLootDropInput } =
+    useContext(LootContext);
 
   const updateMinionLootDrop = (lootDrop) => {
     updateRewardLootDrop(lootDrop);
-    setSkipLootActionSelect(true);
+    setMainContent('LootDrop');
     setDisableLootDropInput(true);
   };
+
   return (
     <div>
       <Header textCenter={true}>Claim Loot Rewards</Header>
@@ -27,7 +25,7 @@ export const LootActionSelect = () => {
       <Button onClick={() => updateMinionLootDrop('T2')} marginBottom={true}>
         Minion Defeated (8+ Health)
       </Button>
-      <Button onClick={() => setSkipLootActionSelect(true)}>
+      <Button onClick={() => setMainContent('LootDrop')}>
         Manually Select Drop
       </Button>
     </div>

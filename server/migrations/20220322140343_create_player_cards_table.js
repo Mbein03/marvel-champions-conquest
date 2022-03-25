@@ -9,14 +9,14 @@ exports.up = function (knex) {
         .integer('player_id')
         .unsigned()
         .notNullable()
-        .references('id')
+        .references('player_id')
         .inTable('players')
         .onDelete('CASCADE'),
       table
         .integer('card_id')
         .unsigned()
         .notNullable()
-        .references('id')
+        .references('card_id')
         .inTable('cards')
         .onDelete('CASCADE'),
       table.integer('qty').unsigned().notNullable();

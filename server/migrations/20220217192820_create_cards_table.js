@@ -4,14 +4,13 @@
  */
 exports.up = function (knex) {
   return knex.schema.createTable('cards', (table) => {
-    table.increments(),
+    table.increments('card_id'),
       table.string('name').index().notNullable(),
       table.string('faction').notNullable(),
       table.string('tier'),
       table.string('marvel_cdb_id'),
       table.string('image_path'),
       table.integer('qty').unsigned().notNullable(),
-      table.boolean('is_acquired').defaultTo(0);
   });
 };
 

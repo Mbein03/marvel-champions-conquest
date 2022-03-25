@@ -1,34 +1,34 @@
 import { factions } from './constants';
+import * as api from './api';
 
 // Returns integer between two intervals
 export const randomIntFromInterval = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
-// Returns array of strings
+// Returns array of strings (tier and faction)
 // Filter rewards table and return potential reward results based on loot drop selected
-export const getPotentialRewardResults = (table, lootDrop) =>
-  table.filter((obj) => obj.lootDrop === lootDrop).map((obj) => obj.results)[0];
+export const getRewardResult = (table, lootDrop) => {
+  const potentialResults = table
+    .filter((obj) => obj.lootDrop === lootDrop)
+    .map((obj) => obj.results)[0];
 
-// Returns string
-// Determine reward result
-export const getRewardResult = (results) =>
-  results[Math.floor(Math.random() * results.length)];
+  const result =
+    potentialResults[Math.floor(Math.random() * potentialResults.length)];
 
-// Returns string
-// Get reward tier
-export const getRewardTier = (result) =>
-  result.includes('None') ? 'None' : result.split(' ')[1];
+  const tier = result.includes('None') ? 'None' : result.split(' ')[1];
 
-// Returns string
-// Get reward faction
-export const getRewardFaction = (result) => {
   if (result.includes('None')) {
-    return 'None';
+    var faction = 'None';
   } else if (result.includes('Roll')) {
-    return factions[randomIntFromInterval(0, 5)].name;
+    faction = factions[randomIntFromInterval(0, 5)].name;
   } else {
-    return result.split(' ')[2];
+    faction = result.split(' ')[2];
   }
+
+  return {
+    tier,
+    faction,
+  };
 };
 
 // Returns array of objects
@@ -59,3 +59,16 @@ export const getPotentialCards = (cards) => {
 // Determine card result
 export const getCard = (cards) =>
   cards.length ? cards[Math.floor(Math.random() * cards.length)] : null;
+
+export const determineCard = async (tier, faction, cardPool, player) => {
+  const filteredCards = filterCards(tier, faction, cardPool);
+  const potentialCards = getPotentialCards(filteredCards);
+  const card = getCard(potentialCards);
+
+  if (card) {
+    const lootedCard = await api.markCardAcquired(card, player);
+    if (lootedCard) return lootedCard;
+  }
+
+  return card;
+};

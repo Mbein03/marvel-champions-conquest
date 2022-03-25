@@ -17,7 +17,7 @@ const fetchPlayerCards = async (player) => {
   const playerCards = await db
     .select(
       'pc.id AS player_card_id',
-      'c.id AS card_id',
+      'c.card_id',
       'c.name',
       'c.faction',
       'c.tier',
@@ -25,10 +25,12 @@ const fetchPlayerCards = async (player) => {
       'pc.qty'
     )
     .from('cards as c')
-    .join('player_cards AS pc', 'c.id', '=', 'pc.card_id')
-    .join('players AS p', 'p.id', '=', 'pc.player_id')
+    .join('player_cards AS pc', 'c.card_id', '=', 'pc.card_id')
+    .join('players AS p', 'p.player_id', '=', 'pc.player_id')
     .where('pc.qty', '>', 0)
-    .where('p.id', player.id);
+    .where('p.player_id', player.player_id)
+    .orderBy('c.faction')
+    .orderBy('c.name');
 
   return playerCards;
 };

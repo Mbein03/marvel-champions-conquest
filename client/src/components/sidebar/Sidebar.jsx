@@ -1,5 +1,5 @@
-import { SelectPlayerButtons } from '../buttons/SelectPlayerButtons';
-import { NavigationButtons } from '../buttons/NavigationButtons';
+import { SelectPlayerButtons } from './button-groups/SelectPlayerButtons';
+import { NavigationButtons } from './button-groups/NavigationButtons';
 
 export const Sidebar = () => {
   return (
