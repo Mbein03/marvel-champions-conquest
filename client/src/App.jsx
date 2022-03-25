@@ -12,7 +12,6 @@ export const App = () => {
   const [selectedPlayer, setSelectedPlayer] = useState('');
 
   const [cardPool, setCardPool] = useState('');
-  const [soldCard, setSoldCard] = useState('');
   const [reward, setReward] = useState({
     lootDrop: 'T1',
     tier: '',
@@ -25,22 +24,17 @@ export const App = () => {
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
 
   useEffect(() => {
-    const updateCardPoolAndPlayer = async () => {
-      console.log('update card pool and player');
+    const initializePlayersAndCardPool = async () => {
       const players = await api.fetchPlayers();
       const cardPool = await api.fetchCardPool();
 
       setPlayers(players);
-
-      !selectedPlayer || selectedPlayer.player_id === 1
-        ? setSelectedPlayer(players[0])
-        : setSelectedPlayer(players[1]);
-
+      setSelectedPlayer(players[0]);
       setCardPool(cardPool);
     };
 
-    updateCardPoolAndPlayer();
-  }, [reward.card, soldCard]);
+    initializePlayersAndCardPool();
+  }, []);
 
   const updateRewardLootDrop = (value) => {
     setReward({ ...reward, lootDrop: value });
@@ -65,7 +59,6 @@ export const App = () => {
     setDisablePlayerSelect,
     selectedPlayer,
     setSelectedPlayer,
-    setSoldCard,
   };
 
   const LootStates = {

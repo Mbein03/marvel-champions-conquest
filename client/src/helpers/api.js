@@ -41,17 +41,17 @@ export const fetchCardPool = async () => {
 };
 
 export const markCardAcquired = async (card, player) => {
-  const acquiredCard = await postData(url.markCardAcquired, {
+  const responseData = await postData(url.markCardAcquired, {
     card: card,
     player: player,
   });
-  return acquiredCard;
+  return responseData;
 };
 
 export const markCardSold = async (card, player) => {
-  const soldCard = await postData(url.markCardSold, {
+  const responseData = await postData(url.markCardSold, {
     card: card,
     player: player,
   });
-  return soldCard;
+  return responseData;
 };

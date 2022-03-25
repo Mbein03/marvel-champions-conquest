@@ -5,13 +5,16 @@ import { Header } from '../../Header';
 import { Button } from '../../Button';
 import { SelectInput } from '../../SelectInput';
 import * as constants from '../../../helpers/constants';
+import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
 
 export const LootDrop = () => {
   const [confirmLootDrop, setConfirmLootDrop] = useState(false);
-  const { selectedPlayer } = useContext(PlayerContext);
+  const { setPlayers, selectedPlayer, setSelectedPlayer } =
+    useContext(PlayerContext);
   const {
     cardPool,
+    setCardPool,
     reward,
     setReward,
     setMainContent,
@@ -31,35 +34,44 @@ export const LootDrop = () => {
 
   const rollForCard = async () => {
     if (reward.tier && reward.faction) {
-      const lootedCard = await loot.determineCard(
+      const card = await loot.determineCard(
         reward.tier,
         reward.faction,
         cardPool,
         selectedPlayer
       );
-      setReward({ ...reward, card: lootedCard });
-      setMainContent('LootReward');
+
+      markCardAcquired(card);
       return;
     }
 
-    const rewardResult = loot.getRewardResult(
-      constants.rewardTable,
-      reward.lootDrop
-    );
+    const result = loot.getResult(constants.rewardTable, reward.lootDrop);
 
-    if (rewardResult.faction === 'Your Choice') {
+    if (result.faction === 'Your Choice') {
       setShowFactionSelectInput(true);
-      setReward({ ...reward, tier: rewardResult.tier, faction: 'Basic' });
+      setReward({ ...reward, tier: reward.tier, faction: 'Basic' });
     } else {
-      const lootedCard = await loot.determineCard(
-        rewardResult.tier,
-        rewardResult.faction,
+      const card = await loot.determineCard(
+        result.tier,
+        result.faction,
         cardPool,
         selectedPlayer
       );
-      setReward({ ...reward, card: lootedCard });
-      setMainContent('LootReward');
+
+      markCardAcquired(card);
     }
+  };
+
+  const markCardAcquired = async (card) => {
+    const responseData = await api.markCardAcquired(card, selectedPlayer);
+
+    setMainContent('LootReward');
+    setReward({ ...reward, card: responseData.acquiredCard });
+    setCardPool(responseData.cardPool);
+    setPlayers(responseData.players);
+    selectedPlayer.player_id === 1
+      ? setSelectedPlayer(responseData.players[0])
+      : setSelectedPlayer(responseData.players[1]);
   };
 
   return (

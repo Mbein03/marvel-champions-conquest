@@ -2,6 +2,7 @@ const knex = require('knex');
 const config = require('../knexfile');
 const fetch = require('node-fetch');
 const db = knex(config.development);
+const Player = require('../models/Player');
 
 const fetchCardsFromMarvelApi = async () => {
   const response = await fetch('https://marvelcdb.com/api/public/cards/');
@@ -80,7 +81,19 @@ const markCardAcquired = async (data) => {
     });
   }
 
-  return db('cards').where('card_id', data.card.card_id).first();
+  const cardPool = await fetchCardPool();
+  const players = await Player.fetchPlayers();
+  const acquiredCard = await db('cards')
+    .where('card_id', data.card.card_id)
+    .first();
+
+  const responseData = {
+    cardPool,
+    players,
+    acquiredCard,
+  };
+
+  return responseData;
 };
 
 const markCardSold = async (data) => {
@@ -113,7 +126,19 @@ const markCardSold = async (data) => {
       credits: player.credits + earnedCredits,
     });
 
-  return db('cards').where('card_id', data.card.card_id).first();
+  const cardPool = await fetchCardPool();
+  const players = await Player.fetchPlayers();
+  const soldCard = await db('cards')
+    .where('card_id', data.card.card_id)
+    .first();
+
+  const responseData = {
+    cardPool,
+    players,
+    soldCard,
+  };
+
+  return responseData;
 };
 
 module.exports = {

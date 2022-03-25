@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react';
 import { PlayerContext } from '../../../App';
+import { LootContext } from '../../../App';
 import { Button } from '../../Button';
 import { Image } from '../../Image';
 import * as api from '../../../helpers/api';
@@ -7,12 +8,20 @@ import { Subheader } from '../../Subheader';
 
 export const PlayerCard = ({ card }) => {
   const [confirmSale, setConfirmSale] = useState(false);
-  const { selectedPlayer, setSoldCard } = useContext(PlayerContext);
+  const { setPlayers, selectedPlayer, setSelectedPlayer } =
+    useContext(PlayerContext);
+  const { setCardPool } = useContext(LootContext);
 
   const saleConfirmed = async () => {
-    await api.markCardSold(card, selectedPlayer);
-    setSoldCard(card);
-    setConfirmSale(!confirmSale);
+    const responseData = await api.markCardSold(card, selectedPlayer);
+    if (responseData) {
+      setCardPool(responseData.cardPool);
+      setPlayers(responseData.players);
+      selectedPlayer.player_id === 1
+        ? setSelectedPlayer(responseData.players[0])
+        : setSelectedPlayer(responseData.players[1]);
+      setConfirmSale(!confirmSale);
+    }
   };
 
   return (

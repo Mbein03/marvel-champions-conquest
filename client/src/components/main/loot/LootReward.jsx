@@ -9,16 +9,28 @@ import * as api from '../../../helpers/api';
 
 export const LootReward = () => {
   const [confirmSale, setConfirmSale] = useState(false);
-  const { selectedPlayer, setDisablePlayerSelect } = useContext(PlayerContext);
-  const { reward, resetLootProcess } = useContext(LootContext);
+  const {
+    setPlayers,
+    selectedPlayer,
+    setSelectedPlayer,
+    setDisablePlayerSelect,
+  } = useContext(PlayerContext);
+  const { setCardPool, reward, resetLootProcess } = useContext(LootContext);
 
   useEffect(() => {
     setDisablePlayerSelect(true);
   });
 
   const saleConfirmed = async () => {
-    const soldCard = await api.markCardSold(reward.card, selectedPlayer);
-    if (soldCard) resetLootProcess();
+    const responseData = await api.markCardSold(reward.card, selectedPlayer);
+    if (responseData) {
+      setCardPool(responseData.cardPool);
+      setPlayers(responseData.players);
+      selectedPlayer.player_id === 1
+        ? setSelectedPlayer(responseData.players[0])
+        : setSelectedPlayer(responseData.players[1]);
+      resetLootProcess();
+    }
   };
 
   return (

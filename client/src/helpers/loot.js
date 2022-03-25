@@ -1,5 +1,4 @@
 import { factions } from './constants';
-import * as api from './api';
 
 // Returns integer between two intervals
 export const randomIntFromInterval = (min, max) =>
@@ -7,7 +6,7 @@ export const randomIntFromInterval = (min, max) =>
 
 // Returns array of strings (tier and faction)
 // Filter rewards table and return potential reward results based on loot drop selected
-export const getRewardResult = (table, lootDrop) => {
+export const getResult = (table, lootDrop) => {
   const potentialResults = table
     .filter((obj) => obj.lootDrop === lootDrop)
     .map((obj) => obj.results)[0];
@@ -60,15 +59,10 @@ export const getPotentialCards = (cards) => {
 export const getCard = (cards) =>
   cards.length ? cards[Math.floor(Math.random() * cards.length)] : null;
 
-export const determineCard = async (tier, faction, cardPool, player) => {
+export const determineCard = async (tier, faction, cardPool) => {
   const filteredCards = filterCards(tier, faction, cardPool);
   const potentialCards = getPotentialCards(filteredCards);
   const card = getCard(potentialCards);
-
-  if (card) {
-    const lootedCard = await api.markCardAcquired(card, player);
-    if (lootedCard) return lootedCard;
-  }
 
   return card;
 };

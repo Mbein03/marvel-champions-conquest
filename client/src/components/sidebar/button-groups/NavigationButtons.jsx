@@ -11,8 +11,7 @@ export const NavigationButtons = () => {
 
   const updateCardImages = async () => {
     setImagesUpdating(true);
-    const images = await api.updateCardImages();
-    console.log(images);
+    await api.updateCardImages();
     setImagesUpdating(false);
   };
 
