@@ -97,20 +97,22 @@ const markCardAcquired = async (data) => {
 };
 
 const markCardSold = async (data) => {
+  const card = await db('cards').where('card_id', data.card.card_id).first();
+
   await db('cards')
-    .where('card_id', data.card.card_id)
+    .where('card_id', card.card_id)
     .update({
-      qty: data.card.qty + 1,
+      qty: card.qty + 1,
     });
 
   const playerCard = await db('player_cards')
     .where('player_id', data.player.player_id)
-    .where('card_id', data.card.card_id)
+    .where('card_id', card.card_id)
     .first();
 
   await db('player_cards')
     .where('player_id', data.player.player_id)
-    .where('card_id', data.card.card_id)
+    .where('card_id', card.card_id)
     .update({
       qty: playerCard.qty - 1,
     });
@@ -118,7 +120,7 @@ const markCardSold = async (data) => {
   const player = await db('players')
     .where('player_id', data.player.player_id)
     .first();
-  const earnedCredits = data.card.faction === 'Basic' ? 25 : 50;
+  const earnedCredits = card.faction === 'Basic' ? 25 : 50;
 
   await db('players')
     .where('player_id', data.player.player_id)
@@ -128,9 +130,7 @@ const markCardSold = async (data) => {
 
   const cardPool = await fetchCardPool();
   const players = await Player.fetchPlayers();
-  const soldCard = await db('cards')
-    .where('card_id', data.card.card_id)
-    .first();
+  const soldCard = await db('cards').where('card_id', card.card_id).first();
 
   const responseData = {
     cardPool,

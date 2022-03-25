@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { PlayerContext } from '../../../App';
 import { PlayerCard } from './PlayerCard';
 
-export const PlayerCards = () => {
+export const CardGrid = () => {
   const { selectedPlayer } = useContext(PlayerContext);
 
   const mapCards = (cards) => {

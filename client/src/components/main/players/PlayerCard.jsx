@@ -25,7 +25,7 @@ export const PlayerCard = ({ card }) => {
   };
 
   return (
-    <div className='justify-center border-2 border-gray-300 rounded-xl p-6 bg-gray-100'>
+    <div className='justify-center border-2 border-gray-300 rounded-xl px-6 py-2 bg-gray-100'>
       <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} />
       <Subheader title={'Quantity'} text={card.qty} />
       {!confirmSale && (
