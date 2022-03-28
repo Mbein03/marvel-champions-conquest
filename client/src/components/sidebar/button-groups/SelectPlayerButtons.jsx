@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { PlayerContext } from '../../../App';
 import { Header } from '../../Header';
-import { Subheader } from '../../Subheader';
 import { Button } from '../../Button';
 
-export const PlayerSelect = () => {
+export const SelectPlayerButtons = () => {
   const { players, selectedPlayer, setSelectedPlayer, disablePlayerSelect } =
     useContext(PlayerContext);
 
@@ -24,7 +23,7 @@ export const PlayerSelect = () => {
         >
           {player.name}
         </Button>
-        <Subheader title={'Credits'} text={player.credits} />
+        <h3>Credits: {player.credits}</h3>
       </div>
     ));
   };

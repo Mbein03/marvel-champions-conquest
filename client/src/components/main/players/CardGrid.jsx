@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { PlayerContext } from '../../../App';
 import { PlayerCard } from './PlayerCard';
 
-export const PlayerCards = () => {
+export const CardGrid = () => {
   const { selectedPlayer } = useContext(PlayerContext);
 
   const mapCards = (cards) => {
@@ -13,5 +13,11 @@ export const PlayerCards = () => {
 
   const playerCards = selectedPlayer ? mapCards(selectedPlayer.cards) : [];
 
-  return <>{playerCards}</>;
+  return (
+    <div className='container m-12'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+        {playerCards}
+      </div>
+    </div>
+  );
 };

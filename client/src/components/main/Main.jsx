@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 import { LootContext } from '../../App';
-import { Grid } from '../Grid';
-import { PlayerCards } from './card-collection/PlayerCards';
+import { CardGrid } from './players/CardGrid';
 import { Card } from '../Card';
 import { LootAction } from './loot/LootAction';
 import { LootDrop } from './loot/LootDrop';
-import { LootReward } from './loot/LootResult';
+import { LootReward } from './loot/LootReward';
 
 export const Main = () => {
   const { mainContent } = useContext(LootContext);
@@ -31,11 +30,7 @@ export const Main = () => {
           </Card>
         );
       default:
-        return (
-          <Grid>
-            <PlayerCards />
-          </Grid>
-        );
+        return <CardGrid />;
     }
   };
 
