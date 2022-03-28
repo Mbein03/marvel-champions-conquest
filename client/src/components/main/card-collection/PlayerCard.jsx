@@ -8,8 +8,7 @@ import { Subheader } from '../../Subheader';
 
 export const PlayerCard = ({ card }) => {
   const [confirmSale, setConfirmSale] = useState(false);
-  const { setPlayers, selectedPlayer, setSelectedPlayer } =
-    useContext(PlayerContext);
+  const { setPlayers, selectedPlayer } = useContext(PlayerContext);
   const { setCardPool } = useContext(LootContext);
 
   const saleConfirmed = async () => {
@@ -17,9 +16,6 @@ export const PlayerCard = ({ card }) => {
     if (responseData) {
       setCardPool(responseData.cardPool);
       setPlayers(responseData.players);
-      selectedPlayer.player_id === 1
-        ? setSelectedPlayer(responseData.players[0])
-        : setSelectedPlayer(responseData.players[1]);
       setConfirmSale(!confirmSale);
     }
   };

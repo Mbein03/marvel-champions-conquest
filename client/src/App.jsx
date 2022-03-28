@@ -19,7 +19,7 @@ export const App = () => {
     card: '',
   });
 
-  const [mainContent, setMainContent] = useState('PlayerCards');
+  const [mainContent, setMainContent] = useState('CardCollection');
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
 

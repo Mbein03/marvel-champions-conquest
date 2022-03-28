@@ -7,7 +7,7 @@ import { Button } from '../../Button';
 import { Image } from '../../Image';
 import * as api from '../../../helpers/api';
 
-export const LootReward = () => {
+export const LootResult = () => {
   const [confirmSale, setConfirmSale] = useState(false);
   const {
     setPlayers,

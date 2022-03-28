@@ -15,12 +15,17 @@ export const NavButtons = () => {
     setImagesUpdating(false);
   };
 
-  const renderPlayerCards = () => {
+  const renderCardCollection = () => {
     resetLootProcess();
-    setMainContent('PlayerCards');
+    setMainContent('CardCollection');
   };
 
-  const renderLootRewards = () => {
+  const renderStore = () => {
+    resetLootProcess();
+    setMainContent('Store');
+  };
+
+  const renderLootResult = () => {
     resetLootProcess();
     setMainContent('LootAction');
   };
@@ -30,16 +35,23 @@ export const NavButtons = () => {
       <Header>Navigation:</Header>
       <ul className='px-1 flex sm:flex-col overflow-hidden content-center justify-between'>
         <Button
-          onClick={() => renderPlayerCards()}
-          color={mainContent === 'PlayerCards' ? 'green' : ''}
+          onClick={() => renderCardCollection()}
+          color={mainContent === 'CardCollection' ? 'green' : ''}
           marginBottom={true}
         >
-          Cards
+          Card Collection
         </Button>
         <Button
-          onClick={() => renderLootRewards()}
+          onClick={() => renderStore()}
+          color={mainContent === 'Store' ? 'green' : ''}
+          marginBottom={true}
+        >
+          Store
+        </Button>
+        <Button
+          onClick={() => renderLootResult()}
           color={
-            ['LootAction', 'LootDrop', 'LootReward'].includes(mainContent)
+            ['LootAction', 'LootDrop', 'LootResult'].includes(mainContent)
               ? 'green'
               : ''
           }

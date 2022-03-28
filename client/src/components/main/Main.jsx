@@ -1,17 +1,24 @@
 import { useContext } from 'react';
 import { LootContext } from '../../App';
 import { Grid } from '../Grid';
+import { StoreCards } from './store/StoreCards';
 import { PlayerCards } from './card-collection/PlayerCards';
 import { Card } from '../Card';
 import { LootAction } from './loot/LootAction';
 import { LootDrop } from './loot/LootDrop';
-import { LootReward } from './loot/LootResult';
+import { LootResult } from './loot/LootResult';
 
 export const Main = () => {
   const { mainContent } = useContext(LootContext);
 
   const renderSwitch = (mainContent) => {
     switch (mainContent) {
+      case 'Store':
+        return (
+          <Grid>
+            <StoreCards />
+          </Grid>
+        );
       case 'LootAction':
         return (
           <Card>
@@ -24,10 +31,10 @@ export const Main = () => {
             <LootDrop />
           </Card>
         );
-      case 'LootReward':
+      case 'LootResult':
         return (
           <Card>
-            <LootReward />
+            <LootResult />
           </Card>
         );
       default:

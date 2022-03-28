@@ -33,7 +33,7 @@ export const PlayerSelect = () => {
 
   return (
     <>
-      <Header>Select Player:</Header>
+      <Header>Active Player:</Header>
       <div className='w-full flex flex-col sm:flex-row flex-grow overflow-hidden'>
         {playerElements}
       </div>

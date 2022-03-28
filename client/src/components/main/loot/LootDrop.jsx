@@ -33,6 +33,7 @@ export const LootDrop = () => {
   });
 
   const rollForCard = async () => {
+    console.log(reward.tier, reward.faction);
     if (reward.tier && reward.faction) {
       const card = await loot.determineCard(
         reward.tier,
@@ -49,7 +50,8 @@ export const LootDrop = () => {
 
     if (result.faction === 'Your Choice') {
       setShowFactionSelectInput(true);
-      setReward({ ...reward, tier: reward.tier, faction: 'Basic' });
+      console.log(result.tier, result.faction);
+      setReward({ ...reward, tier: result.tier, faction: 'Basic' });
     } else {
       const card = await loot.determineCard(
         result.tier,
@@ -65,7 +67,7 @@ export const LootDrop = () => {
   const markCardAcquired = async (card) => {
     const responseData = await api.markCardAcquired(card, selectedPlayer);
 
-    setMainContent('LootReward');
+    setMainContent('LootResult');
     setReward({ ...reward, card: responseData.acquiredCard });
     setCardPool(responseData.cardPool);
     setPlayers(responseData.players);
