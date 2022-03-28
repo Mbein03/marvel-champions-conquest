@@ -4,7 +4,7 @@ import { Header } from '../../Header';
 import { Button } from '../../Button';
 import * as api from '../../../helpers/api';
 
-export const NavigationButtons = () => {
+export const NavButtons = () => {
   const [imagesUpdating, setImagesUpdating] = useState(false);
   const { mainContent, setMainContent, resetLootProcess } =
     useContext(LootContext);
