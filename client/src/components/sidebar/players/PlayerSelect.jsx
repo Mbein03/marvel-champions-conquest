@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../../../App';
+import { PlayerSelectContainer } from './PlayerSelectContainer';
 import { Header } from '../../Header';
 import { Subheader } from '../../Subheader';
 import { Button } from '../../Button';
@@ -28,7 +29,7 @@ export const PlayerSelect = () => {
   return (
     <>
       <Header>Active Player:</Header>
-      <div className='w-full flex flex-col sm:flex-row flex-grow overflow-hidden'>{playerElements}</div>
+      <PlayerSelectContainer>{playerElements}</PlayerSelectContainer>
     </>
   );
 };

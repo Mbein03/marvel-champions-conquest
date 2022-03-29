@@ -8,25 +8,15 @@ export const PlayerCards = () => {
 
   useEffect(() => {
     if (activePlayer) {
-      activePlayer.player_id === 1
-        ? setActivePlayer(players[0])
-        : setActivePlayer(players[1]);
+      activePlayer.player_id === 1 ? setActivePlayer(players[0]) : setActivePlayer(players[1]);
     }
   }, [activePlayer, setActivePlayer, players]);
 
   const mapCards = (cards) => {
-    return cards.map((card) => (
-      <PlayerCard key={card.player_card_id} card={card} />
-    ));
+    return cards.map((card) => <PlayerCard key={card.player_card_id} card={card} />);
   };
 
   const playerCards = activePlayer ? mapCards(activePlayer.cards) : [];
 
-  return (
-    <>
-      <div className='flex items-center justify-center'>
-        <Grid>{playerCards}</Grid>
-      </div>
-    </>
-  );
+  return <Grid>{playerCards}</Grid>;
 };

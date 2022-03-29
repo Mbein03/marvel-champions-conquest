@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 import { GlobalContext } from '../../App';
+import { MainContainer } from './MainContainer';
 import { StoreCards } from './store/StoreCards';
 import { PlayerCards } from './card-collection/PlayerCards';
 import { LootAction } from './loot/LootAction';
@@ -15,7 +16,6 @@ export const Main = () => {
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
   const [reward, setReward] = useState({ lootDrop: 'T1', tier: '', faction: '', card: '' });
-
   const { mainContent } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -66,9 +66,7 @@ export const Main = () => {
   };
   return (
     <CardContext.Provider value={CardStates}>
-      <main role='main' className='w-full h-full flex-grow overflow-auto'>
-        <div className='bg-slate-300'>{renderSwitch(mainContent)}</div>
-      </main>
+      <MainContainer> {renderSwitch(mainContent)}</MainContainer>
     </CardContext.Provider>
   );
 };

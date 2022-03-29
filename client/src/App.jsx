@@ -39,11 +39,9 @@ export const App = () => {
   };
 
   return (
-    <>
-      <GlobalContext.Provider value={GlobalStates}>
-        <Sidebar />
-        <Main />
-      </GlobalContext.Provider>
-    </>
+    <GlobalContext.Provider value={GlobalStates}>
+      <Sidebar />
+      <Main />
+    </GlobalContext.Provider>
   );
 };
