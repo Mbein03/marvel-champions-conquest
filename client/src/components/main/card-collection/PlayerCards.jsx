@@ -1,18 +1,18 @@
 import { useEffect, useContext } from 'react';
-import { PlayerContext } from '../../../App';
+import { GlobalContext } from '../../../App';
 import { PlayerCard } from './PlayerCard';
+import { Grid } from '../../Grid';
 
 export const PlayerCards = () => {
-  const { players, selectedPlayer, setSelectedPlayer } =
-    useContext(PlayerContext);
+  const { players, activePlayer, setActivePlayer } = useContext(GlobalContext);
 
   useEffect(() => {
-    if (selectedPlayer) {
-      selectedPlayer.player_id === 1
-        ? setSelectedPlayer(players[0])
-        : setSelectedPlayer(players[1]);
+    if (activePlayer) {
+      activePlayer.player_id === 1
+        ? setActivePlayer(players[0])
+        : setActivePlayer(players[1]);
     }
-  }, [selectedPlayer, setSelectedPlayer, players]); //
+  }, [activePlayer, setActivePlayer, players]);
 
   const mapCards = (cards) => {
     return cards.map((card) => (
@@ -20,7 +20,13 @@ export const PlayerCards = () => {
     ));
   };
 
-  const playerCards = selectedPlayer ? mapCards(selectedPlayer.cards) : [];
+  const playerCards = activePlayer ? mapCards(activePlayer.cards) : [];
 
-  return <>{playerCards}</>;
+  return (
+    <>
+      <div className='flex items-center justify-center'>
+        <Grid>{playerCards}</Grid>
+      </div>
+    </>
+  );
 };

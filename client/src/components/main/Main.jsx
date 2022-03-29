@@ -1,58 +1,74 @@
-import { useContext } from 'react';
-import { LootContext } from '../../App';
-import { Grid } from '../Grid';
+import { useState, useEffect, useContext, createContext } from 'react';
+import { GlobalContext } from '../../App';
 import { StoreCards } from './store/StoreCards';
 import { PlayerCards } from './card-collection/PlayerCards';
-import { Card } from '../Card';
 import { LootAction } from './loot/LootAction';
 import { LootDrop } from './loot/LootDrop';
 import { LootResult } from './loot/LootResult';
+import * as api from '../../helpers/api';
+
+export const CardContext = createContext();
 
 export const Main = () => {
-  const { mainContent } = useContext(LootContext);
+  const [cardPool, setCardPool] = useState('');
+  const [storeCards, setStoreCards] = useState({ column1: '', column2: '', column3: '', column4: '' });
+  const [disableLootDropInput, setDisableLootDropInput] = useState(false);
+  const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
+  const [reward, setReward] = useState({ lootDrop: 'T1', tier: '', faction: '', card: '' });
+
+  const { mainContent } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const initializeCardPool = async () => {
+      const cardPool = await api.fetchCardPool();
+      setCardPool(cardPool);
+    };
+
+    initializeCardPool();
+  }, []);
+
+  const updateRewardLootDrop = (value) => {
+    setReward({ ...reward, lootDrop: value });
+  };
+
+  const updateRewardFaction = (value) => {
+    setReward({ ...reward, faction: value });
+  };
+
+  const CardStates = {
+    cardPool,
+    setCardPool,
+    storeCards,
+    setStoreCards,
+    reward,
+    setReward,
+    updateRewardLootDrop,
+    disableLootDropInput,
+    setDisableLootDropInput,
+    updateRewardFaction,
+    showFactionSelectInput,
+    setShowFactionSelectInput,
+  };
 
   const renderSwitch = (mainContent) => {
     switch (mainContent) {
       case 'Store':
-        return (
-          <Grid>
-            <StoreCards />
-          </Grid>
-        );
+        return <StoreCards />;
       case 'LootAction':
-        return (
-          <Card>
-            <LootAction />
-          </Card>
-        );
+        return <LootAction />;
       case 'LootDrop':
-        return (
-          <Card>
-            <LootDrop />
-          </Card>
-        );
+        return <LootDrop />;
       case 'LootResult':
-        return (
-          <Card>
-            <LootResult />
-          </Card>
-        );
+        return <LootResult />;
       default:
-        return (
-          <Grid>
-            <PlayerCards />
-          </Grid>
-        );
+        return <PlayerCards />;
     }
   };
-
   return (
-    <main role='main' className='w-full h-full flex-grow overflow-auto'>
-      <div className='bg-slate-300'>
-        <div className='flex items-center justify-center'>
-          {renderSwitch(mainContent)}
-        </div>
-      </div>
-    </main>
+    <CardContext.Provider value={CardStates}>
+      <main role='main' className='w-full h-full flex-grow overflow-auto'>
+        <div className='bg-slate-300'>{renderSwitch(mainContent)}</div>
+      </main>
+    </CardContext.Provider>
   );
 };

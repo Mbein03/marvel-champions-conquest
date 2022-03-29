@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
-import { PlayerContext } from '../../../App';
-import { LootContext } from '../../../App';
+import { GlobalContext } from '../../../App';
+import { CardContext } from '../Main';
+import { Card } from '../../Card';
 import { Header } from '../../Header';
 import { Button } from '../../Button';
 import { SelectInput } from '../../SelectInput';
@@ -9,22 +10,20 @@ import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
 
 export const LootDrop = () => {
-  const [confirmLootDrop, setConfirmLootDrop] = useState(false);
-  const { setPlayers, selectedPlayer, setSelectedPlayer } =
-    useContext(PlayerContext);
+  const { setPlayers, activePlayer, setActivePlayer, setMainContent } = useContext(GlobalContext);
   const {
     cardPool,
     setCardPool,
     reward,
     setReward,
-    setMainContent,
     updateRewardLootDrop,
     disableLootDropInput,
     setDisableLootDropInput,
     updateRewardFaction,
     showFactionSelectInput,
     setShowFactionSelectInput,
-  } = useContext(LootContext);
+  } = useContext(CardContext);
+  const [confirmLootDrop, setConfirmLootDrop] = useState(false);
 
   useEffect(() => {
     if (showFactionSelectInput || confirmLootDrop) {
@@ -33,16 +32,11 @@ export const LootDrop = () => {
   });
 
   const rollForCard = async () => {
-    console.log(reward.tier, reward.faction);
     if (reward.tier && reward.faction) {
-      const card = await loot.determineCard(
-        reward.tier,
-        reward.faction,
-        cardPool,
-        selectedPlayer
-      );
+      const card = await loot.determineCard(reward.tier, reward.faction, cardPool, activePlayer);
 
-      markCardAcquired(card);
+      setMainContent('LootResult');
+      if (card) markCardAcquired(card);
       return;
     }
 
@@ -53,31 +47,24 @@ export const LootDrop = () => {
       console.log(result.tier, result.faction);
       setReward({ ...reward, tier: result.tier, faction: 'Basic' });
     } else {
-      const card = await loot.determineCard(
-        result.tier,
-        result.faction,
-        cardPool,
-        selectedPlayer
-      );
+      const card = await loot.determineCard(result.tier, result.faction, cardPool, activePlayer);
 
-      markCardAcquired(card);
+      setMainContent('LootResult');
+      if (card) markCardAcquired(card);
     }
   };
 
   const markCardAcquired = async (card) => {
-    const responseData = await api.markCardAcquired(card, selectedPlayer);
+    const responseData = await api.markCardAcquired(card, activePlayer);
 
-    setMainContent('LootResult');
     setReward({ ...reward, card: responseData.acquiredCard });
     setCardPool(responseData.cardPool);
     setPlayers(responseData.players);
-    selectedPlayer.player_id === 1
-      ? setSelectedPlayer(responseData.players[0])
-      : setSelectedPlayer(responseData.players[1]);
+    activePlayer.player_id === 1 ? setActivePlayer(responseData.players[0]) : setActivePlayer(responseData.players[1]);
   };
 
   return (
-    <div>
+    <Card>
       <Header textCenter={true}>Loot Drop</Header>
       <SelectInput
         id={'lootDrop'}
@@ -105,10 +92,8 @@ export const LootDrop = () => {
           Confirm Roll
         </Button>
       ) : (
-        <Button onClick={() => setConfirmLootDrop(!confirmLootDrop)}>
-          Roll For Card
-        </Button>
+        <Button onClick={() => setConfirmLootDrop(!confirmLootDrop)}>Roll For Card</Button>
       )}
-    </div>
+    </Card>
   );
 };
