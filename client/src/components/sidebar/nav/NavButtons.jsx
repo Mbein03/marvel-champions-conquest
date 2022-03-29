@@ -8,7 +8,7 @@ export const NavButtons = () => {
 
   const { setDisablePlayerSelect, mainContent, setMainContent } = useContext(GlobalContext);
 
-  const mapButtons = (cards) => {
+  const mapButtons = () => {
     return contentCategories.map((category) => (
       <Button
         key={category}
@@ -26,5 +26,7 @@ export const NavButtons = () => {
     setMainContent(mainContent);
   };
 
-  return <NavButtonsContainer>{mapButtons()}</NavButtonsContainer>;
+  const buttonElements = mapButtons();
+
+  return <NavButtonsContainer>{buttonElements}</NavButtonsContainer>;
 };

@@ -9,9 +9,8 @@ export const LootAction = () => {
 
   useEffect(() => {
     setReward({ lootDrop: reward.lootDrop, tier: '', faction: '', card: '' });
-    setLootContent('LootAction');
     setDisableLootDropInput(false);
-  }, [reward.lootDrop, setDisableLootDropInput, setLootContent, setReward]);
+  }, [reward.lootDrop, setDisableLootDropInput, setReward]);
 
   const updateMinionLootDrop = (lootDrop) => {
     updateRewardLootDrop(lootDrop);

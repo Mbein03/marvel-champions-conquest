@@ -7,9 +7,7 @@ export const PlayerCards = () => {
   const { players, activePlayer, setActivePlayer } = useContext(GlobalContext);
 
   useEffect(() => {
-    if (activePlayer) {
-      activePlayer.player_id === 1 ? setActivePlayer(players[0]) : setActivePlayer(players[1]);
-    }
+    if (activePlayer) activePlayer.player_id === 1 ? setActivePlayer(players[0]) : setActivePlayer(players[1]);
   }, [activePlayer, setActivePlayer, players]);
 
   const mapCards = (cards) => {

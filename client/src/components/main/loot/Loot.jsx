@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { LootAction } from './LootAction';
 import { LootDrop } from './LootDrop';
 import { LootResult } from './LootResult';

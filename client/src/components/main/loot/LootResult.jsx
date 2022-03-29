@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { CardContext } from '../Main';
 import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
@@ -10,8 +9,7 @@ import { Image } from '../../Image';
 import * as api from '../../../helpers/api';
 
 export const LootResult = () => {
-  const { setPlayers, activePlayer, setActivePlayer, setDisablePlayerSelect } = useContext(GlobalContext);
-  const { setCardPool } = useContext(CardContext);
+  const { setPlayers, activePlayer, setDisablePlayerSelect } = useContext(GlobalContext);
   const { setLootContent, reward } = useContext(LootContext);
   const [confirmSale, setConfirmSale] = useState(false);
 
@@ -22,18 +20,15 @@ export const LootResult = () => {
   const saleConfirmed = async () => {
     const responseData = await api.markCardSold(reward.card, activePlayer);
     if (responseData) {
-      setCardPool(responseData.cardPool);
       setPlayers(responseData.players);
-      activePlayer.player_id === 1
-        ? setActivePlayer(responseData.players[0])
-        : setActivePlayer(responseData.players[1]);
       setLootContent('LootAction');
+      setDisablePlayerSelect(false);
     }
   };
 
   const resetLootProcess = () => {
-    setDisablePlayerSelect(false);
     setLootContent('LootAction');
+    setDisablePlayerSelect(false);
   };
 
   return (

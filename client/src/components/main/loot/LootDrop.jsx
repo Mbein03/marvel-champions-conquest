@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { CardContext } from '../Main';
 import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
@@ -14,8 +13,8 @@ export const LootDrop = () => {
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
   const [confirmLootDrop, setConfirmLootDrop] = useState(false);
 
-  const { setPlayers, activePlayer, setActivePlayer } = useContext(GlobalContext);
-  const { cardPool, setCardPool } = useContext(CardContext);
+  const { setPlayers, activePlayer } = useContext(GlobalContext);
+
   const {
     setLootContent,
     reward,
@@ -35,8 +34,10 @@ export const LootDrop = () => {
   useEffect(() => {});
 
   const rollForCard = async () => {
+    const cardPool = await api.fetchCardPool();
+
     if (reward.tier && reward.faction) {
-      const card = await loot.determineCard(reward.tier, reward.faction, cardPool, activePlayer);
+      const card = loot.determineCard(reward.tier, reward.faction, cardPool, activePlayer);
 
       setLootContent('LootResult');
       if (card) markCardAcquired(card);
@@ -49,7 +50,7 @@ export const LootDrop = () => {
       setShowFactionSelectInput(true);
       setReward({ ...reward, tier: result.tier, faction: 'Basic' });
     } else {
-      const card = await loot.determineCard(result.tier, result.faction, cardPool, activePlayer);
+      const card = loot.determineCard(result.tier, result.faction, cardPool, activePlayer);
 
       setLootContent('LootResult');
       if (card) markCardAcquired(card);
@@ -60,9 +61,7 @@ export const LootDrop = () => {
     const responseData = await api.markCardAcquired(card, activePlayer);
 
     setReward({ ...reward, card: responseData.acquiredCard });
-    setCardPool(responseData.cardPool);
     setPlayers(responseData.players);
-    activePlayer.player_id === 1 ? setActivePlayer(responseData.players[0]) : setActivePlayer(responseData.players[1]);
   };
 
   return (

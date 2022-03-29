@@ -1,18 +1,14 @@
 import { factions } from './constants';
 
 // Returns integer between two intervals
-export const randomIntFromInterval = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+export const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 // Returns array of strings (tier and faction)
 // Filter rewards table and return potential reward results based on loot drop selected
 export const getResult = (table, lootDrop) => {
-  const potentialResults = table
-    .filter((obj) => obj.lootDrop === lootDrop)
-    .map((obj) => obj.results)[0];
+  const potentialResults = table.filter((obj) => obj.lootDrop === lootDrop).map((obj) => obj.results)[0];
 
-  const result =
-    potentialResults[Math.floor(Math.random() * potentialResults.length)];
+  const result = potentialResults[Math.floor(Math.random() * potentialResults.length)];
 
   const tier = result.includes('None') ? 'None' : result.split(' ')[1];
 
@@ -33,9 +29,7 @@ export const getResult = (table, lootDrop) => {
 // Returns array of objects
 // Filter out cards from array based on tier and faction
 export const filterCards = (tier, faction, cardPool) =>
-  cardPool
-    .filter((obj) => obj.tier === tier)
-    .filter((obj) => obj.faction === faction);
+  cardPool.filter((obj) => obj.tier === tier).filter((obj) => obj.faction === faction);
 
 // Returns array of objects
 // Add additional rows to cards array based on qty of cards available
@@ -56,10 +50,9 @@ export const getPotentialCards = (cards) => {
 
 // Returns object OR null
 // Determine card result
-export const getCard = (cards) =>
-  cards.length ? cards[Math.floor(Math.random() * cards.length)] : null;
+export const getCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);
 
-export const determineCard = async (tier, faction, cardPool) => {
+export const determineCard = (tier, faction, cardPool) => {
   const filteredCards = filterCards(tier, faction, cardPool);
   const potentialCards = getPotentialCards(filteredCards);
   const card = getCard(potentialCards);

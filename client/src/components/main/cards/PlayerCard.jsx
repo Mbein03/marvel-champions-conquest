@@ -1,6 +1,5 @@
 import { useState, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { CardContext } from '../Main';
 import { Card } from '../../Card';
 import { Button } from '../../Button';
 import { Image } from '../../Image';
@@ -11,12 +10,10 @@ export const PlayerCard = ({ card }) => {
   const [confirmSale, setConfirmSale] = useState(false);
 
   const { setPlayers, activePlayer } = useContext(GlobalContext);
-  const { setCardPool } = useContext(CardContext);
 
   const saleConfirmed = async () => {
     const response = await api.markCardSold(card, activePlayer);
     if (response) {
-      setCardPool(response.cardPool);
       setPlayers(response.players);
       setConfirmSale(!confirmSale);
     }
