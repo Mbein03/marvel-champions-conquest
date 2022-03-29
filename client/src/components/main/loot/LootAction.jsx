@@ -1,25 +1,21 @@
 import { useEffect, useContext } from 'react';
-import { GlobalContext } from '../../../App';
-import { CardContext } from '../Main';
+import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
 import { Button } from '../../Button';
 
 export const LootAction = () => {
-  const { setMainContent } = useContext(GlobalContext);
-  const { reward, setReward, updateRewardLootDrop, setDisableLootDropInput, setShowFactionSelectInput } =
-    useContext(CardContext);
+  const { setLootContent, reward, setReward, updateRewardLootDrop, setDisableLootDropInput } = useContext(LootContext);
 
   useEffect(() => {
     setReward({ lootDrop: reward.lootDrop, tier: '', faction: '', card: '' });
-    setMainContent('LootAction');
+    setLootContent('LootAction');
     setDisableLootDropInput(false);
-    setShowFactionSelectInput(false);
-  }, [reward.lootDrop, setDisableLootDropInput, setMainContent, setReward, setShowFactionSelectInput]);
+  }, [reward.lootDrop, setDisableLootDropInput, setLootContent, setReward]);
 
   const updateMinionLootDrop = (lootDrop) => {
     updateRewardLootDrop(lootDrop);
-    setMainContent('LootDrop');
+    setLootContent('LootDrop');
     setDisableLootDropInput(true);
   };
 
@@ -35,7 +31,7 @@ export const LootAction = () => {
       <Button onClick={() => updateMinionLootDrop('T2')} marginBottom={true}>
         Minion Defeated (8+ Health)
       </Button>
-      <Button onClick={() => setMainContent('LootDrop')}>Manually Select Drop</Button>
+      <Button onClick={() => setLootContent('LootDrop')}>Manually Select Drop</Button>
     </Card>
   );
 };

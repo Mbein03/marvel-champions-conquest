@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { CardContext } from '../Main';
+import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
 import { Button } from '../../Button';
@@ -10,20 +11,20 @@ import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
 
 export const LootDrop = () => {
-  const { setPlayers, activePlayer, setActivePlayer, setMainContent } = useContext(GlobalContext);
+  const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
+  const [confirmLootDrop, setConfirmLootDrop] = useState(false);
+
+  const { setPlayers, activePlayer, setActivePlayer } = useContext(GlobalContext);
+  const { cardPool, setCardPool } = useContext(CardContext);
   const {
-    cardPool,
-    setCardPool,
+    setLootContent,
     reward,
     setReward,
     updateRewardLootDrop,
     disableLootDropInput,
     setDisableLootDropInput,
     updateRewardFaction,
-    showFactionSelectInput,
-    setShowFactionSelectInput,
-  } = useContext(CardContext);
-  const [confirmLootDrop, setConfirmLootDrop] = useState(false);
+  } = useContext(LootContext);
 
   useEffect(() => {
     if (showFactionSelectInput || confirmLootDrop) {
@@ -31,11 +32,13 @@ export const LootDrop = () => {
     }
   });
 
+  useEffect(() => {});
+
   const rollForCard = async () => {
     if (reward.tier && reward.faction) {
       const card = await loot.determineCard(reward.tier, reward.faction, cardPool, activePlayer);
 
-      setMainContent('LootResult');
+      setLootContent('LootResult');
       if (card) markCardAcquired(card);
       return;
     }
@@ -44,12 +47,11 @@ export const LootDrop = () => {
 
     if (result.faction === 'Your Choice') {
       setShowFactionSelectInput(true);
-      console.log(result.tier, result.faction);
       setReward({ ...reward, tier: result.tier, faction: 'Basic' });
     } else {
       const card = await loot.determineCard(result.tier, result.faction, cardPool, activePlayer);
 
-      setMainContent('LootResult');
+      setLootContent('LootResult');
       if (card) markCardAcquired(card);
     }
   };

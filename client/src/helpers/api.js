@@ -31,27 +31,27 @@ export const fetchPlayers = async () => {
 };
 
 export const updateCardImages = async () => {
-  const updatedCards = await fetchData(url.updateCardImages);
-  return updatedCards;
+  const cards = await fetchData(url.updateCardImages);
+  return cards;
 };
 
 export const fetchCardPool = async () => {
-  const cardPool = await fetchData(url.fetchCardPool);
-  return cardPool;
+  const cards = await fetchData(url.fetchCardPool);
+  return cards;
 };
 
 export const markCardAcquired = async (card, player) => {
-  const responseData = await postData(url.markCardAcquired, {
+  const response = await postData(url.markCardAcquired, {
     card: card,
     player: player,
   });
-  return responseData;
+  return response;
 };
 
 export const markCardSold = async (card, player) => {
-  const responseData = await postData(url.markCardSold, {
+  const response = await postData(url.markCardSold, {
     card: card,
     player: player,
   });
-  return responseData;
+  return response;
 };

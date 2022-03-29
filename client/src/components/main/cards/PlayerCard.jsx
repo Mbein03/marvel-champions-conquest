@@ -9,14 +9,15 @@ import { Subheader } from '../../Subheader';
 
 export const PlayerCard = ({ card }) => {
   const [confirmSale, setConfirmSale] = useState(false);
+
   const { setPlayers, activePlayer } = useContext(GlobalContext);
   const { setCardPool } = useContext(CardContext);
 
   const saleConfirmed = async () => {
-    const responseData = await api.markCardSold(card, activePlayer);
-    if (responseData) {
-      setCardPool(responseData.cardPool);
-      setPlayers(responseData.players);
+    const response = await api.markCardSold(card, activePlayer);
+    if (response) {
+      setCardPool(response.cardPool);
+      setPlayers(response.players);
       setConfirmSale(!confirmSale);
     }
   };
