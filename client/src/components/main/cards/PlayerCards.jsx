@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { PlayerCard } from './PlayerCard';
 import { Card } from '../../Card';
@@ -10,6 +10,10 @@ export const PlayerCards = () => {
   const [searchText, setSearchText] = useState('');
   const { activePlayer } = useContext(GlobalContext);
 
+  const filterCardsByName = useCallback(() => {
+    return activePlayer.cards.filter((card) => card.name.toLowerCase().includes(searchText.toLowerCase()));
+  }, [activePlayer, searchText]);
+
   useEffect(() => {
     if (activePlayer) {
       if (!searchText) {
@@ -19,9 +23,7 @@ export const PlayerCards = () => {
         setCards(filteredCards);
       }
     }
-  }, [activePlayer, searchText]);
-
-  const filterCardsByName = () => cards.filter((card) => card.name.toLowerCase().includes(searchText.toLowerCase()));
+  }, [activePlayer, searchText, filterCardsByName]);
 
   const mapCards = (cards) => {
     return cards.map((card) => <PlayerCard key={card.player_card_id} card={card} />);
