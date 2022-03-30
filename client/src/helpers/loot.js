@@ -4,7 +4,7 @@ export const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (m
 
 export const getFactionAndTier = (table, lootDrop) => {
   const filteredResults = filterTableByLootDrop(table, lootDrop);
-  const result = pullRandomResult(filteredResults);
+  const result = rollRandomResult(filteredResults);
   const resultTier = parseTierFromResultString(result);
   const resultFaction = parseFactionFromResultString(result);
 
@@ -15,7 +15,7 @@ const filterTableByLootDrop = (table, lootDrop) => {
   return table.filter((obj) => obj.lootDrop === lootDrop).map((obj) => obj.results)[0];
 };
 
-const pullRandomResult = (filteredResults) => {
+const rollRandomResult = (filteredResults) => {
   return filteredResults[Math.floor(Math.random() * filteredResults.length)];
 };
 
@@ -32,8 +32,8 @@ const parseFactionFromResultString = (result) => {
 
 export const getCard = (tier, faction, cards) => {
   const filteredCards = filterCardsByTierAndFaction(tier, faction, cards);
-  const potentialCards = addExtraRowsPerQuantity(filteredCards);
-  const card = pullRandomCard(potentialCards);
+  const potentialCards = addExtraRowsPerCardQuantity(filteredCards);
+  const card = rollRandomCard(potentialCards);
 
   return card;
 };
@@ -41,7 +41,7 @@ export const getCard = (tier, faction, cards) => {
 export const filterCardsByTierAndFaction = (tier, faction, cards) =>
   cards.filter((obj) => obj.tier === tier).filter((obj) => obj.faction === faction);
 
-export const addExtraRowsPerQuantity = (cards) => {
+export const addExtraRowsPerCardQuantity = (cards) => {
   const potentialCards = cards;
 
   cards.forEach((card) => {
@@ -55,4 +55,4 @@ export const addExtraRowsPerQuantity = (cards) => {
   return potentialCards;
 };
 
-export const pullRandomCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);
+export const rollRandomCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);

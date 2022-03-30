@@ -1,10 +1,11 @@
 const rootURL = 'http://localhost:9000';
 const url = {
   fetchPlayers: rootURL + '/api/players',
-  updateCardImages: rootURL + '/api/cards/update-images',
   fetchCardPool: rootURL + '/api/cards/pool',
+  markSchemeThwarted: rootURL + '/api/player/mark-scheme-thwarted',
   markCardAcquired: rootURL + '/api/card/mark-acquired',
   markCardSold: rootURL + '/api/card/mark-sold',
+  updateCardImages: rootURL + '/api/cards/update-images',
 };
 
 export const fetchData = async (url) => {
@@ -30,28 +31,35 @@ export const fetchPlayers = async () => {
   return players;
 };
 
-export const updateCardImages = async () => {
-  const cards = await fetchData(url.updateCardImages);
-  return cards;
-};
-
 export const fetchCardPool = async () => {
   const cards = await fetchData(url.fetchCardPool);
   return cards;
 };
 
+export const markSchemeThwarted = async (player) => {
+  const players = await postData(url.markSchemeThwarted, {
+    player: player,
+  });
+  return players;
+};
+
 export const markCardAcquired = async (card, player) => {
-  const response = await postData(url.markCardAcquired, {
+  const players = await postData(url.markCardAcquired, {
     card: card,
     player: player,
   });
-  return response;
+  return players;
 };
 
 export const markCardSold = async (card, player) => {
-  const response = await postData(url.markCardSold, {
+  const players = await postData(url.markCardSold, {
     card: card,
     player: player,
   });
-  return response;
+  return players;
+};
+
+export const updateCardImages = async () => {
+  const cards = await fetchData(url.updateCardImages);
+  return cards;
 };

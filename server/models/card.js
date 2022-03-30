@@ -4,48 +4,6 @@ const fetch = require('node-fetch');
 const db = knex(config.development);
 const Player = require('../models/Player');
 
-const fetchCardsFromMarvelApi = async () => {
-  const response = await fetch('https://marvelcdb.com/api/public/cards/');
-  const json = await response.json();
-  return json;
-};
-
-const findMarvelApiCardMatch = (card, marvelApiCards) => {
-  // TODO: Change to find and test
-  const marvelApiCard = marvelApiCards.filter(
-    (obj) => obj.name === card.name && obj.faction_name === card.faction && obj.imagesrc
-  )[0];
-
-  return marvelApiCard;
-};
-
-const updateCardImage = async (card, marvelApiCard) => {
-  const success = await db('cards').where('card_id', card.card_id).update({
-    marvel_cdb_id: marvelApiCard.code,
-    image_path: marvelApiCard.imagesrc,
-  });
-
-  return success;
-};
-
-const updateCardImages = async () => {
-  const marvelApiCards = await fetchCardsFromMarvelApi();
-  const cardsMissingImage = await db('cards').whereNull('image_path');
-  const updatedCardIds = [];
-
-  cardsMissingImage.forEach((card) => {
-    const marvelApiCard = findMarvelApiCardMatch(card, marvelApiCards);
-
-    if (marvelApiCard) {
-      const success = updateCardImage(card, marvelApiCard);
-      if (success) updatedCardIds.push(card.card_id);
-    }
-  });
-
-  const updatedCards = await db('cards').whereIn('card_id', updatedCardIds);
-  return updatedCards;
-};
-
 const fetchCardPool = async () => {
   const cards = await db('cards').where('qty', '>', 0);
   return cards;
@@ -78,17 +36,9 @@ const markCardAcquired = async (data) => {
     });
   }
 
-  const cardPool = await fetchCardPool();
   const players = await Player.fetchPlayers();
-  const card = await db('cards').where('card_id', data.card.card_id).first();
 
-  const response = {
-    cardPool,
-    players,
-    card,
-  };
-
-  return response;
+  return players;
 };
 
 const markCardSold = async (data) => {
@@ -121,17 +71,50 @@ const markCardSold = async (data) => {
       credits: player.credits + earnedCredits,
     });
 
-  const cardPool = await fetchCardPool();
   const players = await Player.fetchPlayers();
-  const card = await db('cards').where('card_id', soldCard.card_id).first();
 
-  const response = {
-    cardPool,
-    players,
-    card,
-  };
+  return players;
+};
 
-  return response;
+const updateCardImages = async () => {
+  const marvelApiCards = await fetchCardsFromMarvelApi();
+  const cardsMissingImage = await db('cards').whereNull('image_path');
+  const updatedCardIds = [];
+
+  cardsMissingImage.forEach((card) => {
+    const marvelApiCard = findMarvelApiCardMatch(card, marvelApiCards);
+
+    if (marvelApiCard) {
+      const success = updateCardImage(card, marvelApiCard);
+      if (success) updatedCardIds.push(card.card_id);
+    }
+  });
+
+  const updatedCards = await db('cards').whereIn('card_id', updatedCardIds);
+  return updatedCards;
+};
+
+const fetchCardsFromMarvelApi = async () => {
+  const response = await fetch('https://marvelcdb.com/api/public/cards/');
+  const json = await response.json();
+  return json;
+};
+
+const findMarvelApiCardMatch = (card, marvelApiCards) => {
+  const marvelApiCard = marvelApiCards.filter(
+    (obj) => obj.name === card.name && obj.faction_name === card.faction && obj.imagesrc
+  )[0];
+
+  return marvelApiCard;
+};
+
+const updateCardImage = async (card, marvelApiCard) => {
+  const success = await db('cards').where('card_id', card.card_id).update({
+    marvel_cdb_id: marvelApiCard.code,
+    image_path: marvelApiCard.imagesrc,
+  });
+
+  return success;
 };
 
 module.exports = {

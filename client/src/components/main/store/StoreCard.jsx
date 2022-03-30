@@ -10,7 +10,6 @@ import * as loot from '../../../helpers/loot';
 import { factions } from '../../../helpers/constants';
 
 export const StoreCard = ({ tier, resetCards, setResetCards }) => {
-  const [confirmPurchase, setConfirmPurchase] = useState(false);
   const [faction, setFaction] = useState('');
   const [card, setCard] = useState('');
 
@@ -44,16 +43,9 @@ export const StoreCard = ({ tier, resetCards, setResetCards }) => {
     return (
       <>
         <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} />
-        {!confirmPurchase && (
-          <Button onClick={() => setConfirmPurchase(!confirmPurchase)} marginBottom={true}>
-            Purchase Card
-          </Button>
-        )}
-        {confirmPurchase && (
-          <Button onClick={() => purchaseConfirmed()} color={'green'} marginBottom={true}>
-            Confirm Sale
-          </Button>
-        )}
+        <Button confirmText={'Confirm Purchase'} onConfirm={() => purchaseConfirmed()} marginBottom={true}>
+          Purchase Card
+        </Button>
       </>
     );
   };

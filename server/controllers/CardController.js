@@ -1,14 +1,5 @@
 const Card = require('../models/Card');
 
-exports.updateCardImages = async (req, res) => {
-  try {
-    const cards = await Card.updateCardImages();
-    res.status(200).json(cards);
-  } catch (error) {
-    res.status(500).json({ message: 'Unable to update card images.' });
-  }
-};
-
 exports.fetchCardPool = async (req, res) => {
   try {
     const cards = await Card.fetchCardPool();
@@ -33,5 +24,14 @@ exports.markCardSold = async (req, res) => {
     res.status(200).json(card);
   } catch (error) {
     res.status(500).json({ message: 'Unable to mark card as sold.' });
+  }
+};
+
+exports.updateCardImages = async (req, res) => {
+  try {
+    const cards = await Card.updateCardImages();
+    res.status(200).json(cards);
+  } catch (error) {
+    res.status(500).json({ message: 'Unable to update card images.' });
   }
 };

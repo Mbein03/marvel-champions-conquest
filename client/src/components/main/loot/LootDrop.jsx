@@ -13,7 +13,6 @@ export const LootDrop = () => {
   const [tier, setTier] = useState('');
   const [faction, setFaction] = useState('Basic');
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
-  const [confirmLootDrop, setConfirmLootDrop] = useState(false);
 
   const { setPlayers, activePlayer } = useContext(GlobalContext);
 
@@ -21,16 +20,14 @@ export const LootDrop = () => {
     useContext(LootContext);
 
   useEffect(() => {
-    if (showFactionSelectInput || confirmLootDrop) {
-      setDisableLootDropInput(true);
-    }
+    if (showFactionSelectInput) setDisableLootDropInput(true);
   });
 
-  const rollForCard = async () => {
+  const rollConfirmed = async () => {
     const cards = await api.fetchCardPool();
 
     if (tier) {
-      pullCard(tier, faction, cards);
+      rollForCard(tier, faction, cards);
       return;
     }
 
@@ -40,20 +37,20 @@ export const LootDrop = () => {
       setShowFactionSelectInput(true);
       setTier(resultTier);
     } else {
-      pullCard(resultTier, resultFaction, cards);
+      rollForCard(resultTier, resultFaction, cards);
     }
   };
 
-  const pullCard = (tier, faction, cards) => {
+  const rollForCard = (tier, faction, cards) => {
     const card = loot.getCard(tier, faction, cards);
     if (card) markCardAcquired(card);
     setLootContent('LootResult');
   };
 
   const markCardAcquired = async (card) => {
-    const response = await api.markCardAcquired(card, activePlayer);
-    setLootedCard(response.card);
-    setPlayers(response.players);
+    const players = await api.markCardAcquired(card, activePlayer);
+    setLootedCard(card);
+    setPlayers(players);
   };
 
   return (
@@ -69,24 +66,18 @@ export const LootDrop = () => {
         disabled={disableLootDropInput}
       />
       {showFactionSelectInput && (
-        <>
-          <SelectInput
-            id={'faction'}
-            name={'faction'}
-            labelText={'Faction:'}
-            data={constants.factions.slice(0, -1)}
-            value={faction}
-            onSelect={setFaction}
-          />
-        </>
+        <SelectInput
+          id={'faction'}
+          name={'faction'}
+          labelText={'Faction:'}
+          data={constants.factions.slice(0, -1)}
+          value={faction}
+          onSelect={setFaction}
+        />
       )}
-      {confirmLootDrop ? (
-        <Button onClick={() => rollForCard()} color={'green'}>
-          Confirm Roll
-        </Button>
-      ) : (
-        <Button onClick={() => setConfirmLootDrop(!confirmLootDrop)}>Roll For Card</Button>
-      )}
+      <Button confirmText={'Confirm Roll'} onConfirm={() => rollConfirmed()}>
+        Roll For Card
+      </Button>
     </Card>
   );
 };

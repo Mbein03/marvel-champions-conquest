@@ -1,12 +1,8 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 
-export const Button = ({
-  onClick,
-  color,
-  marginBottom,
-  disabled,
-  children,
-}) => {
+export const Button = ({ onClick, onConfirm, confirmText, color, marginBottom, disabled, children }) => {
+  const [confirm, setConfirm] = useState(false);
   const btnClass = classNames({
     transition: true,
     uppercase: true,
@@ -26,23 +22,34 @@ export const Button = ({
     'active:shadow-lg': true,
     'duration-150': true,
     'ease-in-out': true,
-    'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800':
-      !disabled && !color,
-    'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800':
-      disabled,
+    'bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800': !disabled && !color,
+    'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800': disabled,
     'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800':
-      !disabled && color === 'green',
+      !disabled && (confirm || color === 'green'),
     'mb-3': marginBottom,
   });
 
+  const confirmed = () => {
+    setConfirm(!confirm);
+    onConfirm();
+  };
+
   return (
-    <button
-      type='button'
-      className={btnClass}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {children}
-    </button>
+    <>
+      {confirm ? (
+        <button type='button' className={btnClass} onClick={() => confirmed()} disabled={disabled}>
+          {confirmText}
+        </button>
+      ) : (
+        <button
+          type='button'
+          className={btnClass}
+          onClick={onConfirm ? () => setConfirm(!confirm) : onClick}
+          disabled={disabled}
+        >
+          {children}
+        </button>
+      )}
+    </>
   );
 };

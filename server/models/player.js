@@ -15,15 +15,7 @@ const fetchPlayers = async () => {
 
 const fetchPlayerCards = async (player) => {
   const playerCards = await db
-    .select(
-      'pc.id AS player_card_id',
-      'c.card_id',
-      'c.name',
-      'c.faction',
-      'c.tier',
-      'c.image_path',
-      'pc.qty'
-    )
+    .select('pc.id AS player_card_id', 'c.card_id', 'c.name', 'c.faction', 'c.tier', 'c.image_path', 'pc.qty')
     .from('cards as c')
     .join('player_cards AS pc', 'c.card_id', '=', 'pc.card_id')
     .join('players AS p', 'p.player_id', '=', 'pc.player_id')
@@ -35,6 +27,19 @@ const fetchPlayerCards = async (player) => {
   return playerCards;
 };
 
+const markSchemeThwarted = async (data) => {
+  await db('players')
+    .where('player_id', data.player.player_id)
+    .update({
+      credits: data.player.credits + 25,
+    });
+
+  const players = await fetchPlayers();
+
+  return players;
+};
+
 module.exports = {
   fetchPlayers,
+  markSchemeThwarted,
 };

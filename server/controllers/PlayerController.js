@@ -9,3 +9,12 @@ exports.fetchPlayers = async (req, res) => {
     res.status(500).json({ message: 'Unable to retrieve players.' });
   }
 };
+
+exports.markSchemeThwarted = async (req, res) => {
+  try {
+    const player = await Player.markSchemeThwarted(req.body.data);
+    res.status(200).json(player);
+  } catch (error) {
+    res.status(500).json({ message: 'Unable to mark scheme thwarted.' });
+  }
+};
