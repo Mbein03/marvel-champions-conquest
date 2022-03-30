@@ -9,7 +9,7 @@ export const App = () => {
   const [players, setPlayers] = useState('');
   const [disablePlayerSelect, setDisablePlayerSelect] = useState(false);
   const [activePlayer, setActivePlayer] = useState('');
-  const [mainContent, setMainContent] = useState('Cards');
+  const [mainContent, setMainContent] = useState('Card Collection');
 
   useEffect(() => {
     const initializePlayers = async () => {

@@ -13,10 +13,7 @@ const fetchCardsFromMarvelApi = async () => {
 const findMarvelApiCardMatch = (card, marvelApiCards) => {
   // TODO: Change to find and test
   const marvelApiCard = marvelApiCards.filter(
-    (obj) =>
-      obj.name === card.name &&
-      obj.faction_name === card.faction &&
-      obj.imagesrc
+    (obj) => obj.name === card.name && obj.faction_name === card.faction && obj.imagesrc
   )[0];
 
   return marvelApiCard;
@@ -83,44 +80,40 @@ const markCardAcquired = async (data) => {
 
   const cardPool = await fetchCardPool();
   const players = await Player.fetchPlayers();
-  const acquiredCard = await db('cards')
-    .where('card_id', data.card.card_id)
-    .first();
+  const card = await db('cards').where('card_id', data.card.card_id).first();
 
-  const responseData = {
+  const response = {
     cardPool,
     players,
-    acquiredCard,
+    card,
   };
 
-  return responseData;
+  return response;
 };
 
 const markCardSold = async (data) => {
-  const card = await db('cards').where('card_id', data.card.card_id).first();
+  const soldCard = await db('cards').where('card_id', data.card.card_id).first();
 
   await db('cards')
-    .where('card_id', card.card_id)
+    .where('card_id', soldCard.card_id)
     .update({
-      qty: card.qty + 1,
+      qty: soldCard.qty + 1,
     });
 
   const playerCard = await db('player_cards')
     .where('player_id', data.player.player_id)
-    .where('card_id', card.card_id)
+    .where('card_id', soldCard.card_id)
     .first();
 
   await db('player_cards')
     .where('player_id', data.player.player_id)
-    .where('card_id', card.card_id)
+    .where('card_id', soldCard.card_id)
     .update({
       qty: playerCard.qty - 1,
     });
 
-  const player = await db('players')
-    .where('player_id', data.player.player_id)
-    .first();
-  const earnedCredits = card.faction === 'Basic' ? 25 : 50;
+  const player = await db('players').where('player_id', data.player.player_id).first();
+  const earnedCredits = soldCard.faction === 'Basic' ? 25 : 50;
 
   await db('players')
     .where('player_id', data.player.player_id)
@@ -130,15 +123,15 @@ const markCardSold = async (data) => {
 
   const cardPool = await fetchCardPool();
   const players = await Player.fetchPlayers();
-  const soldCard = await db('cards').where('card_id', card.card_id).first();
+  const card = await db('cards').where('card_id', soldCard.card_id).first();
 
-  const responseData = {
+  const response = {
     cardPool,
     players,
-    soldCard,
+    card,
   };
 
-  return responseData;
+  return response;
 };
 
 module.exports = {

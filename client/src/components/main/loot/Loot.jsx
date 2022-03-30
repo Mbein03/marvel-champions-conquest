@@ -7,26 +7,19 @@ export const LootContext = createContext();
 
 export const Loot = () => {
   const [lootContent, setLootContent] = useState('LootAction');
+  const [lootDrop, setLootDrop] = useState('T1');
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);
-  const [reward, setReward] = useState({ lootDrop: 'T1', tier: '', faction: '', card: '' });
-
-  const updateRewardLootDrop = (value) => {
-    setReward({ ...reward, lootDrop: value });
-  };
-
-  const updateRewardFaction = (value) => {
-    setReward({ ...reward, faction: value });
-  };
+  const [lootedCard, setLootedCard] = useState('');
 
   const LootStates = {
     lootContent,
     setLootContent,
-    reward,
-    setReward,
-    updateRewardLootDrop,
+    lootDrop,
+    setLootDrop,
     disableLootDropInput,
     setDisableLootDropInput,
-    updateRewardFaction,
+    lootedCard,
+    setLootedCard,
   };
 
   const renderSwitch = (lootContent) => {

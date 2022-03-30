@@ -3,14 +3,13 @@ import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
-import { Subheader } from '../../Subheader';
 import { Button } from '../../Button';
 import { Image } from '../../Image';
 import * as api from '../../../helpers/api';
 
 export const LootResult = () => {
   const { setPlayers, activePlayer, setDisablePlayerSelect } = useContext(GlobalContext);
-  const { setLootContent, reward } = useContext(LootContext);
+  const { setLootContent, lootedCard } = useContext(LootContext);
   const [confirmSale, setConfirmSale] = useState(false);
 
   useEffect(() => {
@@ -18,38 +17,33 @@ export const LootResult = () => {
   });
 
   const saleConfirmed = async () => {
-    const responseData = await api.markCardSold(reward.card, activePlayer);
-    if (responseData) {
-      setPlayers(responseData.players);
+    const response = await api.markCardSold(lootedCard, activePlayer);
+    if (response) {
+      setPlayers(response.players);
       setLootContent('LootAction');
-      setDisablePlayerSelect(false);
     }
   };
 
   const resetLootProcess = () => {
     setLootContent('LootAction');
-    setDisablePlayerSelect(false);
   };
 
   return (
     <Card>
-      <Header textCenter={true}>Reward</Header>
-      {reward.card ? (
+      {lootedCard ? (
         <>
-          <Subheader title={'Card'} text={reward.card.name} />
-          <Subheader title={'Faction'} text={reward.card.faction} />
-          <Subheader title={'Tier'} text={reward.card.tier} />
+          <Header textCenter={true}>{lootedCard.faction + ' / ' + lootedCard.tier + ' Tier'}</Header>
         </>
       ) : (
-        <Subheader title={'Card'} text={'None'} />
+        <Header textCenter={true}>None</Header>
       )}
-      {reward.card && <Image src={'https://marvelcdb.com/' + reward.card.image_path} alt={reward.card.name} />}
-      {reward.card && !confirmSale && (
+      {lootedCard && <Image src={'https://marvelcdb.com/' + lootedCard.image_path} alt={lootedCard.name} />}
+      {lootedCard && !confirmSale && (
         <Button onClick={() => setConfirmSale(!confirmSale)} marginBottom={true}>
           Sell Card
         </Button>
       )}
-      {reward.card && confirmSale && (
+      {lootedCard && confirmSale && (
         <Button onClick={() => saleConfirmed()} color={'green'} marginBottom={true}>
           Confirm Sale
         </Button>

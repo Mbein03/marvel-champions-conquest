@@ -1,19 +1,22 @@
 import { useEffect, useContext } from 'react';
+import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
 import { Card } from '../../Card';
 import { Header } from '../../Header';
 import { Button } from '../../Button';
 
 export const LootAction = () => {
-  const { setLootContent, reward, setReward, updateRewardLootDrop, setDisableLootDropInput } = useContext(LootContext);
+  const { setDisablePlayerSelect } = useContext(GlobalContext);
+  const { setLootContent, setLootDrop, setDisableLootDropInput, setLootedCard } = useContext(LootContext);
 
   useEffect(() => {
-    setReward({ lootDrop: reward.lootDrop, tier: '', faction: '', card: '' });
+    setDisablePlayerSelect(false);
     setDisableLootDropInput(false);
-  }, [reward.lootDrop, setDisableLootDropInput, setReward]);
+    setLootedCard('');
+  }, [setDisablePlayerSelect, setDisableLootDropInput, setLootedCard]);
 
-  const updateMinionLootDrop = (lootDrop) => {
-    updateRewardLootDrop(lootDrop);
+  const defeatedMinion = (lootDrop) => {
+    setLootDrop(lootDrop);
     setLootContent('LootDrop');
     setDisableLootDropInput(true);
   };
@@ -21,13 +24,13 @@ export const LootAction = () => {
   return (
     <Card>
       <Header textCenter={true}>Claim Loot Rewards</Header>
-      <Button onClick={() => updateMinionLootDrop('T1')} marginBottom={true}>
+      <Button onClick={() => defeatedMinion('T1')} marginBottom={true}>
         Minion Defeated (2-4 Health)
       </Button>
-      <Button onClick={() => updateMinionLootDrop('T1+')} marginBottom={true}>
+      <Button onClick={() => defeatedMinion('T1+')} marginBottom={true}>
         Minion Defeated (5-7 Health)
       </Button>
-      <Button onClick={() => updateMinionLootDrop('T2')} marginBottom={true}>
+      <Button onClick={() => defeatedMinion('T2')} marginBottom={true}>
         Minion Defeated (8+ Health)
       </Button>
       <Button onClick={() => setLootContent('LootDrop')}>Manually Select Drop</Button>

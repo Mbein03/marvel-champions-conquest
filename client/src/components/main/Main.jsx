@@ -10,9 +10,9 @@ export const Main = () => {
 
   const renderSwitch = (mainContent) => {
     switch (mainContent) {
-      case 'Store':
+      case 'Helicarrier':
         return <StoreCards />;
-      case 'Loot':
+      case 'Claim Loot Rewards':
         return <Loot />;
       default:
         return <PlayerCards />;

@@ -4,7 +4,7 @@ import { NavButtonsContainer } from './NavButtonsContainer';
 import { Button } from '../../Button';
 
 export const NavButtons = () => {
-  const contentCategories = ['Cards', 'Loot'];
+  const contentCategories = ['Card Collection', 'Claim Loot Rewards'];
 
   const { setDisablePlayerSelect, mainContent, setMainContent } = useContext(GlobalContext);
 
@@ -16,7 +16,7 @@ export const NavButtons = () => {
         color={mainContent === category ? 'green' : ''}
         marginBottom={true}
       >
-        {category === 'Cards' ? category + ' Collection' : category}
+        {category}
       </Button>
     ));
   };
