@@ -27,6 +27,10 @@ export const App = () => {
     updateCardImages();
   }, []);
 
+  useEffect(() => {
+    if (activePlayer) activePlayer.player_id === 1 ? setActivePlayer(players[0]) : setActivePlayer(players[1]);
+  }, [activePlayer, players]);
+
   const GlobalStates = {
     players,
     setPlayers,

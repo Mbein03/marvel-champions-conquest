@@ -7,15 +7,14 @@ import { Button } from '../../Button';
 import * as api from '../../../helpers/api';
 
 export const LootAction = () => {
-  const { players, setPlayers, activePlayer, setActivePlayer, setDisablePlayerSelect } = useContext(GlobalContext);
+  const { setPlayers, activePlayer, setDisablePlayerSelect } = useContext(GlobalContext);
   const { setLootContent, setLootDrop, setDisableLootDropInput, setLootedCard } = useContext(LootContext);
 
   useEffect(() => {
     setDisablePlayerSelect(false);
     setDisableLootDropInput(false);
     setLootedCard('');
-    if (activePlayer) activePlayer.player_id === 1 ? setActivePlayer(players[0]) : setActivePlayer(players[1]);
-  }, [setDisablePlayerSelect, setDisableLootDropInput, setLootedCard, players, activePlayer, setActivePlayer]);
+  }, [setDisablePlayerSelect, setDisableLootDropInput, setLootedCard]);
 
   const schemeThwarted = async () => {
     const players = await api.markSchemeThwarted(activePlayer);
