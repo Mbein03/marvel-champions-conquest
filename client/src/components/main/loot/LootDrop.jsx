@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
 import { Card } from '../../Card';
-import { Header } from '../../Header';
 import { Button } from '../../Button';
 import { SelectInput } from '../../SelectInput';
 import * as constants from '../../../helpers/constants';
@@ -55,10 +54,8 @@ export const LootDrop = () => {
 
   return (
     <Card>
-      <Header textCenter={true}>Loot Drop</Header>
       <SelectInput
         id={'lootDrop'}
-        name={'lootDrop'}
         labelText={'Loot Drop:'}
         data={constants.lootDrops}
         value={lootDrop}
@@ -68,7 +65,6 @@ export const LootDrop = () => {
       {showFactionSelectInput && (
         <SelectInput
           id={'faction'}
-          name={'faction'}
           labelText={'Faction:'}
           data={constants.factions.slice(0, -1)}
           value={faction}

@@ -55,7 +55,6 @@ export const StoreCard = ({ tier, resetCards, setResetCards }) => {
       <>
         <SelectInput
           id={tier}
-          name={tier}
           labelText={'Faction:'}
           data={factions.slice(0, -1)}
           value={faction}

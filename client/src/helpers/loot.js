@@ -3,20 +3,20 @@ import { factions } from './constants';
 export const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 export const getFactionAndTier = (table, lootDrop) => {
-  const filteredResults = filterTableByLootDrop(table, lootDrop);
-  const result = rollRandomResult(filteredResults);
+  const results = findResultsInTable(table, lootDrop);
+  const result = rollRandomResult(results);
   const resultTier = parseTierFromResultString(result);
   const resultFaction = parseFactionFromResultString(result);
 
   return { resultTier, resultFaction };
 };
 
-const filterTableByLootDrop = (table, lootDrop) => {
-  return table.filter((obj) => obj.lootDrop === lootDrop).map((obj) => obj.results)[0];
+const findResultsInTable = (table, lootDrop) => {
+  return table.find((table) => table.lootDrop === lootDrop).results;
 };
 
-const rollRandomResult = (filteredResults) => {
-  return filteredResults[Math.floor(Math.random() * filteredResults.length)];
+const rollRandomResult = (results) => {
+  return results[Math.floor(Math.random() * results.length)];
 };
 
 const parseTierFromResultString = (result) => {
@@ -39,7 +39,7 @@ export const getCard = (tier, faction, cards) => {
 };
 
 export const filterCardsByTierAndFaction = (tier, faction, cards) =>
-  cards.filter((obj) => obj.tier === tier).filter((obj) => obj.faction === faction);
+  cards.filter((card) => card.tier === tier).filter((card) => card.faction === faction);
 
 export const addExtraRowsPerCardQuantity = (cards) => {
   const potentialCards = cards;
