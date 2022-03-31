@@ -1,8 +1,22 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 
 export const Button = ({ onClick, onConfirm, confirmText, color, marginBottom, disabled, children }) => {
   const [confirm, setConfirm] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setConfirm(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [ref]);
+
   const btnClass = classNames({
     transition: true,
     uppercase: true,
@@ -37,7 +51,7 @@ export const Button = ({ onClick, onConfirm, confirmText, color, marginBottom, d
   return (
     <>
       {confirm ? (
-        <button type='button' className={btnClass} onClick={() => confirmed()} disabled={disabled}>
+        <button ref={ref} type='button' className={btnClass} onClick={() => confirmed()} disabled={disabled}>
           {confirmText}
         </button>
       ) : (
