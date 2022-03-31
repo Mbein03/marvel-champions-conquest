@@ -1,11 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { SelectInput } from '../../SelectInput';
-import { Button } from '../../Button';
-import { Image } from '../../Image';
+import { SelectInput } from '../../common/SelectInput';
+import { Button } from '../../common/Button';
+import { Image } from '../../common/Image';
+import { Subheader } from '../../common/Subheader';
 import * as api from '../../../helpers/api';
-import { Subheader } from '../../Subheader';
-
 import * as loot from '../../../helpers/loot';
 import { factions } from '../../../helpers/constants';
 
@@ -56,7 +55,7 @@ export const StoreCard = ({ tier, resetCards, setResetCards }) => {
         <SelectInput
           id={tier}
           labelText={'Faction:'}
-          data={factions.slice(0, -1)}
+          options={factions.slice(0, -1)}
           value={faction}
           onSelect={setFaction}
         />

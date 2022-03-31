@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { NavButtonsContainer } from './NavButtonsContainer';
-import { Button } from '../../Button';
+import { Button } from '../../common/Button';
 
 export const NavButtons = () => {
   const contentCategories = ['Card Collection', 'Claim Loot Rewards'];

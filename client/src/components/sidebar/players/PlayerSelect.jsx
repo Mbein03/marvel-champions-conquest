@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { PlayerSelectContainer } from './PlayerSelectContainer';
-import { Header } from '../../Header';
-import { Subheader } from '../../Subheader';
-import { Button } from '../../Button';
+import { Header } from '../../common/Header';
+import { Subheader } from '../../common/Subheader';
+import { Button } from '../../common/Button';
 
 export const PlayerSelect = () => {
   const { players, activePlayer, setActivePlayer, disablePlayerSelect } = useContext(GlobalContext);

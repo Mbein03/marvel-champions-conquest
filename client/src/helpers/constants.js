@@ -25,6 +25,13 @@ export const factions = [
   { id: 'Your Choice', name: 'Your Choice' },
 ];
 
+export const cardTiers = [
+  { id: 'S', name: 'S' },
+  { id: 'A', name: 'A' },
+  { id: 'B', name: 'B' },
+  { id: 'C', name: 'C' },
+];
+
 export const rewardTable = [
   {
     lootDrop: 'T1',

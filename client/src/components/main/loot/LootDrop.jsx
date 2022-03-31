@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
-import { Card } from '../../Card';
-import { Button } from '../../Button';
-import { SelectInput } from '../../SelectInput';
+import { Card } from '../../common/Card';
+import { Button } from '../../common/Button';
+import { SelectInput } from '../../common/SelectInput';
 import * as constants from '../../../helpers/constants';
 import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
@@ -57,7 +57,7 @@ export const LootDrop = () => {
       <SelectInput
         id={'lootDrop'}
         labelText={'Loot Drop:'}
-        data={constants.lootDrops}
+        options={constants.lootDrops}
         value={lootDrop}
         onSelect={setLootDrop}
         disabled={disableLootDropInput}
@@ -66,7 +66,7 @@ export const LootDrop = () => {
         <SelectInput
           id={'faction'}
           labelText={'Faction:'}
-          data={constants.factions.slice(0, -1)}
+          options={constants.factions.slice(0, -1)}
           value={faction}
           onSelect={setFaction}
         />

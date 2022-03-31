@@ -1,10 +1,10 @@
 import { useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
-import { Card } from '../../Card';
-import { Header } from '../../Header';
-import { Button } from '../../Button';
-import { Image } from '../../Image';
+import { Card } from '../../common/Card';
+import { Header } from '../../common/Header';
+import { Button } from '../../common/Button';
+import { Image } from '../../common/Image';
 import * as api from '../../../helpers/api';
 
 export const LootResult = () => {
@@ -28,7 +28,9 @@ export const LootResult = () => {
   return (
     <Card>
       {lootedCard ? (
-        <Header textCenter={true}>{lootedCard.faction + ' / ' + lootedCard.tier + ' Tier'}</Header>
+        <Header textCenter={true} underline={true}>
+          {'Tier: ' + lootedCard.tier}
+        </Header>
       ) : (
         <Header textCenter={true}>None</Header>
       )}

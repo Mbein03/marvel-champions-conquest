@@ -22,6 +22,7 @@ const fetchPlayerCards = async (player) => {
     .where('pc.qty', '>', 0)
     .where('p.player_id', player.player_id)
     .orderBy('c.faction')
+    .orderBy('c.tier')
     .orderBy('c.name');
 
   return playerCards;

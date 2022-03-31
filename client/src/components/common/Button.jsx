@@ -40,7 +40,8 @@ export const Button = ({ onClick, onConfirm, confirmText, color, marginBottom, d
     'bg-gray-600 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-800': disabled,
     'bg-green-600 hover:bg-green-700 focus:bg-green-700 active:bg-green-800':
       !disabled && (confirm || color === 'green'),
-    'mb-3': marginBottom,
+    'mt-1': true,
+    'mb-2': marginBottom,
   });
 
   const confirmed = () => {

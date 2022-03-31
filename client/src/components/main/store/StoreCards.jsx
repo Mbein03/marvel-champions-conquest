@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { StoreCard } from './StoreCard';
-import { Button } from '../../Button';
-import { Grid } from '../../Grid';
+import { Button } from '../../common/Button';
+import { Grid } from '../../common/Grid';
 
 export const StoreCards = () => {
   const { players, activePlayer, setActivePlayer } = useContext(GlobalContext);

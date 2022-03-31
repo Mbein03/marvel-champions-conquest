@@ -1,9 +1,9 @@
 import { useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
 import { LootContext } from './Loot';
-import { Card } from '../../Card';
-import { Header } from '../../Header';
-import { Button } from '../../Button';
+import { Card } from '../../common/Card';
+import { Header } from '../../common/Header';
+import { Button } from '../../common/Button';
 import * as api from '../../../helpers/api';
 
 export const LootAction = () => {
@@ -29,7 +29,9 @@ export const LootAction = () => {
 
   return (
     <Card>
-      <Header textCenter={true}>Claim Loot Rewards</Header>
+      <Header textCenter={true} underline={true}>
+        Claim Loot Rewards
+      </Header>
       <Button confirmText={'Confirm Scheme Thwarted'} onConfirm={() => schemeThwarted('T1')} marginBottom={true}>
         Side Scheme Thwarted
       </Button>

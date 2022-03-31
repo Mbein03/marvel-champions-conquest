@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { GlobalContext } from '../../App';
 import { MainContainer } from './MainContainer';
 import { Loot } from './loot/Loot';
-import { StoreCards } from './store/StoreCards';
-import { PlayerCards } from './cards/PlayerCards';
+import { Store } from './store/Store';
+import { Cards } from './cards/Cards';
 
 export const Main = () => {
   const { mainContent } = useContext(GlobalContext);
@@ -11,11 +11,11 @@ export const Main = () => {
   const renderSwitch = (mainContent) => {
     switch (mainContent) {
       case 'Helicarrier':
-        return <StoreCards />;
+        return <Store />;
       case 'Claim Loot Rewards':
         return <Loot />;
       default:
-        return <PlayerCards />;
+        return <Cards />;
     }
   };
   return <MainContainer> {renderSwitch(mainContent)}</MainContainer>;
