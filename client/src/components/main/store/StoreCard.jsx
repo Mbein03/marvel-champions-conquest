@@ -45,7 +45,7 @@ export const StoreCard = ({ tier, faction, savedCard, cardPool, purchased, saveC
           <Header textCenter={true} underline={true}>
             {'Tier: ' + card.tier}
           </Header>
-          <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} storeCard={true} />
+          <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} />
           <Button
             confirmText={'Confirm Purchase'}
             onConfirm={() => purchaseConfirmed()}
