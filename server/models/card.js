@@ -36,6 +36,18 @@ const markCardAcquired = async (data) => {
     });
   }
 
+  if (data.purchase) {
+    const prices = { B: 250, A: 500, S: 1000 };
+    const player = await db('players').where('player_id', data.player.player_id).first();
+    const cost = prices[data.card.tier];
+
+    await db('players')
+      .where('player_id', data.player.player_id)
+      .update({
+        credits: player.credits - cost,
+      });
+  }
+
   const players = await Player.fetchPlayers();
 
   return players;
@@ -63,12 +75,12 @@ const markCardSold = async (data) => {
     });
 
   const player = await db('players').where('player_id', data.player.player_id).first();
-  const earnedCredits = soldCard.faction === 'Basic' ? 25 : 50;
+  const creditsFromSale = soldCard.faction === 'Basic' ? 25 : 50;
 
   await db('players')
     .where('player_id', data.player.player_id)
     .update({
-      credits: player.credits + earnedCredits,
+      credits: player.credits + creditsFromSale,
     });
 
   const players = await Player.fetchPlayers();

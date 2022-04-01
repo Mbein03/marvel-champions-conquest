@@ -1,8 +1,8 @@
 import { factionRolls } from './constants';
 
 export const getFactionAndTier = (table, lootDrop) => {
-  const results = findResultsInTable(table, lootDrop);
-  const result = rollRandomResult(results);
+  const results = findMatchingResults(table, lootDrop);
+  const result = randomElementFromArray(results);
   const resultTier = parseTierFromResultString(result);
   const resultFaction = parseFactionFromResultString(result);
 
@@ -12,17 +12,13 @@ export const getFactionAndTier = (table, lootDrop) => {
 export const getCard = (tier, faction, cards) => {
   const filteredCards = filterCardsByTierAndFaction(tier, faction, cards);
   const potentialCards = addExtraRowsPerCardQuantity(filteredCards);
-  const card = rollRandomCard(potentialCards);
+  const card = randomElementFromArray(potentialCards);
 
   return card;
 };
 
-const findResultsInTable = (table, lootDrop) => {
+const findMatchingResults = (table, lootDrop) => {
   return table.find((table) => table.lootDrop === lootDrop).results;
-};
-
-const rollRandomResult = (results) => {
-  return results[Math.floor(Math.random() * results.length)];
 };
 
 const parseTierFromResultString = (result) => {
@@ -31,7 +27,7 @@ const parseTierFromResultString = (result) => {
 
 const parseFactionFromResultString = (result) => {
   if (result.includes('None')) return 'None';
-  if (result.includes('Roll')) return factionRolls[randomIntFromInterval(0, 5)].name;
+  if (result.includes('Roll')) return randomElementFromArray(factionRolls).name;
 
   return result.split(' ')[2];
 };
@@ -53,6 +49,5 @@ const addExtraRowsPerCardQuantity = (cards) => {
   return potentialCards;
 };
 
-const rollRandomCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);
-
-const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+export const randomElementFromArray = (array) =>
+  array.length ? array[Math.floor(Math.random() * array.length)] : null;

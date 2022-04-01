@@ -21,7 +21,7 @@ export const SelectInput = ({ id, labelText, options, value, onSelect: setState,
     setState(event.target.value);
   };
 
-  const mapOptions = (options) => {
+  const mapOptions = () => {
     return options.map((value) => (
       <option key={value.id} value={value.id}>
         {value.name}
@@ -29,7 +29,7 @@ export const SelectInput = ({ id, labelText, options, value, onSelect: setState,
     ));
   };
 
-  const optionElements = options ? mapOptions(options) : [];
+  const optionElements = options ? mapOptions() : [];
 
   return (
     <>

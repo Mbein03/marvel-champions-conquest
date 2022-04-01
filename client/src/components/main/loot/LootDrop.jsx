@@ -5,8 +5,8 @@ import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { SelectInput } from '../../common/SelectInput';
 import { rewardTable, lootDrops, factions } from '../../../helpers/constants';
+import { getFactionAndTier, getCard } from '../../../helpers/loot';
 import * as api from '../../../helpers/api';
-import * as loot from '../../../helpers/loot';
 
 export const LootDrop = () => {
   const [tier, setTier] = useState('');
@@ -30,7 +30,7 @@ export const LootDrop = () => {
       return;
     }
 
-    const { resultTier, resultFaction } = loot.getFactionAndTier(rewardTable, lootDrop);
+    const { resultTier, resultFaction } = getFactionAndTier(rewardTable, lootDrop);
 
     if (resultFaction === 'Your Choice') {
       setShowFactionSelectInput(true);
@@ -41,13 +41,13 @@ export const LootDrop = () => {
   };
 
   const rollForCard = (tier, faction, cards) => {
-    const card = loot.getCard(tier, faction, cards);
+    const card = getCard(tier, faction, cards);
     if (card) markCardAcquired(card);
     setLootContent('LootResult');
   };
 
   const markCardAcquired = async (card) => {
-    const players = await api.markCardAcquired(card, activePlayer);
+    const players = await api.markCardAcquired(card, activePlayer, false);
     setLootedCard(card);
     setPlayers(players);
   };

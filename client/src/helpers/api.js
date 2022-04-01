@@ -52,10 +52,11 @@ export const markSchemeThwarted = async (player) => {
   return players;
 };
 
-export const markCardAcquired = async (card, player) => {
+export const markCardAcquired = async (card, player, purchaseBoolean) => {
   const players = await postData(url.markCardAcquired, {
     card: card,
     player: player,
+    purchase: purchaseBoolean,
   });
   return players;
 };

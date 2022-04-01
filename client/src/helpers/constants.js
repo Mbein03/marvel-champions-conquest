@@ -5,7 +5,7 @@ const TierARoll = 'Tier A Roll';
 const TierSRoll = 'Tier S Roll';
 const Shawarma = 'Shawarma';
 
-export const storeCardTiers = ['B', 'A', 'S', 'Power'];
+export const storeCardTiers = ['B', 'A', 'S'];
 
 export const lootDrops = [
   { id: 'T1', name: 'T1' },

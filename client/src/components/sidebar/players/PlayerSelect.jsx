@@ -8,7 +8,7 @@ import { Button } from '../../common/Button';
 export const PlayerSelect = () => {
   const { players, activePlayer, setActivePlayer, disablePlayerSelect } = useContext(GlobalContext);
 
-  const mapPlayers = (players) => {
+  const mapPlayers = () => {
     return players.map((player) => (
       <div key={player.player_id} className='w-1/2 flex-shrink flex-grow-0 px-1'>
         <Button
@@ -24,7 +24,7 @@ export const PlayerSelect = () => {
     ));
   };
 
-  const playerElements = players ? mapPlayers(players) : [];
+  const playerElements = players ? mapPlayers() : [];
 
   return (
     <>
