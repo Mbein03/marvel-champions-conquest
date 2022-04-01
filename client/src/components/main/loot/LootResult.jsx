@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { LootContext } from './Loot';
+import { LootContext } from './LootOverview';
 import { Card } from '../../common/Card';
 import { Header } from '../../common/Header';
 import { Button } from '../../common/Button';

@@ -4,7 +4,7 @@ import { NavButtonsContainer } from './NavButtonsContainer';
 import { Button } from '../../common/Button';
 
 export const NavButtons = () => {
-  const contentCategories = ['Card Collection', 'Claim Loot Rewards'];
+  const contentCategories = ['Player Overview', 'Claim Loot Rewards'];
 
   const { setDisablePlayerSelect, mainContent, setMainContent } = useContext(GlobalContext);
 

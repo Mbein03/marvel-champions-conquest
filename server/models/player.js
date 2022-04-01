@@ -28,6 +28,16 @@ const fetchPlayerCards = async (player) => {
   return playerCards;
 };
 
+const updateCredits = async (data) => {
+  await db('players').where('player_id', data.player.player_id).update({
+    credits: data.credits,
+  });
+
+  const players = await fetchPlayers();
+
+  return players;
+};
+
 const markSchemeThwarted = async (data) => {
   await db('players')
     .where('player_id', data.player.player_id)
@@ -42,5 +52,6 @@ const markSchemeThwarted = async (data) => {
 
 module.exports = {
   fetchPlayers,
+  updateCredits,
   markSchemeThwarted,
 };

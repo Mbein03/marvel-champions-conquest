@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { LootContext } from './Loot';
+import { LootContext } from './LootOverview';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { SelectInput } from '../../common/SelectInput';

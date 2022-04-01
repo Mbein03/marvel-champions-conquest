@@ -5,7 +5,7 @@ import { LootResult } from './LootResult';
 
 export const LootContext = createContext();
 
-export const Loot = () => {
+export const LootOverview = () => {
   const [lootContent, setLootContent] = useState('LootAction');
   const [lootDrop, setLootDrop] = useState('T1');
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);

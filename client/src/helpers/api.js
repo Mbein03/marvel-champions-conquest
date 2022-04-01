@@ -2,6 +2,7 @@ const rootURL = 'http://localhost:9000';
 const url = {
   fetchPlayers: rootURL + '/api/players',
   fetchCardPool: rootURL + '/api/cards/pool',
+  updateCredits: rootURL + '/api/player/update-credits',
   markSchemeThwarted: rootURL + '/api/player/mark-scheme-thwarted',
   markCardAcquired: rootURL + '/api/card/mark-acquired',
   markCardSold: rootURL + '/api/card/mark-sold',
@@ -34,6 +35,14 @@ export const fetchPlayers = async () => {
 export const fetchCardPool = async () => {
   const cards = await fetchData(url.fetchCardPool);
   return cards;
+};
+
+export const updateCredits = async (player, credits) => {
+  const players = await postData(url.updateCredits, {
+    player: player,
+    credits: credits,
+  });
+  return players;
 };
 
 export const markSchemeThwarted = async (player) => {
