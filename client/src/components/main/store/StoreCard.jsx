@@ -4,26 +4,33 @@ import { Header } from '../../common/Header';
 import { SelectInput } from '../../common/SelectInput';
 import { Button } from '../../common/Button';
 import { Image } from '../../common/Image';
-import { Subheader } from '../../common/Subheader';
-import { randomElementFromArray, getCard } from '../../../helpers/loot';
-import { factions } from '../../../helpers/constants';
+import { getCard } from '../../../helpers/loot';
+import { storeTierPrices, factionOptions } from '../../../helpers/constants';
 import * as api from '../../../helpers/api';
 
-export const StoreCard = ({ tier, faction, cardPool }) => {
+export const StoreCard = ({ tier, faction, savedCard, cardPool, purchased, saveCard }) => {
   const [cardFaction, setCardFaction] = useState(faction);
-  const [card, setCard] = useState('');
-  const [cardPurchased, setCardPurchased] = useState(false);
+  const [card, setCard] = useState(savedCard);
+  const [cardPurchased, setCardPurchased] = useState(purchased);
 
   const { setPlayers, activePlayer } = useContext(GlobalContext);
 
-  var factionOptions = [{ id: '', name: '- Select -' }].concat(factions);
-
   useEffect(() => {
-    if (cardFaction !== 'Your Choice') {
+    if (!card) {
       const card = getCard(tier, cardFaction, cardPool);
       setCard(card);
+      saveCard(tier, cardFaction, card, cardPurchased);
+      return;
     }
-  }, [tier, cardFaction, cardPool]);
+
+    saveCard(tier, cardFaction, card, cardPurchased);
+  }, [card, cardFaction, tier, cardPurchased, cardPool, saveCard]);
+
+  const purchaseButtonText = () => {
+    if (cardPurchased) return 'Card Purchased';
+    if (storeTierPrices[card.tier] > activePlayer.credits) return 'Limited Funds';
+    return 'Purchase Card';
+  };
 
   const purchaseConfirmed = async () => {
     const players = await api.markCardAcquired(card, activePlayer, true);
@@ -39,15 +46,14 @@ export const StoreCard = ({ tier, faction, cardPool }) => {
             {'Tier: ' + card.tier}
           </Header>
           <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} />
-          {!cardPurchased ? (
-            <Button confirmText={'Confirm Purchase'} onConfirm={() => purchaseConfirmed()} marginBottom={true}>
-              Purchase Card
-            </Button>
-          ) : (
-            <Button disabled={true} marginBottom={true}>
-              Card Purchased
-            </Button>
-          )}
+          <Button
+            confirmText={'Confirm Purchase'}
+            onConfirm={() => purchaseConfirmed()}
+            marginBottom={true}
+            disabled={cardPurchased || storeTierPrices[card.tier] > activePlayer.credits}
+          >
+            {purchaseButtonText()}
+          </Button>
         </>
       ) : (
         <SelectInput

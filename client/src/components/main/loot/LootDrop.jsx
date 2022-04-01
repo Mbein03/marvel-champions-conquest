@@ -4,16 +4,16 @@ import { LootContext } from './LootOverview';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { SelectInput } from '../../common/SelectInput';
-import { rewardTable, lootDrops, factions } from '../../../helpers/constants';
+import { rewardTable, lootDropOptions, factionOptions } from '../../../helpers/constants';
 import { getFactionAndTier, getCard } from '../../../helpers/loot';
 import * as api from '../../../helpers/api';
 
 export const LootDrop = () => {
   const [tier, setTier] = useState('');
-  const [faction, setFaction] = useState('Basic');
+  const [faction, setFaction] = useState('');
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
 
-  const { setPlayers, activePlayer } = useContext(GlobalContext);
+  const { setPlayers, activePlayer, setSavedStoreTiers } = useContext(GlobalContext);
 
   const { setLootContent, lootDrop, setLootDrop, disableLootDropInput, setDisableLootDropInput, setLootedCard } =
     useContext(LootContext);
@@ -23,6 +23,7 @@ export const LootDrop = () => {
   });
 
   const rollConfirmed = async () => {
+    setSavedStoreTiers('');
     const cards = await api.fetchCardPool();
 
     if (tier) {
@@ -57,15 +58,25 @@ export const LootDrop = () => {
       <SelectInput
         id={'lootDrop'}
         labelText={'Loot Drop:'}
-        options={lootDrops}
+        options={lootDropOptions}
         value={lootDrop}
         onSelect={setLootDrop}
         disabled={disableLootDropInput}
       />
       {showFactionSelectInput && (
-        <SelectInput id={'faction'} labelText={'Faction:'} options={factions} value={faction} onSelect={setFaction} />
+        <SelectInput
+          id={'faction'}
+          labelText={'Faction:'}
+          options={factionOptions}
+          value={faction}
+          onSelect={setFaction}
+        />
       )}
-      <Button confirmText={'Confirm Roll'} onConfirm={() => rollConfirmed()}>
+      <Button
+        confirmText={'Confirm Roll'}
+        onConfirm={() => rollConfirmed()}
+        disabled={!lootDrop || (showFactionSelectInput && !faction)}
+      >
         Roll For Card
       </Button>
     </Card>

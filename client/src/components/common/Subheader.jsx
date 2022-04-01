@@ -8,7 +8,7 @@ export const Subheader = ({ title, text, spanUnderline }) => {
   });
 
   return (
-    <p className='inline-block text-lg mb-3'>
+    <p className='inline-block mb-3'>
       <span className={spanClass}>{title}</span>: {text}
     </p>
   );

@@ -32,7 +32,7 @@ export const LootAction = () => {
       <Header textCenter={true} underline={true}>
         Claim Loot Rewards
       </Header>
-      <Button confirmText={'Confirm Scheme Thwarted'} onConfirm={() => schemeThwarted('T1')} marginBottom={true}>
+      <Button confirmText={'Confirm Scheme Thwarted'} onConfirm={() => schemeThwarted()} marginBottom={true}>
         Side Scheme Thwarted
       </Button>
       <Button confirmText={'Confirm Defeat (2-4 Health)'} onConfirm={() => minionDefeated('T1')} marginBottom={true}>

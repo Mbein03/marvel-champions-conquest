@@ -17,7 +17,6 @@ export const CreditsInput = () => {
   }, [activePlayer]);
 
   const updateCredits = async () => {
-    console.log(credits);
     const players = await api.updateCredits(activePlayer, credits);
     setPlayers(players);
   };

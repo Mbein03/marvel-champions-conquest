@@ -9,6 +9,7 @@ export const App = () => {
   const [players, setPlayers] = useState('');
   const [disablePlayerSelect, setDisablePlayerSelect] = useState(false);
   const [activePlayer, setActivePlayer] = useState('');
+  const [savedStoreTiers, setSavedStoreTiers] = useState('');
   const [mainContent, setMainContent] = useState('Player Overview');
 
   useEffect(() => {
@@ -38,6 +39,8 @@ export const App = () => {
     setDisablePlayerSelect,
     activePlayer,
     setActivePlayer,
+    savedStoreTiers,
+    setSavedStoreTiers,
     mainContent,
     setMainContent,
   };

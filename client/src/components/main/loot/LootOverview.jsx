@@ -7,7 +7,7 @@ export const LootContext = createContext();
 
 export const LootOverview = () => {
   const [lootContent, setLootContent] = useState('LootAction');
-  const [lootDrop, setLootDrop] = useState('T1');
+  const [lootDrop, setLootDrop] = useState('');
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);
   const [lootedCard, setLootedCard] = useState('');
 
