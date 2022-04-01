@@ -6,6 +6,7 @@ import { NameFilter } from './filters/NameFilter';
 import { FactionFilter } from './filters/FactionFilter';
 import { TierFilter } from './filters/TierFilter';
 import { Grid } from '../../common/Grid';
+import { factionOrder, tierOrder } from '../../../helpers/constants';
 
 export const PlayerOverview = () => {
   const [cards, setCards] = useState('');
@@ -16,8 +17,6 @@ export const PlayerOverview = () => {
   const { activePlayer } = useContext(GlobalContext);
 
   const sortCards = (filteredCards) => {
-    const factionOrder = { Basic: 1, Aggression: 2, Justice: 3, Leadership: 4, Protection: 5 };
-    const tierOrder = { S: 1, A: 2, B: 3, C: 4 };
     filteredCards
       .sort((a, b) => {
         return factionOrder[a.faction] - factionOrder[b.faction];

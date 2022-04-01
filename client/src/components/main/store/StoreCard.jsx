@@ -8,25 +8,9 @@ import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
 import { factions } from '../../../helpers/constants';
 
-export const StoreCard = ({ tier, resetCards, setResetCards }) => {
+export const StoreCard = ({ tier }) => {
   const [faction, setFaction] = useState('');
   const [card, setCard] = useState('');
-
-  useEffect(() => {
-    // if (!card || resetCards) {
-    //   const cardPool = await api.fetchCardPool();
-    //   const randomFaction = factions[loot.randomIntFromInterval(0, 5)].name;
-    //   const filteredCards = loot.filterCards(tier, randomFaction, cardPool);
-    //   const card = loot.getCard(filteredCards);
-    //   setCard(card);
-    // }
-
-    setResetCards(false);
-  }, [resetCards, setResetCards]);
-
-  if (faction) {
-    console.log('faction', faction);
-  }
 
   const purchaseConfirmed = async () => {
     console.log('buy card');
@@ -41,7 +25,7 @@ export const StoreCard = ({ tier, resetCards, setResetCards }) => {
   const displayCard = () => {
     return (
       <>
-        <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} />
+        {/* <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} /> */}
         <Button confirmText={'Confirm Purchase'} onConfirm={() => purchaseConfirmed()} marginBottom={true}>
           Purchase Card
         </Button>

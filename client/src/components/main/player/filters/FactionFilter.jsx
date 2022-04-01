@@ -1,10 +1,10 @@
 import { Card } from '../../../common/Card';
 import { SelectInput } from '../../../common/SelectInput';
 import { Button } from '../../../common/Button';
-import * as constants from '../../../../helpers/constants';
+import { factions } from '../../../../helpers/constants';
 
 export const FactionFilter = ({ faction, setFaction }) => {
-  var options = [{ id: '', name: '- Select -' }].concat(constants.factions.slice(0, -1));
+  var options = [{ id: '', name: '- Select -' }].concat(factions);
 
   return (
     <Card grid={true}>

@@ -29,13 +29,13 @@ export const SelectInput = ({ id, labelText, options, value, onSelect: setState,
     ));
   };
 
-  const selectOptions = options ? mapOptions(options) : [];
+  const optionElements = options ? mapOptions(options) : [];
 
   return (
     <>
       <InputLabel for={id}>{labelText}</InputLabel>
       <select id={id} name={id} value={value} className={inputClass} onChange={updateState} disabled={disabled}>
-        {selectOptions}
+        {optionElements}
       </select>
     </>
   );

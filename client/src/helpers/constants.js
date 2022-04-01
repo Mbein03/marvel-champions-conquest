@@ -5,6 +5,8 @@ const TierARoll = 'Tier A Roll';
 const TierSRoll = 'Tier S Roll';
 const Shawarma = 'Shawarma';
 
+export const storeCardTiers = ['B', 'A', 'S', 'Power'];
+
 export const lootDrops = [
   { id: 'T1', name: 'T1' },
   { id: 'T1+', name: 'T1+' },
@@ -16,16 +18,20 @@ export const lootDrops = [
   { id: 'T4+', name: 'T4+' },
 ];
 
-export const factions = [
+export const factionRolls = [
   { id: 'Basic', name: 'Basic' },
-  { id: 'Protection', name: 'Protection' },
-  { id: 'Leadership', name: 'Leadership' },
   { id: 'Aggression', name: 'Aggression' },
   { id: 'Justice', name: 'Justice' },
+  { id: 'Leadership', name: 'Leadership' },
+  { id: 'Protection', name: 'Protection' },
   { id: 'Your Choice', name: 'Your Choice' },
 ];
 
-export const cardTiers = [
+export const factionOrder = { Basic: 1, Aggression: 2, Justice: 3, Leadership: 4, Protection: 5 };
+export const factions = factionRolls.slice(0, -1);
+
+export const tierOrder = { S: 1, A: 2, B: 3, C: 4 };
+export const tiers = [
   { id: 'S', name: 'S' },
   { id: 'A', name: 'A' },
   { id: 'B', name: 'B' },

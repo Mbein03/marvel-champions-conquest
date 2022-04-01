@@ -4,7 +4,7 @@ import { LootContext } from './LootOverview';
 import { Card } from '../../common/Card';
 import { Button } from '../../common/Button';
 import { SelectInput } from '../../common/SelectInput';
-import * as constants from '../../../helpers/constants';
+import { rewardTable, lootDrops, factions } from '../../../helpers/constants';
 import * as api from '../../../helpers/api';
 import * as loot from '../../../helpers/loot';
 
@@ -30,7 +30,7 @@ export const LootDrop = () => {
       return;
     }
 
-    const { resultTier, resultFaction } = loot.getFactionAndTier(constants.rewardTable, lootDrop);
+    const { resultTier, resultFaction } = loot.getFactionAndTier(rewardTable, lootDrop);
 
     if (resultFaction === 'Your Choice') {
       setShowFactionSelectInput(true);
@@ -57,19 +57,13 @@ export const LootDrop = () => {
       <SelectInput
         id={'lootDrop'}
         labelText={'Loot Drop:'}
-        options={constants.lootDrops}
+        options={lootDrops}
         value={lootDrop}
         onSelect={setLootDrop}
         disabled={disableLootDropInput}
       />
       {showFactionSelectInput && (
-        <SelectInput
-          id={'faction'}
-          labelText={'Faction:'}
-          options={constants.factions.slice(0, -1)}
-          value={faction}
-          onSelect={setFaction}
-        />
+        <SelectInput id={'faction'} labelText={'Faction:'} options={factions} value={faction} onSelect={setFaction} />
       )}
       <Button confirmText={'Confirm Roll'} onConfirm={() => rollConfirmed()}>
         Roll For Card

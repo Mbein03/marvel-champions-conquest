@@ -6,7 +6,7 @@ export const PlayerCards = ({ cards }) => {
     return cards.map((card) => <PlayerCard key={card.player_card_id} card={card} />);
   };
 
-  const playerCards = cards ? mapCards(cards) : [];
+  const playerCardElements = cards ? mapCards(cards) : [];
 
-  return <Grid>{playerCards}</Grid>;
+  return <Grid>{playerCardElements}</Grid>;
 };

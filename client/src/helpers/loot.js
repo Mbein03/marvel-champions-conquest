@@ -1,6 +1,4 @@
-import { factions } from './constants';
-
-export const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+import { factionRolls } from './constants';
 
 export const getFactionAndTier = (table, lootDrop) => {
   const results = findResultsInTable(table, lootDrop);
@@ -9,6 +7,14 @@ export const getFactionAndTier = (table, lootDrop) => {
   const resultFaction = parseFactionFromResultString(result);
 
   return { resultTier, resultFaction };
+};
+
+export const getCard = (tier, faction, cards) => {
+  const filteredCards = filterCardsByTierAndFaction(tier, faction, cards);
+  const potentialCards = addExtraRowsPerCardQuantity(filteredCards);
+  const card = rollRandomCard(potentialCards);
+
+  return card;
 };
 
 const findResultsInTable = (table, lootDrop) => {
@@ -25,23 +31,15 @@ const parseTierFromResultString = (result) => {
 
 const parseFactionFromResultString = (result) => {
   if (result.includes('None')) return 'None';
-  if (result.includes('Roll')) return factions[randomIntFromInterval(0, 5)].name;
+  if (result.includes('Roll')) return factionRolls[randomIntFromInterval(0, 5)].name;
 
   return result.split(' ')[2];
 };
 
-export const getCard = (tier, faction, cards) => {
-  const filteredCards = filterCardsByTierAndFaction(tier, faction, cards);
-  const potentialCards = addExtraRowsPerCardQuantity(filteredCards);
-  const card = rollRandomCard(potentialCards);
-
-  return card;
-};
-
-export const filterCardsByTierAndFaction = (tier, faction, cards) =>
+const filterCardsByTierAndFaction = (tier, faction, cards) =>
   cards.filter((card) => card.tier === tier).filter((card) => card.faction === faction);
 
-export const addExtraRowsPerCardQuantity = (cards) => {
+const addExtraRowsPerCardQuantity = (cards) => {
   const potentialCards = cards;
 
   cards.forEach((card) => {
@@ -55,4 +53,6 @@ export const addExtraRowsPerCardQuantity = (cards) => {
   return potentialCards;
 };
 
-export const rollRandomCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);
+const rollRandomCard = (cards) => (cards.length ? cards[Math.floor(Math.random() * cards.length)] : null);
+
+const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
