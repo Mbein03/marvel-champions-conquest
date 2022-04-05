@@ -1,19 +1,19 @@
 import { useState, createContext } from 'react';
-import { LootAction } from './LootAction';
-import { LootDrop } from './LootDrop';
-import { LootResult } from './LootResult';
+import { LootActionPhase } from './phases/action/LootActionPhase';
+import { LootDropPhase } from './phases/drop/LootDropPhase';
+import { LootResultPhase } from './phases/result/LootResultPhase';
 
 export const LootContext = createContext();
 
 export const LootOverview = () => {
-  const [lootContent, setLootContent] = useState('LootAction');
+  const [lootPhase, setLootPhase] = useState('LootAction');
   const [lootDrop, setLootDrop] = useState('');
   const [disableLootDropInput, setDisableLootDropInput] = useState(false);
   const [lootedCard, setLootedCard] = useState('');
 
   const LootStates = {
-    lootContent,
-    setLootContent,
+    lootPhase,
+    setLootPhase,
     lootDrop,
     setLootDrop,
     disableLootDropInput,
@@ -22,16 +22,16 @@ export const LootOverview = () => {
     setLootedCard,
   };
 
-  const renderSwitch = (lootContent) => {
-    switch (lootContent) {
+  const renderSwitch = (lootPhase) => {
+    switch (lootPhase) {
       case 'LootDrop':
-        return <LootDrop />;
+        return <LootDropPhase />;
       case 'LootResult':
-        return <LootResult />;
+        return <LootResultPhase />;
       default:
-        return <LootAction />;
+        return <LootActionPhase />;
     }
   };
 
-  return <LootContext.Provider value={LootStates}>{renderSwitch(lootContent)}</LootContext.Provider>;
+  return <LootContext.Provider value={LootStates}>{renderSwitch(lootPhase)}</LootContext.Provider>;
 };

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { GlobalContext } from '../../App';
-import { MainContainer } from './MainContainer';
+import { MainContainer } from './container/MainContainer';
 import { LootOverview } from './loot/LootOverview';
 import { StoreOverview } from './store/StoreOverview';
 import { PlayerOverview } from './player/PlayerOverview';

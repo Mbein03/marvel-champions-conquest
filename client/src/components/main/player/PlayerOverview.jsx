@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback, useContext } from 'react';
 import { GlobalContext } from '../../../App';
-import { PlayerCards } from './PlayerCards';
-import { CreditsInput } from './credits/CreditsInput';
-import { NameFilter } from './filters/NameFilter';
-import { FactionFilter } from './filters/FactionFilter';
-import { TierFilter } from './filters/TierFilter';
-import { Grid } from '../../common/Grid';
+import { PlayerCards } from './cards/PlayerCards';
+import { CreditUpdater } from './credits/updater/CreditUpdater';
+import { NameFilter } from './filters/name/NameFilter';
+import { FactionFilter } from './filters/faction/FactionFilter';
+import { TierFilter } from './filters/tier/TierFilter';
+import { GridContainer } from '../../common/containers/grid/GridContainer';
 import { factionOrder, tierOrder } from '../../../helpers/constants';
 
 export const PlayerOverview = () => {
@@ -45,12 +45,12 @@ export const PlayerOverview = () => {
 
   return (
     <>
-      <Grid>
-        <CreditsInput />
+      <GridContainer>
+        <CreditUpdater />
         <NameFilter searchText={searchText} setSearchText={setSearchText} />
         <FactionFilter faction={faction} setFaction={setFaction} />
         <TierFilter tier={tier} setTier={setTier} />
-      </Grid>
+      </GridContainer>
       <PlayerCards cards={cards} />
     </>
   );

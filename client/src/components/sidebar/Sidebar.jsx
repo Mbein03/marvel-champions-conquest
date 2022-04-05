@@ -1,6 +1,6 @@
-import { SidebarContainer } from './SidebarContainer';
-import { PlayerSelect } from './players/PlayerSelect';
-import { NavButtons } from './nav/NavButtons';
+import { SidebarContainer } from './container/SidebarContainer';
+import { PlayerSelect } from './players/select/PlayerSelect';
+import { NavButtons } from './nav/buttons/NavButtons';
 
 export const Sidebar = () => {
   return (
