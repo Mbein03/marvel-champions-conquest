@@ -9,12 +9,9 @@ export const StoreInfo = () => {
   const [showActions, setShowActions] = useState(false);
   return (
     <CardContainer spanColumns={true}>
-      <Button onClick={() => setShowActions(!showActions)} marginBottom={showActions}>
-        {showActions ? 'Hide Actions' : 'Show Actions'}
-      </Button>
       {showActions && (
         <>
-          <Header textCenter={true} underline={true} marginTop={true}>
+          <Header textCenter={true} underline={true}>
             Helicarrier Actions
           </Header>
           <Subheader
@@ -104,9 +101,11 @@ export const StoreInfo = () => {
               'After each win, upon exiting the Helicarrier, cards must be reset. After a loss played in full, you may choose to reset the vendor before the next mission.'
             }
             block={true}
+            marginBottom={true}
           />
         </>
       )}
+      <Button onClick={() => setShowActions(!showActions)}>{showActions ? 'Hide Actions' : 'Show Actions'}</Button>
     </CardContainer>
   );
 };
