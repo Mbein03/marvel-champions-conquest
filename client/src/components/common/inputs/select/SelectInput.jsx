@@ -1,7 +1,7 @@
 import { InputLabel } from '../label/InputLabel';
 import classNames from 'classnames';
 
-export const SelectInput = ({ id, labelText, options, value, onSelect: setState, disabled, marginTop }) => {
+export const SelectInput = ({ id, labelText, options, value, onSelect: setState, disabled }) => {
   const inputClass = classNames({
     border: true,
     rounded: true,
@@ -33,9 +33,7 @@ export const SelectInput = ({ id, labelText, options, value, onSelect: setState,
 
   return (
     <>
-      <InputLabel for={id} marginTop={marginTop}>
-        {labelText}
-      </InputLabel>
+      <InputLabel for={id}>{labelText}</InputLabel>
       <select id={id} name={id} value={value} className={inputClass} onChange={updateState} disabled={disabled}>
         {optionElements}
       </select>

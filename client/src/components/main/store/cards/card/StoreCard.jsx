@@ -68,7 +68,6 @@ export const StoreCard = ({ tier, defaultFaction, card, cardPool, purchased, sav
           options={factionOptions}
           value={faction}
           onSelect={setFaction}
-          marginTop={true}
         />
       )}
     </CardContainer>
