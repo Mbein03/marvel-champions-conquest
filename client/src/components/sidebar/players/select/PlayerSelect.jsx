@@ -19,7 +19,7 @@ export const PlayerSelect = () => {
         >
           {player.name}
         </Button>
-        <Subheader title={'Credits'} text={player.credits} />
+        <Subheader title={'Credits'} text={player.credits} marginBottom={true} />
       </div>
     ));
   };

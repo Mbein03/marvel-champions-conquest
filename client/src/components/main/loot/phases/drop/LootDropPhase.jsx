@@ -13,7 +13,7 @@ export const LootDropPhase = () => {
   const [faction, setFaction] = useState('');
   const [showFactionSelectInput, setShowFactionSelectInput] = useState(false);
 
-  const { setPlayers, activePlayer, setStoreStates } = useContext(GlobalContext);
+  const { setPlayers, activePlayer, storeStates } = useContext(GlobalContext);
 
   const { setLootPhase, lootDrop, setLootDrop, disableLootDropInput, setDisableLootDropInput, setLootedCard } =
     useContext(LootContext);
@@ -23,7 +23,6 @@ export const LootDropPhase = () => {
   });
 
   const rollConfirmed = async () => {
-    setStoreStates('');
     const cards = await api.fetchCardPool();
 
     if (tier) {
@@ -31,7 +30,8 @@ export const LootDropPhase = () => {
       return;
     }
 
-    const { resultTier, resultFaction } = getFactionAndTier(rewardTable, lootDrop);
+    const { result, resultTier, resultFaction } = getFactionAndTier(rewardTable, lootDrop);
+    console.log(result);
 
     if (resultFaction === 'Your Choice') {
       setShowFactionSelectInput(true);
@@ -43,6 +43,16 @@ export const LootDropPhase = () => {
 
   const rollForCard = (tier, faction, cards) => {
     const card = getCard(tier, faction, cards);
+
+    if (storeStates) {
+      storeStates.forEach((state) => {
+        if (state.card && state.card.card_id === card.card_id) {
+          rollForCard(tier, faction, cards);
+          return;
+        }
+      });
+    }
+
     if (card) markCardAcquired(card);
     setLootPhase('LootResult');
   };

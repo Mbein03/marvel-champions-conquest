@@ -19,8 +19,8 @@ export const PlayerCard = ({ card }) => {
     <CardContainer lessPadding={true}>
       <Image src={'https://marvelcdb.com/' + card.image_path} alt={card.name} type='PlayerCard' />
       <SameLineContainer>
-        <Subheader title={'Tier'} text={card.tier ? card.tier : 'N/A'} spanUnderline={true} />
-        <Subheader title={'Qty'} text={card.qty} spanUnderline={true} />
+        <Subheader title={'Tier'} text={card.tier ? card.tier : 'N/A'} spanUnderline={true} marginBottom={true} />
+        <Subheader title={'Qty'} text={card.qty} spanUnderline={true} marginBottom={true} />
       </SameLineContainer>
       <Button confirmText={'Confirm Sale'} onConfirm={() => saleConfirmed()} marginBottom={true}>
         Sell Card

@@ -6,7 +6,7 @@ export const getFactionAndTier = (table, lootDrop) => {
   const resultTier = parseTierFromResultString(result);
   const resultFaction = parseFactionFromResultString(result);
 
-  return { resultTier, resultFaction };
+  return { result, resultTier, resultFaction };
 };
 
 export const getCard = (tier, faction, cards) => {
