@@ -46,7 +46,7 @@ export const LootDropPhase = () => {
 
     if (storeStates) {
       storeStates.forEach((state) => {
-        if (state.card && state.card.card_id === card.card_id) {
+        if (state.card && state.card.card_id === card.card_id && card.qty === 1) {
           rollForCard(tier, faction, cards);
           return;
         }
