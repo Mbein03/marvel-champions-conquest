@@ -30,8 +30,7 @@ export const LootDropPhase = () => {
       return;
     }
 
-    const { result, resultTier, resultFaction } = getFactionAndTier(rewardTable, lootDrop);
-    console.log(result);
+    const { resultTier, resultFaction } = getFactionAndTier(rewardTable, lootDrop);
 
     if (resultFaction === 'Your Choice') {
       setShowFactionSelectInput(true);
