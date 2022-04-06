@@ -1,6 +1,6 @@
 # Marvel Champions Conquest Companion App
 
-This application was created to be a companion app for _Marvel Champions Conquest_ (MCC), a fan-made campaign designed for the Living Card Game (LCG) _Marvel Champions_. Initially, this app will handle card reward rolls for a variety of in-game activities. The app is still very much a work-in-progress. It started as personal passion project to provide practice as I learn a new stack. The goal over time is to add additional functionality to track acquired cards and credits for each player, and handle achievement and shop functionality.
+This application was created to be a companion app for _Marvel Champions Conquest_ (MCC), a fan-made campaign designed for the Living Card Game (LCG) _Marvel Champions_. It handles credit and card tracking on a per-player basis, shop functionality, and loot randomization for acquiring new cards.
 
 ## Stack & Structure
 
@@ -32,36 +32,6 @@ This application was created to be a companion app for _Marvel Champions Conques
 6. Run "npm run build-css" (seperate terminal tab) to build public styles CSS file and watch for changes.
 7. No need to run migrations, as a master DB file is included in repository.
 8. Navigate to [http://localhost:3000](http://localhost:3000) in browser and you should see app displayed.
-
-## Usage
-
-1. Select player in top left corner of sidebar.
-2. Select reward (ex. minion defeated or manually select drop) based on rewards you have earned during play.
-3. If manually selecting drop, select loot drop value (refer to [MCC Rulebook](https://drive.google.com/drive/folders/1s87w8nJLEG_dx_OCpXOT_s7szEBV02tg) for various loot drop rewards and how they are earned). If minion kill was chosen, loot drop value will be selected for you and locked.
-4. Click and confirm roll.
-5. In some cases, depending on your initial reward roll, you may have the opportunity to select your desired card faction. If so, select faction and confirm roll.
-6. Reward card will be displayed (name, faction, and card tier), along with card image. Card quantity will be decremented from potential card pool in database.
-7. Either sell and confirm card back to card pool (card quantity will be incremented in database) or reset and claim a new reward.
-
-- The "Update Card Images" button will fire out a request to [Marvel Card Database API](https://marvelcdb.com/api/) to update images for any cards in database that do not already have images assigned.
-- At this point, credits are not being tracked in app when selling cards, but there are plans to do so in the near future.
-
-## Upcoming Tasks
-
-### Code
-
-- [x] Add NPM package classnames for react components
-- [x] Add controllers to [server](server) folder to follow MVC architecture.
-- [ ] Add intermediate table to track acquired player cards.
-
-### New Features
-
-- [ ] Add functionality to track credits on a per player basis as cards are sold.
-- [ ] Add functionality to track credits acquired for completing side schemes.
-- [ ] Add functionality to manually enter player names and credits as necessary.
-- [ ] Add view to display acquired cards on a per player basis.
-- [ ] Add shop functionality to display cards available in shop.
-- [ ] Add functionality to track game achievements.
 
 ## Helpful Links
 

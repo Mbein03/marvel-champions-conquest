@@ -14,6 +14,8 @@ const allFactionOptions = [
   { id: 'Protection', name: 'Protection' },
   { id: 'Your Choice', name: 'Your Choice' },
 ];
+
+export const coloredFactions = ['Aggression', 'Justice', 'Leadership', 'Protection'];
 export const factionOrder = { Basic: 1, Aggression: 2, Justice: 3, Leadership: 4, Protection: 5 };
 export const factionOptions = allFactionOptions.slice(0, -1);
 export const factionRolls = allFactionOptions.slice(1);
