@@ -6,10 +6,10 @@ import { Subheader } from '../../../common/headers/subheader/Subheader';
 import { Button } from '../../../common/button/Button';
 
 export const StoreInfo = () => {
-  const [showActions, setShowActions] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <CardContainer spanColumns={true}>
-      {showActions && (
+      {showInfo && (
         <>
           <Header textCenter={true} underline={true}>
             Helicarrier Actions
@@ -105,7 +105,7 @@ export const StoreInfo = () => {
           />
         </>
       )}
-      <Button onClick={() => setShowActions(!showActions)}>{showActions ? 'Hide Actions' : 'Show Actions'}</Button>
+      <Button onClick={() => setShowInfo(!showInfo)}>{showInfo ? 'Hide Info' : 'Show Info'}</Button>
     </CardContainer>
   );
 };
