@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames';
 
 export const Button = ({ onClick, onConfirm, confirmText, color, marginBottom, disabled, children }) => {
+  //
   const [confirm, setConfirm] = useState(false);
   const ref = useRef();
 
